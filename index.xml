@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shaoyan Liu</title>
-    <link>http://localhost:62427/</link>
+    <link>https://shaoyanliu.github.io/</link>
     <description>Recent content on Shaoyan Liu</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Aug 2024 23:06:16 +0800</lastBuildDate>
-    <atom:link href="http://localhost:62427/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shaoyanliu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 2 to be submit</title>
-      <link>http://localhost:62427/projects/project2/</link>
+      <link>https://shaoyanliu.github.io/projects/project2/</link>
       <pubDate>Sun, 04 Aug 2024 23:06:16 +0800</pubDate>
-      <guid>http://localhost:62427/projects/project2/</guid>
+      <guid>https://shaoyanliu.github.io/projects/project2/</guid>
       <description></description>
     </item>
     <item>
       <title>Project 1 to be submit</title>
-      <link>http://localhost:62427/projects/project1/</link>
+      <link>https://shaoyanliu.github.io/projects/project1/</link>
       <pubDate>Fri, 04 Aug 2023 23:06:16 +0800</pubDate>
-      <guid>http://localhost:62427/projects/project1/</guid>
+      <guid>https://shaoyanliu.github.io/projects/project1/</guid>
       <description></description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:62427/about/</link>
+      <link>https://shaoyanliu.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62427/about/</guid>
+      <guid>https://shaoyanliu.github.io/about/</guid>
       <description>About Me Link to heading “Science is not about why, it’s about why not.”&#xA;— Rick Sanchez&#xA;Hi there, I’m Shaoyan Liu.&#xA;I am currently pursuing a Master&amp;rsquo;s degree in Battery Technology at Shanghai Jiao Tong University. Prior to this, I completed my Bachelor’s degree in Energy and Power Engineering at Beijing Jiaotong University.&#xA;I am interested in exploring PhD opportunities following my Master&amp;rsquo;s studies. Feel free to reach out to me via email at shaoyan_liu@sjtu.</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:62427/contactme/</link>
+      <link>https://shaoyanliu.github.io/contactme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62427/contactme/</guid>
+      <guid>https://shaoyanliu.github.io/contactme/</guid>
       <description>Contact Link to heading Email: shaoyan_liu@sjtu.edu.cn&#xA;Phone: +86 18518636336&#xA;Mailing Address:&#xA;C3603, School of Mechanical Engineering&#xA;Shanghai Jiao Tong University&#xA;800 Dongchuan RD.&#xA;Minhang, Shanghai, 200240&#xA;China&#xA;Feel free to contact me :)</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:62427/publications/</link>
+      <link>https://shaoyanliu.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62427/publications/</guid>
+      <guid>https://shaoyanliu.github.io/publications/</guid>
       <description>Publications Link to heading 6. Liu, S., Guo, Q., Zhang, J., Huang, Z., &amp;amp; Han, D. (2024). Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions. Under review.&#xA;5. Zhang, J., Ma, C., Yin, F., Guo, Q., Liu, S., Han, P., Huang, Z., &amp;amp; Han, D. (2024). Construction of Lithium-ion Battery Thermal Runaway Gas Generation Chemical Kinetic Mechanism using Chemical Reaction Neural Networks.</description>
     </item>
   </channel>

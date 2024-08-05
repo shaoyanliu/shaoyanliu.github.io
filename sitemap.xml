@@ -2,27 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:62427/projects/project1/</loc>
+    <loc>https://shaoyanliu.github.io/projects/project2/</loc>
     <lastmod>2024-08-04T23:06:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:62427/projects/</loc>
+    <loc>https://shaoyanliu.github.io/projects/</loc>
     <lastmod>2024-08-04T23:06:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:62427/</loc>
+    <loc>https://shaoyanliu.github.io/</loc>
     <lastmod>2024-08-04T23:06:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:62427/about/</loc>
+    <loc>https://shaoyanliu.github.io/projects/project1/</loc>
+    <lastmod>2023-08-04T23:06:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:62427/contactme/</loc>
+    <loc>https://shaoyanliu.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:62427/publications/</loc>
+    <loc>https://shaoyanliu.github.io/contactme/</loc>
   </url><url>
-    <loc>http://localhost:62427/authors/</loc>
+    <loc>https://shaoyanliu.github.io/publications/</loc>
   </url><url>
-    <loc>http://localhost:62427/categories/</loc>
+    <loc>https://shaoyanliu.github.io/authors/</loc>
   </url><url>
-    <loc>http://localhost:62427/series/</loc>
+    <loc>https://shaoyanliu.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:62427/tags/</loc>
+    <loc>https://shaoyanliu.github.io/series/</loc>
+  </url><url>
+    <loc>https://shaoyanliu.github.io/tags/</loc>
   </url>
 </urlset>
