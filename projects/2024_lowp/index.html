@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Mechanisms of Gas Generation during Thermal Runaway of Lithium-ion Batteries under Complex Abusive Conditions · Shaoyan Liu
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Shaoyan Liu">
+<meta name="description" content="Calculation of kinetics parameters of gas generation reactions with different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and different charging rates {2 C, 3 C, 4 C}.
+Overview Link to heading With the increased demand for lithium-ion batteries (LIBs) in aviation and high-altitude applications, understanding battery safety under low-pressure conditions is increasingly crucial. Unlike thermal abuse, electrical abuse involves electrochemical impacts, such as lithium plating and solid electrolyte interphase (SEI) film consumption and regeneration, which affect LIB failure mechanisms.">
+<meta name="keywords" content="">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mechanisms of Gas Generation during Thermal Runaway of Lithium-ion Batteries under Complex Abusive Conditions">
+  <meta name="twitter:description" content="Calculation of kinetics parameters of gas generation reactions with different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and different charging rates {2 C, 3 C, 4 C}.
+Overview Link to heading With the increased demand for lithium-ion batteries (LIBs) in aviation and high-altitude applications, understanding battery safety under low-pressure conditions is increasingly crucial. Unlike thermal abuse, electrical abuse involves electrochemical impacts, such as lithium plating and solid electrolyte interphase (SEI) film consumption and regeneration, which affect LIB failure mechanisms.">
+
+<meta property="og:url" content="https://shaoyanliu.github.io/projects/2024_lowp/">
+  <meta property="og:site_name" content="Shaoyan Liu">
+  <meta property="og:title" content="Mechanisms of Gas Generation during Thermal Runaway of Lithium-ion Batteries under Complex Abusive Conditions">
+  <meta property="og:description" content="Calculation of kinetics parameters of gas generation reactions with different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and different charging rates {2 C, 3 C, 4 C}.
+Overview Link to heading With the increased demand for lithium-ion batteries (LIBs) in aviation and high-altitude applications, understanding battery safety under low-pressure conditions is increasingly crucial. Unlike thermal abuse, electrical abuse involves electrochemical impacts, such as lithium plating and solid electrolyte interphase (SEI) film consumption and regeneration, which affect LIB failure mechanisms.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2023-11-04T23:06:16+08:00">
+    <meta property="article:modified_time" content="2023-11-04T23:06:16+08:00">
+
+
+
+
+<link rel="canonical" href="https://shaoyanliu.github.io/projects/2024_lowp/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.07092c1350ffd254998dc43a44ae96e617d14af4df4602626878df89189c5e1a.css" integrity="sha256-BwksE1D/0lSZjcQ6RK6W5hfRSvTfRgJiaHjfiRicXho=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/logo_sy2.png" sizes="any">
+<link rel="icon" type="image/png" href="/logo_sy2.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/logo_sy2.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://shaoyanliu.github.io/">
+      Shaoyan Liu
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contactme/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://shaoyanliu.github.io/projects/2024_lowp/">
+          Mechanisms of Gas Generation during Thermal Runaway of Lithium-ion Batteries under Complex Abusive Conditions
+        </a>
+      </h1>
+    </header>
+
+    <p><img src="/files/low_P_abstract.png" alt="Calculation of kinetics parameters of gas generation reactions with (a) different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and (b) different charging rates {2 C, 3 C, 4 C}.">
+<em>Calculation of kinetics parameters of gas generation reactions with different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and different charging rates {2 C, 3 C, 4 C}.</em></p>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>With the increased demand for lithium-ion batteries (LIBs) in aviation and high-altitude applications, understanding battery safety under low-pressure conditions is increasingly crucial. Unlike thermal abuse, electrical abuse involves electrochemical impacts, such as lithium plating and solid electrolyte interphase (SEI) film consumption and regeneration, which affect LIB failure mechanisms. However, the complex effects of electrical abuse combined with low ambient pressures on thermal runaway (TR) behaviors remain unaddressed.</p>
+<p>To fill this gap, this study investigates the impacts of ambient pressure {0.2 atm, 0.6 atm, 1.0 atm} and charging rate {2 C, 3 C, 4 C} on the TR behaviors of commercial 18650-type cells induced by electrical abuse. This investigation employs an accelerating rate calorimeter (ARC) and an airtight jar. The results reveal that low ambient pressure leads to earlier safety valve opening and a shortened delay time for TR, limiting electrolyte ejection and increasing both maximum temperature and gas generation. Additionally, more flammable gases are generated under low-pressure conditions. Elevated charging rates further intensify the TR process, increasing flammable gas generation and potential hazards.</p>
+<p>Numerical models are essential for understanding and predicting TR behaviors. Despite extensive research on thermal kinetic parameters for side reactions during TR, there is limited understanding of gas generation dynamics, especially under low-pressure conditions. The Arrhenius law is used to evaluate gas generation dynamics by comparing activation energy and pre-exponential factors. The study proposes rate constants for various operation pressures and charging rates, with notable increases in rate constants at 0.2 atm compared to 1.0 atm, highlighting the higher TR risk under low-pressure conditions.</p>
+<h2 id="contributions">
+  Contributions
+  <a class="heading-link" href="#contributions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>
+<p><strong>Designed Experimental Platform for Low Pressure:</strong></p>
+<p>Developed a platform to simulate and measure battery behavior under low-pressure conditions.</p>
+</li>
+<li>
+<p><strong>Conducted Experiments:</strong></p>
+<p>Performed experiments on 18650-type NCM cells across different pressures and charging rates.</p>
+</li>
+<li>
+<p><strong>Developed Gas Generation Kinetics Model:</strong></p>
+<p>Created a model using the Arrhenius law to analyze gas generation dynamics.</p>
+</li>
+</ol>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Shaoyan Liu 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

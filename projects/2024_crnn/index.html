@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Research on the Thermal Runaway Evolution and Gas Generation Mechanism of Lithium-ion Batteries based on Chemical Kinetics · Shaoyan Liu
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Shaoyan Liu">
+<meta name="description" content="Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.
+Overview Link to heading During the past decades, safety concerns related to thermal runaway (TR) pose a challenge for the advancement of lithium-ion batteries (LIBs). TR involves the release of substantial amounts of heat and rapid gas production, potentially triggering combustible gas venting and the following explosion risk.">
+<meta name="keywords" content="">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research on the Thermal Runaway Evolution and Gas Generation Mechanism of Lithium-ion Batteries based on Chemical Kinetics">
+  <meta name="twitter:description" content="Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.
+Overview Link to heading During the past decades, safety concerns related to thermal runaway (TR) pose a challenge for the advancement of lithium-ion batteries (LIBs). TR involves the release of substantial amounts of heat and rapid gas production, potentially triggering combustible gas venting and the following explosion risk.">
+
+<meta property="og:url" content="https://shaoyanliu.github.io/projects/2024_crnn/">
+  <meta property="og:site_name" content="Shaoyan Liu">
+  <meta property="og:title" content="Research on the Thermal Runaway Evolution and Gas Generation Mechanism of Lithium-ion Batteries based on Chemical Kinetics">
+  <meta property="og:description" content="Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.
+Overview Link to heading During the past decades, safety concerns related to thermal runaway (TR) pose a challenge for the advancement of lithium-ion batteries (LIBs). TR involves the release of substantial amounts of heat and rapid gas production, potentially triggering combustible gas venting and the following explosion risk.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-07-04T23:06:16+08:00">
+    <meta property="article:modified_time" content="2024-07-04T23:06:16+08:00">
+
+
+
+
+<link rel="canonical" href="https://shaoyanliu.github.io/projects/2024_crnn/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.07092c1350ffd254998dc43a44ae96e617d14af4df4602626878df89189c5e1a.css" integrity="sha256-BwksE1D/0lSZjcQ6RK6W5hfRSvTfRgJiaHjfiRicXho=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/logo_sy2.png" sizes="any">
+<link rel="icon" type="image/png" href="/logo_sy2.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/logo_sy2.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://shaoyanliu.github.io/">
+      Shaoyan Liu
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contactme/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://shaoyanliu.github.io/projects/2024_crnn/">
+          Research on the Thermal Runaway Evolution and Gas Generation Mechanism of Lithium-ion Batteries based on Chemical Kinetics
+        </a>
+      </h1>
+    </header>
+
+    <p><img src="/files/CRNN.png" alt="Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.">
+<em>Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.</em></p>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>During the past decades, safety concerns related to thermal runaway (TR) pose a challenge for the advancement of lithium-ion batteries (LIBs).
+TR involves the release of substantial amounts of heat and rapid gas production, potentially triggering combustible gas venting and the following explosion risk.
+Despite the importance of gas generation during TR of lithium-ion batteries, the underlying chemical kinetics remain inadequately understood.
+For example, the widely adopted thermal kinetic mechanism is incapable of accurately predicting TR gas generation.</p>
+<p>To address this gap, the TR gas generation characteristics of 18650-type cells at different states of charge (SOCs), spanning from undercharged to overcharged statuses, are first investigated to establish a training database. A novel machine-learning framework that extends the scope of the recently developed chemical reaction neural networks (CRNN, <a href="https://github.com/DENG-MIT/CRNN"  class="external-link" target="_blank" rel="noopener">what&rsquo;s this?</a>) is then introduced. Using CRNN, we explore unknown reaction pathways and corresponding chemical kinetic parameters. Additionally, by integrating a non-linear neural network to predict the mean molar weight of generated gases, we train a chemical kinetic mechanism encompassing 7 species and 14 reactions.</p>
+<p>Our CRNN models accurately predict key parameters during the TR process, including the timing of separator collapse, the gas generation amount at the failure of the battery, and the maximum gas generation amount, across all SOCs. The models also provide comprehensive explanations of the identified reaction pathways, aligning well with existing literature from a chemical perspective.</p>
+<h2 id="contributions">
+  Contributions
+  <a class="heading-link" href="#contributions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>
+<p><strong>Updated Code to Predict Gas Generation Based on Chemical Reaction Kinetic Parameters:</strong></p>
+<p>I have updated and enhanced the code used to predict gas generation during TR by integrating chemical reaction kinetic parameters. The updated code now accurately reflects the intricate chemical kinetics and reaction pathways identified in our research, ensuring that it can reliably predict gas generation profiles based on the chemical reaction kinetic parameters derived from the CRNN models.</p>
+</li>
+<li>
+<p><strong>Extending Model Applicability to Higher-Capacity Batteries:</strong></p>
+<p>Currently, I am focused on extending the applicability of our chemical kinetic model to higher-capacity batteries. This involves adapting and optimizing the model to handle the increased complexity associated with larger battery systems. This extension is crucial for improving the model’s relevance and utility for larger-scale applications, such as those used in electric vehicles and grid energy storage.</p>
+</li>
+<li>
+<p><strong>Integrating the heat generation model with the CRNN-based gas generation model:</strong></p>
+<p>I am currently working on integrating the heat generation model with our CRNN-based gas generation model to form a comprehensive TR model. This integration aims to capture the complex interplay between heat generation and gas production during the TR process. By combining these two critical aspects into a single model, we can achieve a more holistic understanding of the thermal runaway behavior in lithium-ion batteries.</p>
+</li>
+</ol>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Shaoyan Liu 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

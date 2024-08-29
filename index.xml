@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shaoyan Liu</title>
+    <link>https://shaoyanliu.github.io/</link>
+    <description>Recent content on Shaoyan Liu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Jul 2024 23:06:16 +0800</lastBuildDate>
+    <atom:link href="https://shaoyanliu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research on the Thermal Runaway Evolution and Gas Generation Mechanism of Lithium-ion Batteries based on Chemical Kinetics</title>
+      <link>https://shaoyanliu.github.io/projects/2024_crnn/</link>
+      <pubDate>Thu, 04 Jul 2024 23:06:16 +0800</pubDate>
+      <guid>https://shaoyanliu.github.io/projects/2024_crnn/</guid>
+      <description>Schematic of the LIB TR gas generation kinetic mechanism modeling approach. The left part is CRNN architecture for multi-step reactions involves stacking neurons into a hidden layer and the right part is the mean molar mass predictor involves a non-linear neural network.&#xA;Overview Link to heading During the past decades, safety concerns related to thermal runaway (TR) pose a challenge for the advancement of lithium-ion batteries (LIBs). TR involves the release of substantial amounts of heat and rapid gas production, potentially triggering combustible gas venting and the following explosion risk.</description>
+    </item>
+    <item>
+      <title>Mechanisms of Gas Generation during Thermal Runaway of Lithium-ion Batteries under Complex Abusive Conditions</title>
+      <link>https://shaoyanliu.github.io/projects/2024_lowp/</link>
+      <pubDate>Sat, 04 Nov 2023 23:06:16 +0800</pubDate>
+      <guid>https://shaoyanliu.github.io/projects/2024_lowp/</guid>
+      <description>Calculation of kinetics parameters of gas generation reactions with different ambient pressures {1.0 atm, 0.6 atm, 0.2 atm} and different charging rates {2 C, 3 C, 4 C}.&#xA;Overview Link to heading With the increased demand for lithium-ion batteries (LIBs) in aviation and high-altitude applications, understanding battery safety under low-pressure conditions is increasingly crucial. Unlike thermal abuse, electrical abuse involves electrochemical impacts, such as lithium plating and solid electrolyte interphase (SEI) film consumption and regeneration, which affect LIB failure mechanisms.</description>
+    </item>
+    <item>
+      <title>Study on Chemical Kinetic Characteristics and Electrochemical-Thermal-Kinetic Interaction Mechanism of NCM Lithium-ion Battery Thermal Runaway Process</title>
+      <link>https://shaoyanliu.github.io/projects/2024_jps/</link>
+      <pubDate>Tue, 04 Apr 2023 23:06:16 +0800</pubDate>
+      <guid>https://shaoyanliu.github.io/projects/2024_jps/</guid>
+      <description>The variations of gas generation rate with respect to (a) temperature and (b) heat generation rate caused by side reactions curves of six cells with different charging procedures.&#xA;Overview Link to heading Lithium-ion batteries are prone to thermal runaway under high-temperature abuse and overcharging conditions. This study investigates thermal runaway behaviors in 18650-type cells by combining accelerating rate calorimetry with a battery testing system. The focus is on constant current constant voltage (CCCV) charging at rates of 0.</description>
+    </item>
+    <item>
+      <title>Safety Performance Assessment and Explosion Threshold Simulation of Lithium-ion Batteries under Electro-Thermal Coupled Abusive Conditions</title>
+      <link>https://shaoyanliu.github.io/projects/2024_jes/</link>
+      <pubDate>Thu, 04 Aug 2022 23:06:16 +0800</pubDate>
+      <guid>https://shaoyanliu.github.io/projects/2024_jes/</guid>
+      <description>Figure 1. Effects of minor generated gas components addition on the explosion limits of stoichiometric NCM cell generated gas/oxygen mixtures.&#xA;Overview Link to heading This project investigates the gas generation characteristics and explosion limits of gases produced by 18650-type NCM cells during thermal runaway (TR) at various states of charge (SOCs). To initiate TR, an accelerating rate calorimeter is employed, and gas measurements are conducted using an airtight jar.</description>
+    </item>
+    <item>
+      <title>Formula Student Electric China, with BJTU Formula Student Team</title>
+      <link>https://shaoyanliu.github.io/projects/20192020_fsec/</link>
+      <pubDate>Mon, 04 Nov 2019 23:06:16 +0800</pubDate>
+      <guid>https://shaoyanliu.github.io/projects/20192020_fsec/</guid>
+      <description>2019 FSEC in Zhuhai, captured by the official photographer – I&amp;rsquo;m the one pushing the car.&#xA;My Journey with the BJTU Formula Student Team Link to heading Being a member of the BJTU Formula Student Team and participating in the Formula Student Electric China (FSEC, what&amp;rsquo;s this?) occupied a significant portion of my undergraduate years. I joined the team as a freshman, diving into the 2019 season as a member of the suspension group.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://shaoyanliu.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://shaoyanliu.github.io/about/</guid>
+      <description>About Me Link to heading “Science is not about why, it’s about why not.”&#xA;— Rick Sanchez&#xA;Hi there, I’m Shaoyan Liu.&#xA;I am currently pursuing a Master&amp;rsquo;s degree at Shanghai Jiao Tong University, advised by Prof. Dong Han and Assoc. Prof. Jiabo Zhang. My research focuses on modeling and experimental analysis of lithium-ion battery safety. Previously, I completed my Bachelor’s degree in Energy and Power Engineering at Beijing Jiaotong University.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://shaoyanliu.github.io/contactme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://shaoyanliu.github.io/contactme/</guid>
+      <description>Contact Link to heading Email: shaoyan_liu@sjtu.edu.cn&#xA;Phone: +86 18518636336&#xA;Mailing Address:&#xA;Room 3603, Building C, School of Mechanical Engineering, 800 Dongchuan Road, Minhang District, Shanghai 200240, China&#xA;Feel free to contact me :)</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://shaoyanliu.github.io/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://shaoyanliu.github.io/publications/</guid>
+      <description>Publications Link to heading 6. Liu, S., Guo, Q., Zhang, J., Huang, Z., &amp;amp; Han, D. (2024). Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions. Under review.&#xA;5. Zhang, J., Ma, C., Yin, F., Guo, Q., Liu, S., Han, P., Huang, Z., &amp;amp; Han, D. (2024). Construction of Lithium-ion Battery Thermal Runaway Gas Generation Chemical Kinetic Mechanism using Chemical Reaction Neural Networks.</description>
+    </item>
+  </channel>
+</rss>
