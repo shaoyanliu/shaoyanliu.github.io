@@ -18,7 +18,7 @@ enable_hopkins_logo: false
 enable_last_update: false
 
 # Links
-link_type: text #text/icon
+link_type: icon #text/icon
 google_scholar: https://scholar.google.com/citations?user=K_SWS2oAAAAJ&hl
 #github_link: https://github.com/shaoyanliu/
 linkedin: https://www.linkedin.com/in/shaoyanliu/
