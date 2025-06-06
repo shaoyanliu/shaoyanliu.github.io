@@ -3,7 +3,7 @@ title: Shaoyan Liu
 position: Ph.D. Student
 affiliation: The Pennsylvania State University
 affiliation_link: https://www.psu.edu/
-affiliation_logo: ./assets/img/illinois.svg
+#affiliation_logo: ./assets/img/illinois.svg
 email: shaoyanliu[at]psu[dot]edu
 
 # Search Engine Optimization (SEO)
@@ -27,7 +27,7 @@ linkedin: https://www.linkedin.com/in/shaoyanliu/
 strava: https://www.strava.com/athletes/126530457
 
 # Images 
-avatar: https://img.yliu.me/avatar_new.jpg
+avatar: ./assets/img/avatar.jpg
 
 # Footnotes
 #footnote: Feel free to use my website's source code.
