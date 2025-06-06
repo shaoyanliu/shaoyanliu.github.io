@@ -12,7 +12,7 @@ canonical: https://shaoyanliu.github.io/
 description: Shaoyan liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery aging mechanisms, battery performance, and battery lifetime prediction.
 
 # The option is used to enable the Illinois template.
-enable_hopkins_logo: true
+enable_hopkins_logo: false
 
 # The option is used to show the last update time.
 enable_last_update: false
@@ -21,7 +21,7 @@ enable_last_update: false
 link_type: text #text/icon
 google_scholar: https://scholar.google.com/citations?user=K_SWS2oAAAAJ&hl
 #github_link: https://github.com/shaoyanliu/
-linkedin: https://www.linkedin.com/in/liuyaoyao/
+linkedin: https://www.linkedin.com/in/shaoyanliu/
 #twitter: https://twitter.com/YaoyaoLiu1/
 strava: https://www.strava.com/athletes/126530457
 
@@ -29,13 +29,13 @@ strava: https://www.strava.com/athletes/126530457
 avatar: https://img.yliu.me/avatar_new.jpg
 
 # Footnotes
-footnote: Feel free to use my website's source code.
-footnote_link: https://github.com/yaoyao-liu/minimal-light
+#footnote: Feel free to use my website's source code.
+#footnote_link: https://github.com/yaoyao-liu/minimal-light
 
 # Analytics
 # Please remove the following lines about analytics services if you fork my project. 
 # Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-clustrmaps_id: HV0rAUdAxpfEQLOsVs0FcJTR2rKVI5sEQUZIDM-N_HY
+#clustrmaps_id: HV0rAUdAxpfEQLOsVs0FcJTR2rKVI5sEQUZIDM-N_HY
 
 # The following files will be removed from the generated website.
 exclude:
