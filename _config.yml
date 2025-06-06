@@ -19,8 +19,9 @@ enable_last_update: false
 
 # Links
 link_type: icon #text/icon
+cv_link: https://shaoyanliu.github.io/cv/shaoyan_cv.pdf
 google_scholar: https://scholar.google.com/citations?user=K_SWS2oAAAAJ&hl
-#github_link: https://github.com/shaoyanliu/
+github_link: https://github.com/shaoyanliu/
 linkedin: https://www.linkedin.com/in/shaoyanliu/
 #twitter: https://twitter.com/YaoyaoLiu1/
 strava: https://www.strava.com/athletes/126530457
