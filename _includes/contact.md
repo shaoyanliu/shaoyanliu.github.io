@@ -1,9 +1,9 @@
 <h2 style="margin: 60px 0px 10px;">Contact</h2>
 
-614 E. Daniel St. MC-314
+Building C, School of Mechanical Engineering
 <br />
-Champaign, IL 61820-7999
+800 Dong Chuan Road, Shanghai, CN
 <br />
-Phone: <a href="tel:+12173000910">217-300-0910</a>
+Phone: <a href="tel:+86-18518636336">+86-18518636336</a>
 <br />
-Office: <a href="https://maps.app.goo.gl/xvHRWG27wSZXQ1Cv7">5125</a>
+Office: <a href="https://maps.app.goo.gl/KXK2k2woFVERjfni9">C3606</a>
