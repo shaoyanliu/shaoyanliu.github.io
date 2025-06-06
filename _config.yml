@@ -12,7 +12,7 @@ canonical: https://shaoyanliu.github.io/
 description: Shaoyan liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery aging mechanisms, battery performance, and battery lifetime prediction.
 
 # The option is used to enable the Illinois template.
-enable_hopkins_logo: false
+enable_hopkins_logo: true
 
 # The option is used to show the last update time.
 enable_last_update: false
