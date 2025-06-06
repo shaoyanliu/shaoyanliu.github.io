@@ -12,4 +12,4 @@ Previously, I completed my M.S. at [Shanghai Jiao Tong University](https://en.sj
 
 {% include_relative _includes/news.md %}
 
-#{% include_relative _includes/contact.md %}
+{% include_relative _includes/contact.md %}
