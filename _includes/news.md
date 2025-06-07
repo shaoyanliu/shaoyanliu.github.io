@@ -2,7 +2,7 @@
 
 <ul>
 <li><strong>[Apr. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2025.116855">low pressure TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
-<li><strong>[Mar. 2025]</strong> Graduated from SJTU and was honored as an Outstanding Graduate!</li>
+<li><strong>[Mar. 2025]</strong> Graduated from SJTU and honored as an Outstanding Graduate!</li>
 <li><strong>[Mar. 2025]</strong> Officially accepted the Ph.D. offer from PENN STATE!</li>
 <li><strong>[Mar. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.xcrp.2025.102563">CRNN for battery TR</a> is accepted by <a href="https://www.cell.com/cell-reports-physical-science/home">Cell Reports Physical Science</a>.</li>
 <li><strong>[Dec. 2024]</strong> Presented at <a href="https://eteu2024.scimeeting.cn/">2024 China National Symposium on Energy Utilization</a> in Xiamen. </li>
