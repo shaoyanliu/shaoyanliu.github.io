@@ -11,12 +11,11 @@
 <li><strong>[Feb. 2024]</strong> Our paper about <a href="https://doi.org/10.1016/j.jpowsour.2024.234237">TR under overcharge coupled with high temperature</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-power-sources">Journal of Power Sources</a>.</li>
 <li><strong>[Dec. 2023]</strong> Honored to receive the First Prize Baillie Gifford Scholarship from SJTU!</li>
 <li><strong>[Dec. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2023.110201">TR explosion limits</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
-<li><strong>[Jun. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.ijhydene.2023.06.084">exergy loss under temperature fluctuations</a> is accepted by <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy">International Journal of Hydrogen Energy</a>.</li>
   
-
 <li> <a href="#" onclick="toggleVis(this); return false;">Show more</a> </li>
 <div id="newsmore" style="display:none"> 
   <li><strong>[Dec. 2022]</strong> Presented at <a href="https://combust2022.casconf.cn/">2022 China National Symposium on Combustion</a> in Shanghai. </li>
+  <li><strong>[Jun. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.ijhydene.2023.06.084">exergy loss under temperature fluctuations</a> is accepted by <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy">International Journal of Hydrogen Energy</a>.</li>
 </div>
 
 </ul>
