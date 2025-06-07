@@ -2,14 +2,14 @@
 
 <ul>
 <li><strong>[Apr. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2025.116855">low pressure TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
-<li><strong>[Mar. 2025]</strong> Graduated from SJTU with highest distinction and was honored as an Outstanding Graduate!</li>
-<li><strong>[Mar. 2025]</strong> Officially accepted the Ph.D. offer from Penn State!</li>
+<li><strong>[Mar. 2025]</strong> Graduated from SJTU and was honored as an Outstanding Graduate!</li>
+<li><strong>[Mar. 2025]</strong> Officially accepted the Ph.D. offer from PENN STATE!</li>
 <li><strong>[Mar. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.xcrp.2025.102563">CRNN for TR</a> is accepted by <a href="https://www.cell.com/cell-reports-physical-science/home">Cell Reports Physical Science</a>.</li>
 <li><strong>[Dec. 2024]</strong> Presented at <a href="https://eteu2024.scimeeting.cn/">2024 China National Symposium on Energy Utilization</a> in Xiamen. </li>
 <li><strong>[Oct. 2024]</strong> Presented at <a href="https://combust2024.casconf.cn/">2024 China National Symposium on Combustion</a> in Hangzhou. </li>
-<li><strong>[Sep. 2024]</strong> Presented at the 2nd National Doctoral Forum on Energy Storage Science and Engineering</a> in Beijing. </li>
+<li><strong>[Sep. 2024]</strong> Presented at the 2nd National Doctoral Forum on Energy Storage in Beijing. </li>
 <li><strong>[Feb. 2024]</strong> Our paper about <a href="https://doi.org/10.1016/j.jpowsour.2024.234237">TR under overcharge coupled with high temperature</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-power-sources">Journal of Power Sources</a>.</li>
-<li><strong>[Dec. 2023]</strong> Honored to receive the First Prize Baillie Gifford Scholarship from SJTU (2 out of ~80)!</li>
+<li><strong>[Dec. 2023]</strong> Honored to receive the First Prize Baillie Gifford Scholarship from SJTU!</li>
 <li><strong>[Dec. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2023.110201">TR explosion limits</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
 <li><strong>[Jun. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.ijhydene.2023.06.084">exergy loss under temperature fluctuations</a> is accepted by <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy">International Journal of Hydrogen Energy</a>.</li>
   
