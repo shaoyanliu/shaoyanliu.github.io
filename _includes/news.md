@@ -14,8 +14,8 @@
   
 <li> <a href="#" onclick="toggleVis(this); return false;">Show more</a> </li>
 <div id="newsmore" style="display:none"> 
-  <li><strong>[Dec. 2022]</strong> Presented at <a href="https://combust2022.casconf.cn/">2022 China National Symposium on Combustion</a> in Shanghai. </li>
   <li><strong>[Jun. 2023]</strong> Our paper about <a href="https://doi.org/10.1016/j.ijhydene.2023.06.084">exergy loss under temperature fluctuations</a> is accepted by <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy">International Journal of Hydrogen Energy</a>.</li>
+   <li><strong>[Dec. 2022]</strong> Presented at <a href="https://combust2022.casconf.cn/">2022 China National Symposium on Combustion</a> in Shanghai. </li>
 </div>
 
 </ul>
