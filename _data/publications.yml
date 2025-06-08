@@ -9,7 +9,7 @@ main:
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
 
   - title: "Chemical Reaction Neural Networks to Map Lithium-ion Battery Thermal Runaway Gas Generation"
-    authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Changsheng Ma, Shuaiqi Liu, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Peng Han, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: CRPS
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
     doi: https://doi.org/10.1016/j.xcrp.2025.102563
