@@ -1,34 +1,22 @@
 main:
 
   - title: "Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions"
-    authors: <strong>Shaoyan Liu<strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JES
     conference: Journal of Energy Storage, 125, 116855, 2024.
     doi: https://doi.org/10.1016/j.est.2025.116855
     pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
 
+- title: "Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions"
+  authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, <strong>Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup></strong> <br>(<sup><i class="fa-regular fa-envelope fa-xs"></i></sup> Corresponding authors)
+  conference_short: JES
+  conference: Journal of Energy Storage, 125, 116855, 2024.
+  doi: https://doi.org/10.1016/j.est.2025.116855
+  pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
+  image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  - title: "ImageNet3D: Towards General-Purpose Object-Level 3D Understanding"
-    authors: Wufei Ma, Guofeng Zhang, Qihao Liu, Guanning Zeng, Adam Kortylewski, <strong>Yaoyao Liu</strong>, Alan Yuille
-    conference: NeurIPS 2024 Datasets and Benchmarks Track.
-    pdf: https://yaoyaoliu.web.illinois.edu/papers/ImageNet3D_Towards_General_Purpose_Object_Level_3D_Understanding.pdf
-    bibtex: https://dblp.org/rec/journals/corr/abs-2406-09613.html?view=bibtex
-    data: https://github.com/wufeim/imagenet3d
-    page: https://imagenet3d.github.io/
 
   - title: "HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting"
     authors: Yuanhao Cai, Zihao Xiao, Yixun Liang, Minghan Qin, Yulun Zhang, Xiaokang Yang, <strong>Yaoyao Liu</strong>, Alan Yuille
