@@ -148,5 +148,18 @@ footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-
   border-radius: 0;
 }
 
+/* 桌面端 */
+#header .image.avatar {
+  width: 8em;
+  margin: 0 0 1em 0;
+}
+
+/* 移动端 */
+@media print, screen and (max-width: 960px) {
+  #header .image.avatar {
+    width: 6em; /* 或您想要的任何移动端尺寸 */
+  }
+}
+
 
 /*# sourceMappingURL=style.css.map */
