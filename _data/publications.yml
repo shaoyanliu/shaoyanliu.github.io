@@ -18,7 +18,13 @@ main:
     data: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/data
     image: https://shaoyanliu.github.io/assets/img/5_2025_crps.jpg
 
-
+  - title: "Effects of Charging Rates on Heat and Gas Generation in Lithium-ion Battery Thermal Runaway Triggered by High Temperature Coupled with Overcharge"
+    authors: Qianzhen Guo, <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    conference_short: JPS
+    conference: Journal of Power Sources, 600, 234237, 2024.
+    doi: https://doi.org/10.1016/j.jpowsour.2024.234237
+    pdf: https://shaoyanliu.github.io/files/4_2024_jps.pdf
+    image: https://shaoyanliu.github.io/assets/img/4_2024_jps.jpg
 
 
 
