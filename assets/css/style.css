@@ -148,12 +148,5 @@ footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-
   border-radius: 0 !important;
 }
 
-.image.avatar img {
-  width: 120px !important;
-  border-radius: 0;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 
 /*# sourceMappingURL=style.css.map */
