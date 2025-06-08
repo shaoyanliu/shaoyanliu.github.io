@@ -13,7 +13,7 @@ main:
     conference_short: CRPS
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
     doi: https://doi.org/10.1016/j.xcrp.2025.102563
-    pdf: https://shaoyanliu.github.io/files/5_2025_crps.p
+    pdf: https://shaoyanliu.github.io/files/5_2025_crps.pdf
     code: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/code
     data: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/data
     image: https://shaoyanliu.github.io/assets/img/5_2025_crps.jpg
