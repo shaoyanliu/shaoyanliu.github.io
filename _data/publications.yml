@@ -42,7 +42,7 @@ main:
     pdf: https://shaoyanliu.github.io/files/2_2023_ijhe.pdf
     image: https://shaoyanliu.github.io/assets/img/2_2023_ijhe.jpg
 
-  - title: "A Comparative Study on the Turbulent Explosion Characteristics of Syngas Between CO-Enriched and H₂-Enriched"
+  - title: "A Comparative Study on the Turbulent Explosion Characteristics of Syngas Between CO-Enriched and H<sub>2</sub>-Enriched"
     authors: Zuoyu Sun<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, <strong>Shaoyan Liu</strong>
     conference_short: Energy
     conference: Energy, 241, 122941, 2022.
