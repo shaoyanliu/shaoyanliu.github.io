@@ -9,7 +9,7 @@ main:
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
 
   - title: "Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions"
-    authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, <strong>Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup></strong> <br>(<sup><i class="fa-regular fa-envelope fa-xs"></i></sup> Corresponding authors)
+    authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup> <br>
     conference_short: JES
     conference: Journal of Energy Storage, 125, 116855, 2024.
     doi: https://doi.org/10.1016/j.est.2025.116855
