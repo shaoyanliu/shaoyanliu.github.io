@@ -10,6 +10,10 @@ I am an incoming Ph.D. student in the [Department of Mechanical Engineering](htt
 
 In my spare time, I enjoy doing sports (mostly running, cycling, dragon boat racing, and working out at the gym), traveling, and going on hikes with friends (find my workout records on my [Strava page](https://www.strava.com/athletes/shaoyanliu)). Also, I enjoy music, photography, and philosophy.
 
+<div style="border: 1px solid #ccc; padding: 11px; background-color: #f9f9f9; color: #333; border-radius: 5px;">
+<strong style="color:#e74d3c;">I am actively looking for self-motivated PhD students with interests in computer vision and machine learning. You may see details <a href="https://vision.ischool.illinois.edu/openings/">here</a>.</strong>
+</div>
+
 {% include_relative _includes/news.md %}
 
 {% include_relative _includes/contact.md %}
