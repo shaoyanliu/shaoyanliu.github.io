@@ -2,7 +2,7 @@
 
 Building C, School of Mechanical Engineering
 <br />
-800 Dong Chuan Road, Shanghai, CN
+800 Dongchuan Rd, SH, CN
 <br />
 Phone: <a href="tel:+86-18518636336">+86-18518636336</a>
 <br />
