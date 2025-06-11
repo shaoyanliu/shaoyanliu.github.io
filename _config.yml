@@ -47,3 +47,6 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
+
+includes:
+  head: _includes/head-custom.html
