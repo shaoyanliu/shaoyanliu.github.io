@@ -1,0 +1,12 @@
+@article{liu2023effects,
+  title={Effects of temperature and pressure fluctuations on exergy loss characteristics of hydrogen auto-ignition processes},
+  author={Liu, Shaoyan and Zhang, Jiabo and Sun, Zuoyu and Han, Dong},
+  journal={International Journal of Hydrogen Energy},
+  volume={48},
+  number={97},
+  pages={38484--38495},
+  year={2023},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.ijhydene.2023.06.084},
+  url={https://www.sciencedirect.com/science/article/abs/pii/S0360319923029440}
+}
