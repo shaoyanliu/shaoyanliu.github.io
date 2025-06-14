@@ -7,6 +7,7 @@ main:
     doi: https://doi.org/10.1016/j.est.2025.116855
     pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
+    bibtex: https://shaoyanliu.github.io/bib/6_2025_jes.txt
 
   - title: "Chemical Reaction Neural Networks to Map Lithium-ion Battery Thermal Runaway Gas Generation"
     authors: Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Changsheng Ma, Shuaiqi Liu, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Peng Han, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
@@ -17,6 +18,7 @@ main:
     code: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/code
     data: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/data
     image: https://shaoyanliu.github.io/assets/img/5_2025_crps.jpg
+    bibtex: https://shaoyanliu.github.io/bib/5_2025_crps.txt
 
   - title: "Effects of Charging Rates on Heat and Gas Generation in Lithium-ion Battery Thermal Runaway Triggered by High Temperature Coupled with Overcharge"
     authors: Qianzhen Guo, <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
@@ -25,6 +27,7 @@ main:
     doi: https://doi.org/10.1016/j.jpowsour.2024.234237
     pdf: https://shaoyanliu.github.io/files/4_2024_jps.pdf
     image: https://shaoyanliu.github.io/assets/img/4_2024_jps.jpg
+    bibtex: https://shaoyanliu.github.io/bib/4_2024_jps.txt
 
   - title: "Investigation on Gas Generation and Corresponding Explosion Characteristics of Lithium-ion Batteries During Thermal Runaway at Different Charge States"
     authors: Jiabo Zhang, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Chao Zhou, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
@@ -33,6 +36,7 @@ main:
     doi: https://doi.org/10.1016/j.est.2023.110201
     pdf: https://shaoyanliu.github.io/files/3_2024_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/3_2024_jes.jpg
+    bibtex: https://shaoyanliu.github.io/bib/3_2024_jes.txt
 
   - title: "Effects of Temperature and Pressure Fluctuations on Exergy Loss Characteristics of Hydrogen Auto-ignition Processes"
     authors: <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zuoyu Sun, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
@@ -41,6 +45,7 @@ main:
     doi: https://doi.org/10.1016/j.ijhydene.2023.06.084
     pdf: https://shaoyanliu.github.io/files/2_2023_ijhe.pdf
     image: https://shaoyanliu.github.io/assets/img/2_2023_ijhe.jpg
+    bibtex: https://shaoyanliu.github.io/bib/2_2023_ijhe.txt
 
   - title: "A Comparative Study on the Turbulent Explosion Characteristics of Syngas Between CO-Enriched and H<sub>2</sub>-Enriched"
     authors: Zuoyu Sun<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, <strong>Shaoyan Liu</strong>
@@ -49,4 +54,4 @@ main:
     doi: https://doi.org/10.1016/j.energy.2021.122941
     pdf: https://shaoyanliu.github.io/files/1_2022_energy.pdf
     image: https://shaoyanliu.github.io/assets/img/1_2022_energy.jpg
-    bibtex: https://shaoyanliu.github.io/bib/1_2022_energy.txt
+    bibtex: https://shaoyanliu.github.io/bib/1_2022_energy.t
