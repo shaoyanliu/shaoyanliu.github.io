@@ -1,0 +1,11 @@
+@article{guo2024effects,
+  title={Effects of charging rates on heat and gas generation in lithium-ion battery thermal runaway triggered by high temperature coupled with overcharge},
+  author={Guo, Qianzhen and Liu, Shaoyan and Zhang, Jiabo and Huang, Zhen and Han, Dong},
+  journal={Journal of Power Sources},
+  volume={600},
+  pages={234237},
+  year={2024},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.jpowsour.2024.234237},
+  url={https://www.sciencedirect.com/science/article/abs/pii/S0378775324001885}
+}
