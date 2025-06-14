@@ -1,0 +1,11 @@
+@article{zhang2025chemical,
+  title={Chemical reaction neural networks to map lithium-ion battery thermal runaway gas generation},
+  author={Zhang, Jiabo and Ma, Changsheng and Liu, Shuaiqi and Guo, Qianzhen and Liu, Shaoyan and Han, Peng and Huang, Zhen and Han, Dong},
+  journal={Cell Reports Physical Science},
+  volume={6},
+  number={5},
+  year={2025},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.xcrp.2025.102563},
+  url={https://linkinghub.elsevier.com/retrieve/pii/S2666386425001626}
+}
