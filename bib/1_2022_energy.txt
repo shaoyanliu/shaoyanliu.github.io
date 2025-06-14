@@ -1,0 +1,11 @@
+@article{sun2022comparative,
+  title={A comparative study on the turbulent explosion characteristics of syngas between CO-enriched and H2-enriched},
+  author={Sun, ZY and Shao-Yan, LIU},
+  journal={Energy},
+  volume={241},
+  pages={122941},
+  year={2022},
+  publisher={Elsevier},
+  doi = {https://doi.org/10.1016/j.energy.2021.122941},
+  url = {https://www.sciencedirect.com/science/article/pii/S036054422103190X}
+}
