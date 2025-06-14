@@ -1,0 +1,11 @@
+@article{liu2025investigation,
+  title={Investigation on thermal runaway behaviors and gas generation dynamics of lithium-ion batteries induced by electrical abuse at low-pressure conditions},
+  author={Liu, Shaoyan and Guo, Qianzhen and Zhang, Jiabo and Huang, Zhen and Han, Dong},
+  journal={Journal of Energy Storage},
+  volume={125},
+  pages={116855},
+  year={2025},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.est.2025.116855},
+  url={https://www.sciencedirect.com/science/article/abs/pii/S2352152X25015683}
+}
