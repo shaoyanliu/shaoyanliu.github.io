@@ -1,0 +1,11 @@
+@article{zhang2024investigation,
+  title={Investigation on gas generation and corresponding explosion characteristics of lithium-ion batteries during thermal runaway at different charge states},
+  author={Zhang, Jiabo and Guo, Qianzhen and Liu, Shaoyan and Zhou, Chao and Huang, Zhen and Han, Dong},
+  journal={Journal of Energy Storage},
+  volume={80},
+  pages={110201},
+  year={2024},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.est.2023.110201},
+  url={https://www.sciencedirect.com/science/article/abs/pii/S2352152X23036009}
+}
