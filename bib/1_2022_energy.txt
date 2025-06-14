@@ -6,6 +6,6 @@
   pages={122941},
   year={2022},
   publisher={Elsevier},
-  doi = {https://doi.org/10.1016/j.energy.2021.122941},
-  url = {https://www.sciencedirect.com/science/article/pii/S036054422103190X}
+  doi={https://doi.org/10.1016/j.energy.2021.122941},
+  url={https://www.sciencedirect.com/science/article/pii/S036054422103190X}
 }
