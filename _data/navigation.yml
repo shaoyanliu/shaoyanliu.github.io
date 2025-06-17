@@ -6,7 +6,7 @@ main:
 
   - title: "Services"
     url: services/
-
+    right: true
   #- title: "Talks"
   #  url: talks/
 
@@ -15,7 +15,6 @@ main:
 
   - title: "Publications"
     url: publications/
-    right: true
 
   - title: "Home"
     url: ./
