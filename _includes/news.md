@@ -10,7 +10,7 @@
 <li><strong>[Oct. 2024]</strong> Presented at <a href="https://combust2024.casconf.cn/">2024 China National Symposium on Combustion</a> in Hangzhou. </li>
 <li><strong>[Sep. 2024]</strong> Presented at the 2nd National Doctoral Forum on Energy Storage in Beijing. </li>
 <li><strong>[Feb. 2024]</strong> Our paper about <a href="https://doi.org/10.1016/j.jpowsour.2024.234237">TR under overcharge coupled with high temperature</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-power-sources">Journal of Power Sources</a>.</li>
-<li><strong>[Dec. 2023]</strong> Received the First Prize Baillie Gifford Scholarship from SJTU. Thanks, SJTU!</li>
+<li><strong>[Dec. 2023]</strong> Received the First Prize Baillie Gifford Scholarship. Thanks, Baillie&Gifford and SJTU!</li>
   
 <li> <a href="#" onclick="toggleVis(this); return false;">Show more</a> </li>
 <div id="newsmore" style="display:none">
