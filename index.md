@@ -14,7 +14,7 @@ In my spare time, I enjoy doing sports (mostly running, cycling, dragon boat rac
   .strava-badge-:hover { background-position: 0 -31px; }
   .strava-badge-follow { height: 16px; width: 16px; background: url(//badges.strava.com/echelon-sprite-16.png) no-repeat 0 0; }
 </style>
-<a href="https://strava.com/athletes/126530457" class="strava-badge- strava-badge-follow" target="_blank"><img src="//badges.strava.com/echelon-sprite-16.png" alt="Strava" /></a>). Also, I enjoy music, photography, and philosophy.
+<a href="https://www.strava.com/athletes/shaoyanliu" class="strava-badge- strava-badge-follow" target="_blank"><img src="//badges.strava.com/echelon-sprite-16.png" alt="Strava" /></a>). Also, I enjoy music, photography, and philosophy.
 
 
 <div style="border: 1px solid #ccc; padding: 11px; background-color: #f9f9f9; color: #333; border-radius: 5px;">
