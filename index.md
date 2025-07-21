@@ -8,7 +8,7 @@ layout: homepage
 
 I am an incoming Ph.D. student in the [Department of Mechanical Engineering](https://www.me.psu.edu/) at [Penn State University](https://www.psu.edu/). Previously, I completed my M.S. at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) and my B.S. at [Beijing Jiaotong University](http://en.njtu.edu.cn/). My current research interests mainly lie in **battery performance and degradation mode prediction**, **aging mechanisms**, and **fault diagnostics**.
 
-In my spare time, I enjoy doing sports (mostly running, cycling, dragon boat racing, and working out at the gym), traveling, and going on hikes with friends (find my workout records on my [Strava page](https://www.strava.com/athletes/shaoyanliu)<style>
+In my spare time, I enjoy doing sports (mostly running, cycling and working out at the gym), traveling, and going on hikes with friends (find my workout records on my [Strava page](https://www.strava.com/athletes/shaoyanliu)<style>
   .strava-badge- { display: inline-block; height: 16px; }
   .strava-badge- img { visibility: hidden; height: 16px; }
   .strava-badge-:hover { background-position: 0 -31px; }
