@@ -1,6 +1,7 @@
 <h2 style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
+<li><strong>[Jul. 2025]</strong> Attended 2025 World Artificial Intelligence Conference (<a href="https://worldaic.com.cn/">WAIC</a>) in Shanghai.</li>
 <li><strong>[Jun. 2025]</strong> Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>. Honored to serve our community!</li>
 <li><strong>[Apr. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2025.116855">low pressure TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
 <li><strong>[Mar. 2025]</strong> Graduated from SJTU and honored as an Outstanding Graduate! [<a href="https://shaoyanliu.github.io/assets/img/graduation-president.jpg" target="_blank">📸 honored pic with the president</a>]:D</li>
