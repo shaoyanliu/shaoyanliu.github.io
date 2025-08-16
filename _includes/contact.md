@@ -1,9 +1,6 @@
 <h2 style="margin: 60px 0px 10px;">Contact</h2>
 
-Building C, School of Mechanical Engineering
 <br />
-800 Dongchuan Rd, SH, CN
+Phone: <a href="tel:814-680-5098">814-680-5098</a>
 <br />
-Phone: <a href="tel:+86-18518636336">+86-18518636336</a>
-<br />
-Office: <a href="https://maps.app.goo.gl/KXK2k2woFVERjfni9">C3606</a>
+Office: <a href="https://maps.app.goo.gl/sL2maeXKHooXPVVc8">137 Reber Bldg, University Park, PA</a>
