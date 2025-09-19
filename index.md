@@ -18,7 +18,8 @@ In my spare time, I enjoy doing sports (mostly running, cycling and working out 
 
 
 <div style="border: 1px solid #ccc; padding: 11px; background-color: #f9f9f9; color: #333; border-radius: 5px;">
-<strong style="color:#e74d3c;">Pin1: I dedicate one hour per week to mentor and offer suggestions to underrepresented students or anyone in need. You are welcome to fill in <a href="https://forms.gle/VpNYkEUKp5PXqFSv8">this form</a> if you are interested.</strong>
+<strong style="color:#e74d3c;">Pin1: I am currently looking for a summer internship for 2026.</strong>
+<strong style="color:#e74d3c;">Pin2: I dedicate one hour per week to mentor and offer suggestions to underrepresented students or anyone in need. You are welcome to fill in <a href="https://forms.gle/VpNYkEUKp5PXqFSv8">this form</a> if you are interested.</strong>
 </div>
 
 {% include_relative _includes/news.md %}
