@@ -37,7 +37,7 @@ avatar: ./assets/img/avatar.jpg
 # Analytics
 # Please remove the following lines about analytics services if you fork my project. 
 # Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-clustrmaps_id: Nxt_UehMuH188v6Ij2TF1WPFNEX7tS0wHzMdt7qmae0
+clustrmaps_id: Fn4cCup9Cz7RE4UCBigKhbU1LyF9HP26pil-DgDrQqQ
 
 # The following files will be removed from the generated website.
 exclude:
