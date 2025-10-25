@@ -1,7 +1,7 @@
 <h2 style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
-<li><strong>[Oct. 2025]</strong> Joind the Electrochemical Engine Center (<a href="https://ecec.me.psu.edu/">ECEC</a>) at Penn State, and was funded by Toyota Research Institute (<a href="https://www.tri.global/">TRI</a>).</li>
+<li><strong>[Oct. 2025]</strong> Joind the Electrochemical Engine Center (<a href="https://ecec.me.psu.edu/">ECEC</a>) at Penn State!</li>
 <li><strong>[Aug. 2025]</strong> Started my journey at <a href="https://www.psu.edu/">PENN STATE</a>. Cheers!</li>
 <li><strong>[Jul. 2025]</strong> Attended 2025 World Artificial Intelligence Conference (<a href="https://worldaic.com.cn/">WAIC</a>) in Shanghai.</li>
 <li><strong>[Jun. 2025]</strong> Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>. Honored to serve our community!</li>
