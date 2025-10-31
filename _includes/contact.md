@@ -3,4 +3,4 @@
 <br />
 Phone: <a href="tel:814-680-5098">814-680-5098</a>
 <br />
-Office: <a href="https://maps.app.goo.gl/J4aAKyqFRWxEpaaZ9">148 Energy and Environment Laboratory, University Park, PA</a>
+Office: <a href="https://maps.app.goo.gl/J4aAKyqFRWxEpaaZ9">148 Energy and Environment Laboratory, 753 Hastings Rd, University Park, PA</a>
