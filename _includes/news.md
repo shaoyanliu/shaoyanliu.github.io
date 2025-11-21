@@ -1,9 +1,9 @@
 <h2 style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
-<li><strong>[Oct. 2025]</strong> Joind the Electrochemical Engine Center (<a href="https://ecec.me.psu.edu/">ECEC</a>) at Penn State!</li>
+<li><strong>[Oct. 2025]</strong> Joind the <a href="https://ecec.me.psu.edu/">Electrochemical Engine Center</a> (ECEC) at Penn State!</li>
 <li><strong>[Aug. 2025]</strong> Started my journey at <a href="https://www.psu.edu/">PENN STATE</a>. Cheers!</li>
-<li><strong>[Jul. 2025]</strong> Attended 2025 World Artificial Intelligence Conference (<a href="https://worldaic.com.cn/">WAIC</a>) in Shanghai.</li>
+<li><strong>[Jul. 2025]</strong> <a href="https://worldaic.com.cn/">Attended 2025 World Artificial Intelligence Conference</a> (WAIC) in Shanghai.</li>
 <li><strong>[Jun. 2025]</strong> Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>. Honored to serve our community!</li>
 <li><strong>[Apr. 2025]</strong> Our paper about <a href="https://doi.org/10.1016/j.est.2025.116855">low pressure TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.</li>
 <li><strong>[Mar. 2025]</strong> Graduated from SJTU and honored as an Outstanding Graduate! [<a href="https://shaoyanliu.github.io/assets/img/graduation-president.jpg" target="_blank">📸 honored pic with the president</a>]:D</li>
