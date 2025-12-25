@@ -12,5 +12,5 @@
 <h4 style="margin:0 10px 0;">Teaching Assistant</h4>
 
 <ul style="margin:0 0 20px;">
-  <li>Spring 2026: TBD</li>
+  <li>Spring 2026: ME 348, <a href="https://bulletins.psu.edu/university-course-descriptions/undergraduate/me/#:~:text=ME%20348%3A%20Circuit%20Analysis%2C%20Instrumentation%2C%20and%20Statistics">Circuit Analysis, Instrumentation, and Statistics</a> (Instructors: Dr. <a href="https://www.me.psu.edu/department/directory-detail-g.aspx?q=hxp5027">Herschel Pangborn</a>, Dr. <a href="https://www.me.psu.edu/department/directory-detail-g.aspx?q=mcb5351">Melissa Brindise</a>)</li></li>
 </ul>
