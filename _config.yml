@@ -9,7 +9,7 @@ affiliation_logo: ./assets/img/pennstate.png
 # Search Engine Optimization (SEO)
 keywords: shaoyanliu liu, liu shaoyan, shaoyanliu, liushaoyan
 canonical: https://shaoyanliu.github.io/
-description: Shaoyan liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery performance prediction, aging mechanisms and fault diagnostics.
+description: Shaoyan liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery safety and performance prediction.
 
 # The option is used to enable the Illinois template.
 enable_hopkins_logo: false
