@@ -4,7 +4,7 @@ layout: homepage
 
 <h1 id="about-me"></h1>
 
-<h2 style="margin: 80px 0px 10px;"></h2>
+<h2 style="margin: 80px 0px 10px;">About me</h2>
 
 I am a Ph.D. student in the [Department of Mechanical Engineering](https://www.me.psu.edu/) and [Electrochemical Engine Center](https://ecec.me.psu.edu/) (ECEC) at [Penn State University](https://www.psu.edu/), advised by [Prof. Chao-Yang Wang](https://www.me.psu.edu/department/directory-detail-g.aspx?q=CXW31). Previously, I completed my M.S. at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) and my B.S. at [Beijing Jiaotong University](http://en.bjtu.edu.cn/). My current research interests mainly lie in **battery safety** and **battery performance prediction**.
 
