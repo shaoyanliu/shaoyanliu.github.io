@@ -1,7 +1,8 @@
 <h2 style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
-<li><strong>[Oct. 2025]</strong> Joind the <a href="https://ecec.me.psu.edu/">Electrochemical Engine Center</a> (ECEC) at Penn State!</li>
+<li><strong>[May 2026]</strong> Completed my first year of Ph.D. coursework. Excited to focus on my summer research!</li>
+<li><strong>[Oct. 2025]</strong> Joined the <a href="https://ecec.me.psu.edu/">Electrochemical Engine Center</a> (ECEC) at Penn State!</li>
 <li><strong>[Aug. 2025]</strong> Started my journey at <a href="https://www.psu.edu/">PENN STATE</a>. Cheers!</li>
 <li><strong>[Jul. 2025]</strong> Attended <a href="https://worldaic.com.cn/">2025 World Artificial Intelligence Conference</a> (WAIC) in Shanghai.</li>
 <li><strong>[Jun. 2025]</strong> Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>. Honored to serve our community!</li>
