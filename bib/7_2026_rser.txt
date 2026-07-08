@@ -1,0 +1,11 @@
+@article{wang2026influence,
+  title={Influence of different aging pathways on the thermal runaway characteristics of lithium-ion batteries: A review with gas evolution as the bridging perspective},
+  author={Wang, Mengying and Liu, Shaoyan and Han, Dong and Huang, Zhen and Zhang, Jiabo},
+  journal={Renewable and Sustainable Energy Reviews},
+  volume={241},
+  pages={117225},
+  year={2026},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.rser.2026.117225},
+  url={https://www.sciencedirect.com/science/article/pii/S1364032126005241}
+}
