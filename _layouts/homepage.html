@@ -225,11 +225,106 @@
       {% endif %}
 
       <br>
-      {% if site.clustrmaps_id %}
-        <a href="https://mapmyvisitors.com/web/1c529" title="Visit tracker">
-          <img style="display: block; margin-left: 0; margin-right: auto;" src="https://mapmyvisitors.com/map.png?cl=080808&w=370&t=tt&d=FiL232t2CSYi3XiFo4eWlCKcIVkn98HVf02w84uKCrY&co=ffffff&ct=808080"/>
-        </a>
-      {% endif %}
+      <!-- GoatCounter visitor statistics -->
+<div id="visitor-stats" style="
+  max-width: 370px;
+  margin: 20px 0 10px 0;
+  padding: 16px 18px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: left;
+  box-sizing: border-box;
+">
+
+  <div style="
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+  ">
+    Website Statistics
+  </div>
+
+  <div style="
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  ">
+
+    <div style="
+      font-size: 24px;
+      color: #555555;
+      line-height: 1;
+    ">
+      <i class="fa-solid fa-chart-simple"></i>
+    </div>
+
+    <div>
+      <div id="goatcounter-total" style="
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #222222;
+      ">
+        Loading...
+      </div>
+
+      <div style="
+        margin-top: 2px;
+        font-size: 12px;
+        color: #777777;
+      ">
+        Total page views
+      </div>
+    </div>
+
+  </div>
+
+  <a
+    href="https://shaoyanliu.goatcounter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="
+      display: inline-block;
+      margin-top: 13px;
+      font-size: 13px;
+      text-decoration: none;
+    "
+  >
+    View detailed statistics
+    <i class="fa-solid fa-arrow-up-right-from-square"
+       style="margin-left: 3px; font-size: 10px;"></i>
+  </a>
+
+</div>
+
+<script>
+  (function () {
+    var counterElement = document.getElementById("goatcounter-total");
+
+    fetch("https://shaoyanliu.goatcounter.com/counter/TOTAL.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Unable to load visitor count");
+        }
+
+        return response.json();
+      })
+      .then(function (data) {
+        var count = data.count;
+
+        if (typeof count === "number") {
+          count = count.toLocaleString();
+        }
+
+        counterElement.textContent = count;
+      })
+      .catch(function () {
+        counterElement.textContent = "Statistics";
+      });
+  })();
+</script>
       </section>
       <footer>
         <div style="font: 12px/1.2 Crimson Pro, serif">
