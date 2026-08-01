@@ -109,7 +109,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/pub.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
-
     <link
       rel="stylesheet"
       href="https://cdn.brand.illinois.edu/illinois.css"
@@ -175,222 +174,64 @@
         text-align: center;
       }
 
-      .gc-stat-card {
+      .visitor-stats {
         width: 100%;
-        max-width: 430px;
-        margin: 24px 0 12px 0;
-        padding: 20px 22px;
+        max-width: 370px;
+        margin: 20px 0 10px 0;
+        padding: 16px 18px;
         border: 1px solid #dddddd;
-        border-radius: 14px;
+        border-radius: 8px;
         background-color: #ffffff;
         box-sizing: border-box;
         text-align: left;
-        overflow: hidden;
-        transition:
-          transform 0.22s ease,
-          box-shadow 0.22s ease,
-          border-color 0.22s ease;
       }
 
-      .gc-stat-card:hover {
-        transform: translateY(-3px);
-        border-color: #c8ddea;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-      }
-
-      .gc-stat-header {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 22px;
-      }
-
-      .gc-stat-title {
-        margin: 0;
-        color: #222222;
-        font-size: 16px;
+      .visitor-stats-title {
+        margin-bottom: 10px;
+        color: #333333;
+        font-size: 14px;
         font-weight: 600;
-        line-height: 1.3;
       }
 
-      .gc-stat-status {
+      .visitor-stats-content {
         display: flex;
         align-items: center;
-        gap: 7px;
-        margin-top: 6px;
-        color: #777777;
-        font-size: 11px;
-        line-height: 1.3;
+        gap: 12px;
       }
 
-      .gc-stat-status-dot {
-        width: 7px;
-        height: 7px;
-        flex: 0 0 7px;
-        border-radius: 50%;
-        background-color: #2da44e;
-        animation: gcPulse 2s ease-in-out infinite;
-      }
-
-      .gc-stat-header-icon {
-        color: #9a9a9a;
-        font-size: 18px;
-        transition:
-          color 0.22s ease,
-          transform 0.22s ease;
-      }
-
-      .gc-stat-card:hover .gc-stat-header-icon {
-        color: #1689c9;
-        transform: translateY(-1px);
-      }
-
-      .gc-stat-main {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .gc-stat-icon-box {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-        align-items: center;
-        justify-content: center;
-        border-radius: 13px;
-        background-color: #eef7fc;
-        color: #1689c9;
-        font-size: 22px;
-        transition:
-          transform 0.22s ease,
-          background-color 0.22s ease;
-      }
-
-      .gc-stat-card:hover .gc-stat-icon-box {
-        transform: scale(1.04);
-        background-color: #e4f2fa;
-      }
-
-      .gc-stat-value-wrap {
-        min-width: 0;
-      }
-
-      .gc-stat-counter {
-        display: block;
-        min-height: 34px;
+      .visitor-stats-icon {
+        color: #555555;
+        font-size: 24px;
         line-height: 1;
       }
 
-      .gc-stat-counter img {
-        display: block;
-        width: auto;
-        height: 34px;
-        max-width: 100%;
-        border: 0;
+      .visitor-stats-number {
+        color: #222222;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1.2;
       }
 
-      .gc-stat-label {
-        margin-top: 7px;
+      .visitor-stats-label {
+        margin-top: 2px;
         color: #777777;
         font-size: 12px;
-        line-height: 1.3;
       }
 
-      .gc-stat-divider {
-        width: 100%;
-        height: 1px;
-        margin: 20px 0 14px 0;
-        background-color: #eeeeee;
-      }
-
-      .gc-stat-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-
-      .gc-stat-updated {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: #888888;
-        font-size: 11px;
-        line-height: 1.3;
-      }
-
-      .gc-stat-updated i {
-        font-size: 10px;
-      }
-
-      .gc-stat-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        line-height: 1.3;
+      .visitor-stats-link {
+        display: inline-block;
+        margin-top: 13px;
+        font-size: 13px;
         text-decoration: none;
-        white-space: nowrap;
       }
 
-      .gc-stat-link:hover {
+      .visitor-stats-link:hover {
         text-decoration: underline;
       }
 
-      .gc-stat-link i {
-        font-size: 9px;
-        transition: transform 0.18s ease;
-      }
-
-      .gc-stat-link:hover i {
-        transform: translate(2px, -2px);
-      }
-
-      @keyframes gcPulse {
-        0% {
-          opacity: 1;
-          transform: scale(1);
-        }
-
-        50% {
-          opacity: 0.45;
-          transform: scale(0.78);
-        }
-
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .gc-stat-card {
-          padding: 18px;
-          border-radius: 12px;
-        }
-
-        .gc-stat-footer {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 9px;
-        }
-
-        .gc-stat-counter img {
-          height: 31px;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .gc-stat-card,
-        .gc-stat-header-icon,
-        .gc-stat-icon-box,
-        .gc-stat-link i,
-        .gc-stat-status-dot {
-          animation: none;
-          transition: none;
-        }
+      .visitor-stats-link-icon {
+        margin-left: 3px;
+        font-size: 10px;
       }
     </style>
   </head>
@@ -593,72 +434,95 @@
         <br>
 
         <!-- GoatCounter statistics card -->
-        <div class="gc-stat-card">
-          <div class="gc-stat-header">
-            <div>
-              <div class="gc-stat-title">
-                Website Statistics
-              </div>
-
-              <div class="gc-stat-status">
-                <span class="gc-stat-status-dot"></span>
-                Analytics active
-              </div>
-            </div>
-
-            <i
-              class="fa-solid fa-chart-line gc-stat-header-icon"
-              aria-hidden="true"
-            ></i>
+        <div class="visitor-stats">
+          <div class="visitor-stats-title">
+            Website Statistics
           </div>
 
-          <div class="gc-stat-main">
-            <div class="gc-stat-icon-box">
-              <i
-                class="fa-solid fa-chart-simple"
-                aria-hidden="true"
-              ></i>
+          <div class="visitor-stats-content">
+            <div class="visitor-stats-icon">
+              <i class="fa-solid fa-chart-simple"></i>
             </div>
 
-            <div class="gc-stat-value-wrap">
-              <div class="gc-stat-counter">
-                <img
-                  src="https://shaoyanliu.goatcounter.com/counter/TOTAL.svg"
-                  alt="Total number of page views"
-                >
+            <div>
+              <div
+                id="goatcounter-total"
+                class="visitor-stats-number"
+              >
+                Loading...
               </div>
 
-              <div class="gc-stat-label">
+              <div class="visitor-stats-label">
                 Total page views
               </div>
             </div>
           </div>
 
-          <div class="gc-stat-divider"></div>
-
-          <div class="gc-stat-footer">
-            <div class="gc-stat-updated">
-              <i
-                class="fa-regular fa-clock"
-                aria-hidden="true"
-              ></i>
-              Updated periodically
-            </div>
-
-            <a
-              class="gc-stat-link"
-              href="https://shaoyanliu.goatcounter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Detailed analytics
-              <i
-                class="fa-solid fa-arrow-up-right-from-square"
-                aria-hidden="true"
-              ></i>
-            </a>
-          </div>
+          <a
+            class="visitor-stats-link"
+            href="https://shaoyanliu.goatcounter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View detailed statistics
+            <i
+              class="fa-solid fa-arrow-up-right-from-square visitor-stats-link-icon"
+            ></i>
+          </a>
         </div>
+
+        <script>
+          (function () {
+            var counterElement =
+              document.getElementById("goatcounter-total");
+
+            fetch(
+              "https://shaoyanliu.goatcounter.com/counter/TOTAL.json",
+              {
+                method: "GET",
+                mode: "cors",
+                cache: "no-cache"
+              }
+            )
+              .then(function (response) {
+                if (!response.ok) {
+                  throw new Error(
+                    "GoatCounter returned HTTP " + response.status
+                  );
+                }
+
+                return response.json();
+              })
+              .then(function (data) {
+                if (
+                  data.count === undefined ||
+                  data.count === null
+                ) {
+                  throw new Error(
+                    "The response does not contain a count"
+                  );
+                }
+
+                var rawCount = String(data.count).replace(/,/g, "");
+                var numericCount = Number(rawCount);
+
+                if (Number.isFinite(numericCount)) {
+                  counterElement.textContent =
+                    numericCount.toLocaleString("en-US");
+                } else {
+                  counterElement.textContent = data.count;
+                }
+              })
+              .catch(function (error) {
+                console.error(
+                  "Unable to load GoatCounter statistics:",
+                  error
+                );
+
+                counterElement.textContent = "Unavailable";
+              });
+          })();
+        </script>
       </section>
 
       <footer>
