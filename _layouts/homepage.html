@@ -109,6 +109,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/pub.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
+
     <link
       rel="stylesheet"
       href="https://cdn.brand.illinois.edu/illinois.css"
@@ -176,62 +177,192 @@
 
       .visitor-stats {
         width: 100%;
-        max-width: 370px;
-        margin: 20px 0 10px 0;
-        padding: 16px 18px;
+        max-width: 430px;
+        margin: 24px 0 12px 0;
+        padding: 20px 22px;
         border: 1px solid #dddddd;
-        border-radius: 8px;
+        border-radius: 14px;
         background-color: #ffffff;
         box-sizing: border-box;
         text-align: left;
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          border-color 0.22s ease;
+      }
+
+      .visitor-stats:hover {
+        transform: translateY(-3px);
+        border-color: #c8ddea;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+      }
+
+      .visitor-stats-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
       }
 
       .visitor-stats-title {
-        margin-bottom: 10px;
-        color: #333333;
-        font-size: 14px;
+        color: #222222;
+        font-size: 16px;
         font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .visitor-stats-status {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 6px;
+        color: #777777;
+        font-size: 11px;
+      }
+
+      .visitor-stats-dot {
+        width: 7px;
+        height: 7px;
+        flex: 0 0 7px;
+        border-radius: 50%;
+        background-color: #2da44e;
+        animation: visitorPulse 2s ease-in-out infinite;
+      }
+
+      .visitor-stats-header-icon {
+        color: #999999;
+        font-size: 18px;
       }
 
       .visitor-stats-content {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 16px;
       }
 
       .visitor-stats-icon {
-        color: #555555;
-        font-size: 24px;
-        line-height: 1;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+        background-color: #eef7fc;
+        color: #1689c9;
+        font-size: 22px;
       }
 
       .visitor-stats-number {
+        min-height: 34px;
         color: #222222;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 1.2;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1;
       }
 
       .visitor-stats-label {
-        margin-top: 2px;
+        margin-top: 7px;
         color: #777777;
         font-size: 12px;
       }
 
-      .visitor-stats-link {
-        display: inline-block;
-        margin-top: 13px;
-        font-size: 13px;
-        text-decoration: none;
+      .visitor-stats-divider {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0 14px 0;
+        background-color: #eeeeee;
       }
 
+      .visitor-stats-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .visitor-stats-updated {
+        color: #888888;
+        font-size: 11px;
+      }
+
+      .visitor-stats-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .visitor-stats-refresh {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #1689c9;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 12px;
+      }
+
+      .visitor-stats-refresh:hover,
       .visitor-stats-link:hover {
         text-decoration: underline;
       }
 
+      .visitor-stats-refresh:disabled {
+        color: #999999;
+        cursor: default;
+        text-decoration: none;
+      }
+
+      .visitor-stats-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
       .visitor-stats-link-icon {
-        margin-left: 3px;
-        font-size: 10px;
+        font-size: 9px;
+      }
+
+      @keyframes visitorPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 0.45;
+          transform: scale(0.78);
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .visitor-stats {
+          padding: 18px;
+        }
+
+        .visitor-stats-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 9px;
+        }
+
+        .visitor-stats-actions {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .visitor-stats,
+        .visitor-stats-dot {
+          animation: none;
+          transition: none;
+        }
       }
     </style>
   </head>
@@ -435,40 +566,80 @@
 
         <!-- GoatCounter statistics card -->
         <div class="visitor-stats">
-          <div class="visitor-stats-title">
-            Website Statistics
+          <div class="visitor-stats-header">
+            <div>
+              <div class="visitor-stats-title">
+                Website Statistics
+              </div>
+
+              <div class="visitor-stats-status">
+                <span class="visitor-stats-dot"></span>
+                Analytics active
+              </div>
+            </div>
+
+            <i
+              class="fa-solid fa-chart-line visitor-stats-header-icon"
+              aria-hidden="true"
+            ></i>
           </div>
 
           <div class="visitor-stats-content">
             <div class="visitor-stats-icon">
-              <i class="fa-solid fa-chart-simple"></i>
+              <i
+                class="fa-solid fa-chart-simple"
+                aria-hidden="true"
+              ></i>
             </div>
 
             <div>
               <div
                 id="goatcounter-total"
                 class="visitor-stats-number"
+                aria-live="polite"
               >
-                Loading...
+                Loading…
               </div>
 
               <div class="visitor-stats-label">
-                Total page views
+                Total visits
               </div>
             </div>
           </div>
 
-          <a
-            class="visitor-stats-link"
-            href="https://shaoyanliu.goatcounter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View detailed statistics
-            <i
-              class="fa-solid fa-arrow-up-right-from-square visitor-stats-link-icon"
-            ></i>
-          </a>
+          <div class="visitor-stats-divider"></div>
+
+          <div class="visitor-stats-footer">
+            <div
+              id="goatcounter-updated"
+              class="visitor-stats-updated"
+            >
+              Waiting for latest count…
+            </div>
+
+            <div class="visitor-stats-actions">
+              <button
+                id="goatcounter-refresh"
+                class="visitor-stats-refresh"
+                type="button"
+              >
+                Refresh
+              </button>
+
+              <a
+                class="visitor-stats-link"
+                href="https://shaoyanliu.goatcounter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Detailed analytics
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square visitor-stats-link-icon"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
         </div>
 
         <script>
@@ -476,51 +647,169 @@
             var counterElement =
               document.getElementById("goatcounter-total");
 
-            fetch(
-              "https://shaoyanliu.goatcounter.com/counter/TOTAL.json",
-              {
+            var updatedElement =
+              document.getElementById("goatcounter-updated");
+
+            var refreshButton =
+              document.getElementById("goatcounter-refresh");
+
+            var endpoint =
+              "https://shaoyanliu.goatcounter.com/counter/TOTAL.json";
+
+            var refreshTimer = null;
+            var isLoading = false;
+
+            function formatTime(date) {
+              return date.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+              });
+            }
+
+            function loadLatestCount() {
+              if (isLoading) {
+                return;
+              }
+
+              isLoading = true;
+              refreshButton.disabled = true;
+              updatedElement.textContent =
+                "Checking latest count…";
+
+              /*
+               * Add a unique query parameter and use no-store
+               * to minimize browser and CDN caching.
+               *
+               * GoatCounter may still apply server-side caching,
+               * which browser code cannot forcefully bypass.
+               */
+              var requestUrl =
+                endpoint +
+                "?refresh=" +
+                Date.now() +
+                "-" +
+                Math.random().toString(36).slice(2);
+
+              fetch(requestUrl, {
                 method: "GET",
                 mode: "cors",
-                cache: "no-cache"
+                cache: "no-store",
+                credentials: "omit"
+              })
+                .then(function (response) {
+                  if (!response.ok) {
+                    throw new Error(
+                      "GoatCounter returned HTTP " +
+                      response.status
+                    );
+                  }
+
+                  return response.json();
+                })
+                .then(function (data) {
+                  if (
+                    data.count === undefined ||
+                    data.count === null
+                  ) {
+                    throw new Error(
+                      "The response does not contain a count"
+                    );
+                  }
+
+                  var rawCount =
+                    String(data.count)
+                      .replace(/,/g, "")
+                      .trim();
+
+                  var numericCount = Number(rawCount);
+
+                  if (Number.isFinite(numericCount)) {
+                    counterElement.textContent =
+                      numericCount.toLocaleString("en-US");
+                  } else {
+                    counterElement.textContent = data.count;
+                  }
+
+                  updatedElement.textContent =
+                    "Last checked " +
+                    formatTime(new Date());
+                })
+                .catch(function (error) {
+                  console.error(
+                    "Unable to load GoatCounter statistics:",
+                    error
+                  );
+
+                  /*
+                   * Keep the last successfully loaded number.
+                   * Only show Unavailable if no number loaded yet.
+                   */
+                  if (
+                    counterElement.textContent === "Loading…" ||
+                    counterElement.textContent === "Loading..."
+                  ) {
+                    counterElement.textContent =
+                      "Unavailable";
+                  }
+
+                  updatedElement.textContent =
+                    "Update failed — try Refresh";
+                })
+                .finally(function () {
+                  isLoading = false;
+                  refreshButton.disabled = false;
+                });
+            }
+
+            refreshButton.addEventListener(
+              "click",
+              loadLatestCount
+            );
+
+            /*
+             * Wait 2.5 seconds so the GoatCounter tracking
+             * request has time to register the current visit.
+             */
+            window.setTimeout(
+              loadLatestCount,
+              2500
+            );
+
+            /*
+             * Check for a newer count once every minute.
+             */
+            refreshTimer = window.setInterval(
+              loadLatestCount,
+              60000
+            );
+
+            /*
+             * Check again whenever the visitor returns
+             * to the tab or focuses the browser window.
+             */
+            document.addEventListener(
+              "visibilitychange",
+              function () {
+                if (!document.hidden) {
+                  loadLatestCount();
+                }
               }
-            )
-              .then(function (response) {
-                if (!response.ok) {
-                  throw new Error(
-                    "GoatCounter returned HTTP " + response.status
-                  );
+            );
+
+            window.addEventListener(
+              "focus",
+              loadLatestCount
+            );
+
+            window.addEventListener(
+              "beforeunload",
+              function () {
+                if (refreshTimer) {
+                  window.clearInterval(refreshTimer);
                 }
-
-                return response.json();
-              })
-              .then(function (data) {
-                if (
-                  data.count === undefined ||
-                  data.count === null
-                ) {
-                  throw new Error(
-                    "The response does not contain a count"
-                  );
-                }
-
-                var rawCount = String(data.count).replace(/,/g, "");
-                var numericCount = Number(rawCount);
-
-                if (Number.isFinite(numericCount)) {
-                  counterElement.textContent =
-                    numericCount.toLocaleString("en-US");
-                } else {
-                  counterElement.textContent = data.count;
-                }
-              })
-              .catch(function (error) {
-                console.error(
-                  "Unable to load GoatCounter statistics:",
-                  error
-                );
-
-                counterElement.textContent = "Unavailable";
-              });
+              }
+            );
           })();
         </script>
       </section>
@@ -531,13 +820,18 @@
             <small>
               {% if site.imprint %}
               <a href="{{ site.imprint }}" rel="noopener">
-                <autocolor>Imprint / Impressum</autocolor>
+                <autocolor>
+                  Imprint / Impressum
+                </autocolor>
               </a>
               <br>
               {% endif %}
 
               {% if site.data_protection %}
-              <a href="{{ site.data_protection }}" rel="noopener">
+              <a
+                href="{{ site.data_protection }}"
+                rel="noopener"
+              >
                 <autocolor>
                   Data Protection / Datenschutzhinweis
                 </autocolor>
