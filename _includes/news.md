@@ -1,6 +1,7 @@
 <h2 style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
+<li><strong>[Aug. 2026]</strong> Joined the <a href="https://junxu-emslab.github.io/">Energy Mechanics and Sustainability Laboratory</a> (EMSLab) at Penn State!</li>
 <li><strong>[Jul. 2026]</strong> Our review paper about <a href="https://doi.org/10.1016/j.rser.2026.117225">gas-bridged aging and TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/renewable-and-sustainable-energy-reviews">Renewable and Sustainable Energy Reviews</a>.</li>
 <li><strong>[May 2026]</strong> Completed all Ph.D. coursework with a GPA 3.8. Excited to start summer research!</li>
 <li><strong>[Oct. 2025]</strong> Joined the <a href="https://ecec.me.psu.edu/">Electrochemical Engine Center</a> (ECEC) at Penn State!</li>
