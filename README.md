@@ -14,7 +14,7 @@ Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing 
 - **About page:** a single content area with a name heading, profile photo, biography, and contact/profile icons in the navigation.
 - **Scholar statistics:** a compact inline summary with paper count, total citations, h-index, and the last successful check date.
 - **Dedicated CV page:** a continuously scrolling PDF preview with a Sections menu, zoom controls, open/download links, and a CV entry in the top navigation.
-- **News and activities:** six recent news items on About, a full News archive, and a combined Academic Activities page for teaching experience and academic service.
+- **News and activities:** six recent news items on About, a full News archive, and a combined Academic Activities page for conference presentations, teaching experience, and academic service.
 - **Visitor statistics:** GoatCounter tracks the homepage and subpages, with a total visitor display on the homepage.
 
 ## Content maintenance
@@ -27,6 +27,7 @@ Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing 
 | Topic IDs, labels, and full names | [`_data/publication_topics.yml`](_data/publication_topics.yml) |
 | News, newest first | [`_data/news.yml`](_data/news.yml) |
 | Teaching and academic service | [`_includes/teaching.md`](_includes/teaching.md), [`_includes/services.md`](_includes/services.md) |
+| Conference presentations and posters | [`_data/conferences.yml`](_data/conferences.yml) |
 | CV page and PDF | [`cv.md`](cv.md), [`cv/cv_shaoyan.pdf`](cv/cv_shaoyan.pdf); PDF path is configured as `cv_pdf` in `_config.yml` |
 | CV section navigation | [`_data/cv_sections.yml`](_data/cv_sections.yml); headings are located in the PDF automatically, so page numbers need no manual updates |
 | BibTeX files | [`bib/`](bib/) |

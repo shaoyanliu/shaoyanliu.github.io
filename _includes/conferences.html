@@ -1,0 +1,18 @@
+<h2 id="conferences" class="activities-heading">Conferences &amp; Presentations</h2>
+
+<ul class="conference-list">
+  {% assign conferences = site.data.conferences | sort: 'date' | reverse %}
+  {% for conference in conferences %}
+  <li class="conference-entry">
+    <time datetime="{{ conference.date }}">{{ conference.date | append: '-01' | date: '%b %Y' }}</time>
+    <div class="conference-details">
+      <h3>{{ conference.meeting | escape }}</h3>
+      <div class="conference-meta">
+        <span>{{ conference.location | escape }}</span>
+        <span class="conference-type">{{ conference.type | escape }}</span>
+      </div>
+      <p class="conference-title">{{ conference.title | escape }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
