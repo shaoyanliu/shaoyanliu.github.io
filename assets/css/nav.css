@@ -9,11 +9,21 @@
 
 
   .topnav #myLinks {
-    display: inline;
+    display: flex;
+    float: right;
   }
 
-.topnav a.icon {
+.topnav button.icon {
     display: none;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.topnav button.icon:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -4px;
 }
 
   .topnav img {
@@ -24,7 +34,6 @@
   
   /* Style the links inside the navigation bar */
   .topnav a.normal {
-    float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 10px 9px;
@@ -38,8 +47,8 @@
     color: black;
   }
   
-  /* Add a color to the active/current link */
-  .topnav a.right {
+  /* Align the link group with the page content. */
+  .topnav #myLinks {
     margin-right:30%;
   }
 
@@ -49,7 +58,7 @@
         margin-left:3%;
       }
 
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:3%;
       }
 
@@ -64,7 +73,7 @@
     .topnav img {
         margin-left:6%;
       }
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:6%;
       }
 
@@ -75,7 +84,7 @@
     .topnav img {
         margin-left:12%;
       }
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:12%;
       }
 
@@ -87,7 +96,7 @@
     .topnav img {
         margin-left:16%;
       }
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:16%;
       }
 
@@ -98,7 +107,7 @@
     .topnav img {
         margin-left:19%;
       }
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:19%;
       }
 
@@ -109,7 +118,7 @@
     .topnav img {
         margin-left:22%;
       }
-    .topnav a.right {
+    .topnav #myLinks {
         margin-right:22%;
       }
 
@@ -126,6 +135,13 @@
 
     .topnav #myLinks {
         display: none;
+        float: none;
+        margin-right: 0;
+      }
+
+    .topnav #myLinks.is-open {
+        display: flex;
+        flex-direction: column;
       }
 
       .topnav a.normal {
@@ -137,7 +153,7 @@
         display: block;
       }
 
-      .topnav a.icon {
+      .topnav button.icon {
         color: white;
         display: block;
         padding: 10px 16px;
