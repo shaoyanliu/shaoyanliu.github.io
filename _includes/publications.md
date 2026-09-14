@@ -38,6 +38,11 @@
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
     <div class="links">
+      {% for topic in site.data.publication_topics %}
+      {% if link.topics contains topic.id %}
+      <span class="publication-topic" data-topic="{{ topic.id | escape }}" title="{{ topic.name | default: topic.label | escape }}">{{ topic.label | downcase | escape }}</span>
+      {% endif %}
+      {% endfor %}
       {% if link.abstract %}
       <button class="publication-action" type="button" data-abstract-toggle aria-expanded="false" aria-controls="abstract-{{ publication_number }}" hidden>Abstract</button>
       {% endif %}

@@ -22,6 +22,10 @@ an abbreviation (such as AI/ML). Current IDs are `thermal-runaway`,
 `machine-learning`, `combustion`, and `review`;
 a paper can have several.
 
+Each paper displays its topics as lowercase colored badges before the resource
+buttons. Badge colors are defined by topic ID in `assets/css/pub.css`, with
+separate light and dark palettes; new topics fall back to blue.
+
 BibTeX content is loaded from the existing `bib/*.txt` files on this site, so
 there is only one copy of each citation to maintain. Downloads use a `.bib`
 filename. Without JavaScript, abstracts remain readable and BibTeX links open
