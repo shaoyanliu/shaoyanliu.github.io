@@ -3,17 +3,25 @@
 <h2 style="margin: 60px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?&user=Yw_kFE4AAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;"> | </temp><temp style="font-size:15px;">Corresponding author = <sup><i class="fa-regular fa-envelope fa-xs"></i></sup>]</temp></h2>
 
 
-<div class="publications">
+<div class="publications" data-publication-list>
+<div class="publication-filters" data-publication-filters role="group" aria-label="Filter publications by topic" hidden>
+  <button type="button" data-topic-filter="all" aria-pressed="true">All</button>
+  {% for topic in site.data.publication_topics %}
+  <button type="button" data-topic-filter="{{ topic.id }}" aria-pressed="false">{{ topic.label }}</button>
+  {% endfor %}
+</div>
+<p class="publication-filter-status" data-filter-status role="status" aria-live="polite" hidden></p>
 {% assign publication_years = site.data.publications.main | group_by: "year" | sort: "name" | reverse %}
 {% assign publication_number = site.data.publications.main.size %}
 
 {% for year_group in publication_years %}
+<div class="publication-year-group" data-publication-year>
 <h3 class="year" id="publications-{{ year_group.name }}"><span>{{ year_group.name }}</span></h3>
 <ol class="bibliography" reversed start="{{ publication_number }}">
 
 {% for link in year_group.items %}
 
-<li value="{{ publication_number }}">
+<li value="{{ publication_number }}" data-publication data-topics="{{ link.topics | join: ' ' | escape }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
@@ -25,6 +33,9 @@
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
     <div class="links">
+      {% if link.abstract %}
+      <button class="publication-action" type="button" data-abstract-toggle aria-expanded="false" aria-controls="abstract-{{ publication_number }}" hidden>Abstract</button>
+      {% endif %}
       {% if link.doi %} 
       <a href="{{ link.doi }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">DOI</a>
       {% endif %}
@@ -41,7 +52,9 @@
       <a href="{{ link.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
       {% endif %}
       {% if link.bibtex %} 
-      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+      {% assign bibtex_filename = link.bibtex | split: '/' | last %}
+      {% assign bibtex_path = '/bib/' | append: bibtex_filename %}
+      <a href="{{ bibtex_path | relative_url }}" class="btn btn-sm z-depth-0" data-bibtex-link data-paper-title="{{ link.title | strip_html | escape }}" style="font-size:12px;">BibTeX</a>
       {% endif %}
       {% if link.scholar_id and site.data.scholar_stats.articles %}
       {% assign scholar_article = site.data.scholar_stats.articles[link.scholar_id] %}
@@ -56,6 +69,12 @@
       {{ link.others }}
       {% endif %}
     </div>
+    {% if link.abstract %}
+    <div class="publication-abstract" id="abstract-{{ publication_number }}">
+      <h4>Abstract</h4>
+      <p>{{ link.abstract | escape }}</p>
+    </div>
+    {% endif %}
   </div>
 </div>
 </li>
@@ -64,5 +83,21 @@
 {% endfor %}
 
 </ol>
+</div>
 {% endfor %}
 </div>
+
+<dialog class="publication-bibtex-dialog" id="publication-bibtex-dialog" aria-labelledby="bibtex-dialog-title" aria-describedby="bibtex-paper-title">
+  <div class="bibtex-dialog-heading">
+    <h2 id="bibtex-dialog-title">BibTeX</h2>
+    <button type="button" class="bibtex-close" data-bibtex-close aria-label="Close citation">&times;</button>
+  </div>
+  <p class="bibtex-paper-title" id="bibtex-paper-title" data-bibtex-title></p>
+  <pre class="bibtex-content" data-bibtex-content tabindex="0" aria-label="BibTeX citation"></pre>
+  <p class="bibtex-status" data-bibtex-status role="status" aria-live="polite"></p>
+  <div class="bibtex-dialog-actions">
+    <button type="button" data-bibtex-copy disabled>Copy BibTeX</button>
+    <a data-bibtex-download download>Download .bib</a>
+  </div>
+</dialog>
+<script src="{{ '/assets/js/publications.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

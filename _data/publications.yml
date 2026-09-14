@@ -4,6 +4,20 @@ main:
     conference_short: RSER
     conference: Renewable and Sustainable Energy Reviews, 241, 117225, 2026.
     year: 2026
+    topics: [thermal-runaway, gas-generation, review]
+    abstract: >-
+      Lithium-ion batteries (LIBs) are increasingly used in electric vehicles and large-scale energy storage systems.
+      However, their long-term operational safety remains a critical bottleneck, especially as batteries experience
+      progressive aging during extended service. This review examines how primary aging pathways, including high
+      temperature, low temperature, high C-rate cycling, and overcharge/over-discharge conditions, affect aging reactions
+      and consequently influence thermal runaway (TR) behavior. Specifically, these aging pathways trigger
+      different side reactions and produce characteristic gas signals, such as hydrogen, carbon oxides, and hydrocarbons.
+      These gas signals can reflect the internal aging state of batteries and help explain changes in TR
+      characteristics and overall thermal safety behavior. As the relationship among aging pathways and TR characteristics
+      is strongly path-dependent, gas evolution is reviewed here as a bridge linking aging mechanisms with
+      thermal safety assessment. Moreover, the review further examines how gas signals can be integrated with machine
+      learning methods to support TR diagnosis and early warning. This combined perspective helps improve the
+      safety design and operation of LIBs.
     scholar_id: Yw_kFE4AAAAJ:UeHWp8X0CEIC
     doi: https://doi.org/10.1016/j.rser.2026.117225
     pdf: https://shaoyanliu.github.io/files/7_2026_rser.pdf
@@ -15,6 +29,22 @@ main:
     conference_short: JES
     conference: Journal of Energy Storage, 125, 116855, 2025.
     year: 2025
+    topics: [thermal-runaway, gas-generation, modeling]
+    abstract: >-
+      With the increased demand of lithium-ion batteries in aviation and high-altitude applications, understanding
+      battery safety at low-pressure conditions becomes paramount. This study aims to comprehensively investigate
+      the effects of ambient pressure and charging rate on the thermal runaway behaviors and corresponding gas
+      generation dynamics of commercial 18650-type LiNi₁/₃Co₁/₃Mn₁/₃O₂ (NCM) cells triggered by electrical abuse,
+      employing an accelerating rate calorimeter. The results indicate that low ambient pressure leads to an earlier
+      opening of the safety valve and a shortened delay time of violent thermal runaway, which limits electrolyte
+      ejection outside the cell. Due to the greater participation of electrolytes during thermal runaway, the maximum
+      temperature and gas generation amount both increases at low ambient pressure conditions. Besides, it is found
+      that an elevated charging rate intensifies the thermal runaway process, increasing the potential for thermal
+      runaway hazards, as indicated by the increased generation of flammable gases. Furthermore, the Arrhenius
+      law is employed to evaluate the gas generation dynamics of LIBs during thermal runaway by comparing the
+      activation energy and pre-exponential factors. Therefore, the rate constants for various operation pressures
+      and charging rates are proposed. Significantly, the rate constants show a notable increase at low-pressure
+      conditions, highlighting the higher TR risk in such conditions.
     doi: https://doi.org/10.1016/j.est.2025.116855
     scholar_id: Yw_kFE4AAAAJ:d1gkVwhDpl0C
     pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
@@ -26,6 +56,18 @@ main:
     conference_short: CRPS
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
     year: 2025
+    topics: [thermal-runaway, gas-generation, modeling, machine-learning]
+    abstract: >-
+      The widespread application of lithium-ion batteries in electric vehicles is hindered by safety concerns, notably
+      thermal runaway. Understanding gas generation during thermal runaway is crucial for battery safety design,
+      early fault detection, and fire hazard assessment, but existing kinetic models remain inadequate. We investigate
+      gas generation behavior of 18650-type LiNi₁/₃Co₁/₃Mn₁/₃O₂ cells across varied states of charge, constructing a
+      training dataset to develop a chemical reaction neural network model that autonomously explores unknown reaction
+      pathways and corresponding chemical kinetic parameters. By incorporating an additional non-linear
+      neural network to predict the mean molar weight of generated gases, the model trains a chemical kinetic mechanism
+      comprising 7 species and 16 reactions. The resulting mechanism accurately predicts key parameters,
+      including gas generation rates and amounts, during thermal runaway. This methodology addresses the current
+      limitations in thermal runaway gas prediction, providing a robust framework for enhancing battery safety.
     doi: https://doi.org/10.1016/j.xcrp.2025.102563
     scholar_id: Yw_kFE4AAAAJ:u-x6o8ySG0sC
     pdf: https://shaoyanliu.github.io/files/5_2025_crps.pdf
@@ -39,6 +81,21 @@ main:
     conference_short: JPS
     conference: Journal of Power Sources, 600, 234237, 2024.
     year: 2024
+    topics: [thermal-runaway, gas-generation]
+    abstract: >-
+      Lithium-ion batteries are susceptible to thermal runaway incidents at high-temperature abuse and overcharging
+      conditions. This study employs an experimental approach that combines an accelerating rate calorimetry with a
+      battery testing system to investigate thermal runaway behaviors in 18,650-type LiNi₁/₃Co₁/₃Mn₁/₃O₂ cells at
+      high temperatures, particularly during constant current constant voltage (CCCV) charging at rates of 0.2C, 0.5C,
+      1C, and 2C. The results reveal that cells coupled with charging behavior exhibit a greater potential for thermal
+      runaway at high temperatures, and increased charging rates lead to increased irreversible heat and promoted
+      side reactions, which ensure advanced thermal runaway events and enhanced heat and gas generation capacity
+      in the cell. Furthermore, owing to the combined influences of stage of charge and the promoting effect of
+      charging current on side reactions, the total heat and gas production and the charging rate exhibit a nonlinear
+      relationship. Eventually, after the completion of charging, the relationship between gas generation rate and heat
+      generation rate can be characterized by two linear growth stages. The initial stage displays consistent gas
+      generation rates despite variations in charging rates, and the subsequent stage demonstrates different gas generation
+      rates with increased charging rates, suggesting alterations in side reaction pathways.
     doi: https://doi.org/10.1016/j.jpowsour.2024.234237
     scholar_id: Yw_kFE4AAAAJ:2osOgNQ5qMEC
     pdf: https://shaoyanliu.github.io/files/4_2024_jps.pdf
@@ -50,6 +107,22 @@ main:
     conference_short: JES
     conference: Journal of Energy Storage, 80, 110201, 2024.
     year: 2024
+    topics: [thermal-runaway, gas-generation, modeling, combustion]
+    abstract: >-
+      This study investigates the gas generation characteristics and explosion limits of the gas generated by 18650-type
+      LiNi₁/₃Co₁/₃Mn₁/₃O₂ (NCM) cells during thermal runaway (TR) at different states of charge (SOCs). An
+      accelerating rate calorimeter is employed to initialize TR, together with an airtight jar for gas measurement.
+      Based on the detected gas composition for NCM cells, the corresponding explosion limits are computed and
+      further compared with those of LiFePO₄ (LFP) and LiNi₀.₈₀Co₀.₁₅Al₀.₀₅O₂ (NCA) cells. The results reveal that
+      the gas generation rates are slightly higher for NCM cells with lower SOCs prior to the violent TR processes
+      compared to those for high-SOC cells, primarily due to the elevated reaction temperature. Moreover, during
+      violent TR, multiple-peak features are observed for the gas generation rate curves, especially at high-SOC
+      conditions. On the other hand, typical Z-shaped explosion limit curves are observed for all generated mixtures.
+      As the cathode material varies from NCM to LFP and NCA, the explosion limits shift from high-temperature
+      regions to low-temperature regions. In contrast to common beliefs that the generation gas at high SOCs is
+      more explosive, non-monotonic responses of the explosion limit curves are found with respect to cell SOC.
+      The significance of minor components of the generated gas, including ethylene and ethane, in reducing the
+      explosivity of the mixture, is highlighted through sensitivity analyses.
     doi: https://doi.org/10.1016/j.est.2023.110201
     scholar_id: Yw_kFE4AAAAJ:qjMakFHDy7sC
     pdf: https://shaoyanliu.github.io/files/3_2024_jes.pdf
@@ -61,6 +134,29 @@ main:
     conference_short: IJHE
     conference: International Journal of Hydrogen Energy, 48(97), 38484-38495, 2023.
     year: 2023
+    topics: [modeling, combustion]
+    abstract: >-
+      Intake temperature and pressure fluctuations prior to main ignition are one of the reasons
+      affecting the efficiency of internal combustion engines. In this study, the effects of temperature
+      and pressure fluctuations with varied amplitudes and frequencies on the exergy
+      loss of hydrogen auto-ignition processes were numerically investigated in an adiabatic
+      constant-volume system at engine-relevant conditions. The results revealed that the increase
+      in temperature fluctuation amplitudes primarily decreases the exergy loss due to
+      chemical reactions, and the exergy loss due to incomplete combustion remains unchanged.
+      Specifically, the total exergy loss is reduced by approximately 1.5% with a temperature
+      fluctuation amplitude of 100 K at a frequency of 2 ms⁻¹. Furthermore, with the
+      same temperature fluctuation amplitude, increasing the frequency of temperature fluctuation
+      from 2 ms⁻¹ to 7 ms⁻¹ leads to a 0.7% increase in the total exergy loss. On the other
+      hand, the effects of pressure fluctuation on the exergy loss of hydrogen auto-ignition
+      processes are negligible compared with those of temperature fluctuation. Through chemical
+      kinetic analysis, it is found that temperature fluctuation promotes the consumption
+      pathway of O₂ to generate OH, rather than the collision with H to produce HO₂. Consequently,
+      the reduced mole fraction of HO₂ inhibits the related HO₂-consumption reactions,
+      including HO₂+H=OH + OH and HO₂+HO₂=H₂O₂+O₂. Moreover, with temperature fluctuation,
+      due to the lower fraction of third-body collision molecules, H₂O, the reactivity of
+      the third-body reaction, H + O₂+M=HO₂+M, is decreased. The reduced reaction rates of
+      these reactions lead to decreased total exergy loss, indicating that the fuel energy conversion
+      process may benefit from temperature fluctuation.
     doi: https://doi.org/10.1016/j.ijhydene.2023.06.084
     scholar_id: Yw_kFE4AAAAJ:9yKSN-GCB0IC
     pdf: https://shaoyanliu.github.io/files/2_2023_ijhe.pdf
@@ -72,6 +168,21 @@ main:
     conference_short: Energy
     conference: Energy, 241, 122941, 2022.
     year: 2022
+    topics: [combustion]
+    abstract: >-
+      Syngas, containing mostly CO and H₂, has variant explosion properties for the specific contents. For a
+      further understanding, a comparative study on the turbulent explosion characteristics of syngas between
+      CO-enriched (the mole ratio of CO was 70%) and H₂-enriched (the mole ratio of H₂ was 70%) were
+      conducted at different equivalence ratios (φ, from 0.4 to 3.0) and turbulent intensities (u′_rms, from 0 to
+      1.309 m/s). The peak value of maximum explosion pressure (p_max) was attained in the stoichiometric
+      explosion of H₂-enriched syngas but in fuel-rich explosion of the CO-enriched, the growth extents of p_max
+      seemed more sensitive to u′_rms for H₂-enriched syngas compared to CO-enriched syngas. The lowest
+      values of explosion duration (t_c) was attained in fuel-rich explosions for both CO-enriched and H₂-enriched
+      syngas but different corresponding φ to the lowest t_c, the phenomena were analyzed from the
+      aspects of ignition delay time, laminar burning velocity, intrinsic instabilities, and flame/turbulence
+      interaction. Finally, the pressure rising was comparatively observed, the maximum pressure rise rate
+      ((dp/dt)_max) expressed more similar variation regulations to t_c rather than p_max, which meant flame
+      propagation speed plays a more important role on the evolution of pressure rising.
     doi: https://doi.org/10.1016/j.energy.2021.122941
     scholar_id: Yw_kFE4AAAAJ:u5HHmVD_uO8C
     pdf: https://shaoyanliu.github.io/files/1_2022_energy.pdf

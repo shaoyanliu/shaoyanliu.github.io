@@ -6,6 +6,23 @@ Many thanks to Yaoyao for providing the original template!
 For more details about the original theme, please refer to this repository:  
 <https://github.com/yaoyao-liu/minimal-light>
 
+## Publication browsing
+
+The Publications page has single-topic filters, expandable abstracts, and a
+BibTeX dialog with copy and download buttons. Filtering preserves each paper's
+original number and hides year headings that have no matching papers.
+
+Maintain `abstract` (plain text from the paper) and `topics` (a list of IDs) in
+`_data/publications.yml`. Topic IDs and display labels are defined in
+`_data/publication_topics.yml`. Current IDs are `thermal-runaway`,
+`gas-generation`, `modeling`, `combustion`, and `review`; a paper can have several.
+
+BibTeX content is loaded from the existing `bib/*.txt` files on this site, so
+there is only one copy of each citation to maintain. Downloads use a `.bib`
+filename. Without JavaScript, abstracts remain readable and BibTeX links open
+the original files. If clipboard access is unavailable, the dialog selects the
+citation for manual copying and keeps the download link available.
+
 ## Google Scholar statistics
 
 The sidebar reads `_data/scholar_stats.yml`. The **Update Google Scholar statistics**
