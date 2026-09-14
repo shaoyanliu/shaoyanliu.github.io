@@ -10,11 +10,14 @@ title: About
 
 <div class="about-intro" markdown="1">
 
-<figure class="about-portrait"><img src="{{ site.avatar | relative_url }}" alt="Shaoyan Liu" /></figure>
+<figure class="about-portrait">
+  <img src="{{ site.avatar | relative_url }}" alt="Shaoyan Liu" />
+  <figcaption><a href="https://maps.app.goo.gl/J4aAKyqFRWxEpaaZ9" title="View location on Google Maps"><span aria-hidden="true">📍</span><span>State College</span></a></figcaption>
+</figure>
 
 {% include scholar-stats.html %}
 
-Greetings! I am Shaoyan Liu (劉 少言), a Ph.D. student in [Energy Mechanics and Sustainability Laboratory](https://junxu-emslab.github.io/) (EMSLab) and [Department of Mechanical Engineering](https://www.me.psu.edu/) at [Penn State University](https://www.psu.edu/), advised by Prof. [Jun Xu](https://www.me.psu.edu/department/directory-detail-g.aspx?q=jkx5175). Previously, I completed my M.S. at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) and my B.S. at [Beijing Jiaotong University](http://en.bjtu.edu.cn/). My current research interests mainly lie in **battery safety**.
+Greetings! I am Shaoyan Liu (劉 少言), a Ph.D. student in [Energy Mechanics and Sustainability Laboratory](https://junxu-emslab.github.io/) (EMSLab) and [Department of Mechanical Engineering](https://www.me.psu.edu/) at [Penn State University](https://www.psu.edu/), advised by [Prof. Jun Xu](https://www.me.psu.edu/department/directory-detail-g.aspx?q=jkx5175). Previously, I completed my M.S. at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/) and my B.S. at [Beijing Jiaotong University](http://en.bjtu.edu.cn/). My current research interests mainly lie in **battery safety**.
 
 In my spare time, I enjoy doing sports (mostly running, cycling and working out at the gym), traveling, and going on hikes with friends (find my workout records on my [Strava page](https://www.strava.com/athletes/shaoyanliu)<style>
   .strava-badge- { display: inline-block; height: 16px; }
@@ -32,5 +35,3 @@ In my spare time, I enjoy doing sports (mostly running, cycling and working out 
 
 
 {% include_relative _includes/news.md %}
-
-{% include_relative _includes/contact.md %}

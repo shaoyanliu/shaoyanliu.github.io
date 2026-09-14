@@ -8,7 +8,7 @@
 
 .cv-heading h1 {
   margin: 0;
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: clamp(30px, 4vw, 40px);
   font-weight: 600;
 }
 
@@ -32,7 +32,7 @@
   border-radius: 4px;
   color: #13294b;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .cv-view-link i {

@@ -46,24 +46,24 @@
       <button class="publication-action" type="button" data-abstract-toggle aria-expanded="false" aria-controls="abstract-{{ publication_number }}" hidden>Abstract</button>
       {% endif %}
       {% if link.doi %} 
-      <a href="{{ link.doi }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">HTML</a>
+      <a href="{{ link.doi }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
       {% endif %}
       {% if link.pdf %} 
-      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
       {% endif %}
       {% if link.code %} 
-      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
       {% endif %}
       {% if link.page %} 
-      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project Page</a>
+      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Project Page</a>
       {% endif %}
       {% if link.data %} 
-      <a href="{{ link.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
+      <a href="{{ link.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Dataset</a>
       {% endif %}
       {% if link.bibtex %} 
       {% assign bibtex_filename = link.bibtex | split: '/' | last %}
       {% assign bibtex_path = '/bib/' | append: bibtex_filename %}
-      <a href="{{ bibtex_path | relative_url }}" class="btn btn-sm z-depth-0" data-bibtex-link data-paper-title="{{ link.title | strip_html | escape }}" style="font-size:12px;">BibTeX</a>
+      <a href="{{ bibtex_path | relative_url }}" class="btn btn-sm z-depth-0" data-bibtex-link data-paper-title="{{ link.title | strip_html | escape }}">BibTeX</a>
       {% endif %}
       {% if link.scholar_id and site.data.scholar_stats.articles %}
       {% assign scholar_article = site.data.scholar_stats.articles[link.scholar_id] %}

@@ -88,8 +88,9 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
     background: transparent;
     color: var(--site-card-text);
     font: inherit;
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 0.67rem;
+    font-weight: 400;
+    line-height: 1.2;
     cursor: pointer;
 }
 
@@ -128,9 +129,9 @@ html[data-theme="dark"] .publication-filters button[aria-pressed="true"] { color
     border-radius: 999px;
     background: #13294b;
     color: #fff;
-    font-size: 12px;
+    font-size: 0.64rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
     white-space: nowrap;
 }
 
@@ -155,7 +156,8 @@ html[data-theme="dark"] .publications .publication-topic[data-topic="review"] { 
     background: transparent;
     color: var(--site-card-text);
     font: inherit;
-    font-size: 12px;
+    font-size: 0.68rem;
+    font-weight: 400;
     line-height: 1.2;
     cursor: pointer;
 }
@@ -299,9 +301,9 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
     align-items: center;
     gap: 0.75rem;
     color: var(--global-theme-color);
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1;
     margin: 2rem 0 1.25rem;
     text-align: right;
     scroll-margin-top: 5rem;
@@ -337,7 +339,11 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
 
 .publications ol.bibliography li .abbr .award { color: var(--global-theme-color) !important; border: 1px solid var(--global-theme-color); }
 
-.publications ol.bibliography li .title { font-weight: bolder; }
+.publications ol.bibliography li .title { font-size: 16px; font-weight: 400; line-height: 1.25; }
+
+.publications ol.bibliography li .author { line-height: 1.3; }
+
+.publications ol.bibliography li .periodical { line-height: 1.25; }
 
 .publications ol.bibliography li .author a { border-bottom: 1px var(--global-theme-color); }
 
