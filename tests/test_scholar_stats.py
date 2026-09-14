@@ -20,7 +20,8 @@ NOW = datetime(2026, 9, 14, 4, 17, tzinfo=ZoneInfo("America/New_York"))
 
 
 def profile_page(ids=("paper_a", "paper_b"), citations="172", h_index="2",
-                 has_more=False, include_metrics=True):
+                 has_more=False, include_metrics=True, article_counts=None,
+                 article_hrefs=None):
     """Small synthetic markup containing only the public fields we consume."""
     statistics = ""
     if include_metrics:
@@ -33,16 +34,34 @@ def profile_page(ids=("paper_a", "paper_b"), citations="172", h_index="2",
             <tr><td>i10-index</td><td>0</td><td>0</td></tr>
           </tbody>
         </table>"""
-    articles = "".join(
-        '<tr class="gsc_a_tr"><td><a class="gsc_a_at" '
-        f'href="/citations?citation_for_view={escape(PROFILE + ":" + paper)}">'
-        f"Synthetic paper {index}</a></td></tr>"
-        for index, paper in enumerate(ids)
-    )
+    articles = []
+    for index, paper in enumerate(ids):
+        count = article_counts[index] if article_counts is not None else "2"
+        if article_hrefs is None:
+            href = (f"https://scholar.google.com/scholar?cites={1000 + index}"
+                    if count.strip() and count != "0" else "")
+        else:
+            href = article_hrefs[index]
+        href_attr = f' href="{escape(href)}"' if href is not None else ""
+        articles.append(
+            '<tr class="gsc_a_tr"><td><a class="gsc_a_at" '
+            f'href="/citations?citation_for_view={escape(PROFILE + ":" + paper)}">'
+            f"Synthetic {escape(paper)}</a></td>"
+            f'<td class="gsc_a_c"><a class="gsc_a_ac"{href_attr}>'
+            f"{escape(count)}</a></td></tr>")
     disabled = "" if has_more else " disabled"
     return (f'<div id="gsc_prf_in">Synthetic Author</div>{statistics}'
-            f'<table><tbody id="gsc_a_b">{articles}</tbody></table>'
+            f'<table><tbody id="gsc_a_b">{"".join(articles)}</tbody></table>'
             f'<button id="gsc_bpf_more"{disabled}>Show more</button>')
+
+
+def expected_articles():
+    return {
+        f"{PROFILE}:paper_a": {"title": "Synthetic paper_a", "citations": 2,
+                                "cited_by_url": "https://scholar.google.com/scholar?hl=en&cites=1000"},
+        f"{PROFILE}:paper_b": {"title": "Synthetic paper_b", "citations": 2,
+                                "cited_by_url": "https://scholar.google.com/scholar?hl=en&cites=1001"},
+    }
 
 
 class ScholarParsingTests(unittest.TestCase):
@@ -71,6 +90,9 @@ class ScholarParsingTests(unittest.TestCase):
         fetch = Mock(side_effect=[first, second])
         result = scholar.collect_stats(PROFILE, fetch=fetch)
         self.assertEqual(result["papers"], 101)
+        self.assertEqual(len(result["articles"]), 101)
+        self.assertIn(f"{PROFILE}:paper_100", result["articles"])
+        self.assertEqual(list(result["articles"]), sorted(result["articles"]))
         self.assertEqual([call.args for call in fetch.call_args_list],
                          [(PROFILE, 0), (PROFILE, 100)])
 
@@ -119,6 +141,54 @@ class ScholarParsingTests(unittest.TestCase):
             with self.assertRaises(scholar.ScholarError):
                 scholar.collect_stats(PROFILE, fetch=fetch)
 
+    def test_article_counts_include_thousands_and_zero(self):
+        result = scholar.collect_stats(PROFILE, fetch=lambda *_: profile_page(
+            citations="1,999", article_counts=("1,234", "")))
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["citations"], 1234)
+        zero = result["articles"][f"{PROFILE}:paper_b"]
+        self.assertEqual(zero["citations"], 0)
+        self.assertIsNone(zero["cited_by_url"])
+        self.assertEqual(result["citations"], 1999)
+
+    def test_explicit_zero_and_number_without_link_are_valid(self):
+        result = scholar.collect_stats(PROFILE, fetch=lambda *_: profile_page(
+            article_counts=("0", "2"), article_hrefs=("", "")))
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["citations"], 0)
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_b"]["citations"], 2)
+        self.assertTrue(all(article["cited_by_url"] is None
+                            for article in result["articles"].values()))
+
+    def test_article_title_is_plain_text(self):
+        html = profile_page().replace("Synthetic paper_a", "Battery <em>Safety</em> &amp; Gas")
+        result = scholar.collect_stats(PROFILE, fetch=lambda *_: html)
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["title"],
+                         "Battery Safety & Gas")
+
+    def test_cluster_links_are_validated_and_normalized(self):
+        href = "https://scholar.google.com/scholar?hl=fr&cites=123,456&oi=bibs"
+        result = scholar.collect_stats(PROFILE, fetch=lambda *_: profile_page(
+            article_hrefs=(href, "")))
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["cited_by_url"],
+                         "https://scholar.google.com/scholar?hl=en&cites=123%2C456")
+
+    def test_invalid_citation_links_are_rejected(self):
+        invalid_links = (
+            "https://example.com/scholar?cites=123",
+            "https://scholar.google.com.evil.test/scholar?cites=123",
+            "https://scholar.google.com@evil.test/scholar?cites=123",
+            "http://scholar.google.com/scholar?cites=123",
+            "javascript:alert(1)",
+            "/scholar?cites=123",
+            "https://scholar.google.com/citations?cites=123",
+            "https://scholar.google.com/scholar?cites=",
+            "https://scholar.google.com/scholar?cites=123&cites=456",
+            "https://scholar.google.com/scholar?cites=123,bad",
+        )
+        for href in invalid_links:
+            with self.subTest(href=href), self.assertRaises(scholar.ScholarError):
+                scholar.collect_stats(PROFILE, fetch=lambda *_: profile_page(
+                    article_hrefs=(href, "")))
+
 
 class ScholarSnapshotTests(unittest.TestCase):
     def setUp(self):
@@ -128,6 +198,7 @@ class ScholarSnapshotTests(unittest.TestCase):
         self.previous = {
             "profile_id": PROFILE, "papers": 7, "citations": 172,
             "h_index": 6, "updated": "2026-09-13",
+            "articles": expected_articles(),
         }
         self.write_previous()
         self.clock = patch.object(scholar, "datetime")
@@ -178,16 +249,20 @@ class ScholarSnapshotTests(unittest.TestCase):
         self.assertEqual(result, {
             "profile_id": PROFILE, "papers": 2, "citations": 100,
             "h_index": 2, "updated": TODAY,
+            "articles": expected_articles(),
         })
         self.assertEqual(yaml.safe_load(self.path.read_text()), result)
         self.mock_clock.now.assert_called_once_with(ZoneInfo("America/New_York"))
 
     def test_zero_citations_are_saved(self):
         result = scholar.update_snapshot(
-            self.path, fetch=lambda *_: profile_page(citations="0", h_index="0"))
+            self.path, fetch=lambda *_: profile_page(
+                citations="0", h_index="0", article_counts=("", "0")))
         self.assertEqual(result["citations"], 0)
         self.assertEqual(result["h_index"], 0)
         self.assertEqual(result["updated"], TODAY)
+        self.assertTrue(all(article["citations"] == 0
+                            for article in result["articles"].values()))
 
     def test_same_day_identical_snapshot_does_not_rewrite_file(self):
         self.previous.update(papers=2, h_index=2, updated=TODAY)
@@ -221,6 +296,51 @@ class ScholarSnapshotTests(unittest.TestCase):
                 scholar.update_snapshot(self.path, fetch=lambda *_: profile_page())
         self.assertEqual(self.path.read_bytes(), before)
         self.assertEqual(list(self.path.parent.iterdir()), [self.path])
+
+    def test_incomplete_article_does_not_replace_any_saved_metrics(self):
+        malformed_pages = (
+            profile_page().replace('class="gsc_a_c"', 'class="missing"', 1),
+            profile_page().replace('class="gsc_a_ac"', 'class="missing"', 1),
+            profile_page(article_hrefs=(None, "")),
+            profile_page().replace("Synthetic paper_a", " "),
+            profile_page(article_counts=("N/A", "2")),
+            profile_page(article_counts=("1,23", "2")),
+            profile_page(article_counts=("-1", "2")),
+            profile_page(article_counts=("", "2"), article_hrefs=(
+                "https://scholar.google.com/scholar?cites=1000", "")),
+        )
+        for index, html in enumerate(malformed_pages):
+            with self.subTest(case=index):
+                self.assert_unchanged_after_failure(lambda *_: html)
+
+    def test_later_page_article_error_preserves_aggregate_date_and_articles(self):
+        first = profile_page(has_more=True)
+        second = profile_page(ids=("paper_c",), include_metrics=False,
+                              article_hrefs=(None,))
+        self.assert_unchanged_after_failure(Mock(side_effect=[first, second]))
+
+    def test_same_day_article_change_is_saved_when_totals_do_not_change(self):
+        self.previous.update(papers=2, h_index=2, updated=TODAY)
+        self.write_previous()
+        result = scholar.update_snapshot(self.path, fetch=lambda *_: profile_page(
+            article_counts=("3", "2")))
+        self.assertEqual(result["updated"], TODAY)
+        self.assertEqual(result["citations"], self.previous["citations"])
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["citations"], 3)
+        self.assertEqual(yaml.safe_load(self.path.read_text()), result)
+
+    def test_valid_article_citation_decrease_is_saved(self):
+        result = scholar.update_snapshot(self.path, fetch=lambda *_: profile_page(
+            article_counts=("1", "2")))
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_a"]["citations"], 1)
+        self.assertEqual(yaml.safe_load(self.path.read_text()), result)
+
+    def test_legacy_snapshot_gains_article_data_after_success(self):
+        del self.previous["articles"]
+        self.write_previous()
+        result = scholar.update_snapshot(self.path, fetch=lambda *_: profile_page())
+        self.assertEqual(result["articles"], expected_articles())
+        self.assertEqual(yaml.safe_load(self.path.read_text()), result)
 
 
 if __name__ == "__main__":

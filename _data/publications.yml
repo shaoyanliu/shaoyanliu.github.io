@@ -4,6 +4,7 @@ main:
     conference_short: RSER
     conference: Renewable and Sustainable Energy Reviews, 241, 117225, 2026.
     year: 2026
+    scholar_id: Yw_kFE4AAAAJ:UeHWp8X0CEIC
     doi: https://doi.org/10.1016/j.rser.2026.117225
     pdf: https://shaoyanliu.github.io/files/7_2026_rser.pdf
     image: https://shaoyanliu.github.io/assets/img/7_2026_rser.jpg
@@ -15,6 +16,7 @@ main:
     conference: Journal of Energy Storage, 125, 116855, 2025.
     year: 2025
     doi: https://doi.org/10.1016/j.est.2025.116855
+    scholar_id: Yw_kFE4AAAAJ:d1gkVwhDpl0C
     pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
     bibtex: https://shaoyanliu.github.io/bib/6_2025_jes.txt
@@ -25,6 +27,7 @@ main:
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
     year: 2025
     doi: https://doi.org/10.1016/j.xcrp.2025.102563
+    scholar_id: Yw_kFE4AAAAJ:u-x6o8ySG0sC
     pdf: https://shaoyanliu.github.io/files/5_2025_crps.pdf
     code: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/code
     data: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/data
@@ -37,6 +40,7 @@ main:
     conference: Journal of Power Sources, 600, 234237, 2024.
     year: 2024
     doi: https://doi.org/10.1016/j.jpowsour.2024.234237
+    scholar_id: Yw_kFE4AAAAJ:2osOgNQ5qMEC
     pdf: https://shaoyanliu.github.io/files/4_2024_jps.pdf
     image: https://shaoyanliu.github.io/assets/img/4_2024_jps.jpg
     bibtex: https://shaoyanliu.github.io/bib/4_2024_jps.txt
@@ -47,6 +51,7 @@ main:
     conference: Journal of Energy Storage, 80, 110201, 2024.
     year: 2024
     doi: https://doi.org/10.1016/j.est.2023.110201
+    scholar_id: Yw_kFE4AAAAJ:qjMakFHDy7sC
     pdf: https://shaoyanliu.github.io/files/3_2024_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/3_2024_jes.jpg
     bibtex: https://shaoyanliu.github.io/bib/3_2024_jes.txt
@@ -57,6 +62,7 @@ main:
     conference: International Journal of Hydrogen Energy, 48(97), 38484-38495, 2023.
     year: 2023
     doi: https://doi.org/10.1016/j.ijhydene.2023.06.084
+    scholar_id: Yw_kFE4AAAAJ:9yKSN-GCB0IC
     pdf: https://shaoyanliu.github.io/files/2_2023_ijhe.pdf
     image: https://shaoyanliu.github.io/assets/img/2_2023_ijhe.jpg
     bibtex: https://shaoyanliu.github.io/bib/2_2023_ijhe.txt
@@ -67,6 +73,7 @@ main:
     conference: Energy, 241, 122941, 2022.
     year: 2022
     doi: https://doi.org/10.1016/j.energy.2021.122941
+    scholar_id: Yw_kFE4AAAAJ:u5HHmVD_uO8C
     pdf: https://shaoyanliu.github.io/files/1_2022_energy.pdf
     image: https://shaoyanliu.github.io/assets/img/1_2022_energy.jpg
     bibtex: https://shaoyanliu.github.io/bib/1_2022_energy.txt

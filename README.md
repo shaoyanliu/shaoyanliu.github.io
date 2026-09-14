@@ -19,7 +19,17 @@ counts every listed article, following pagination when needed. These are Google
 Scholar's counts, which can differ from the website's curated publication list.
 Google Scholar does not guarantee that its own counts change every day.
 
-A successful check saves all three metrics and the check date together. The
+Each paper on Publications also displays **Cited by N**. Per-paper counts are
+collected from the same profile response and saved in the snapshot's `articles`
+mapping, so the current seven papers still need just one request per daily run.
+Each entry in `_data/publications.yml` has a manually verified `scholar_id`
+matching Google Scholar's full `citation_for_view` ID. When adding a paper, copy
+that ID from its Scholar detail link; the site never guesses a match by title.
+Papers without a matching entry omit the citation label, while a verified zero
+displays **Cited by 0**. The label opens the citing-paper list, or the Scholar
+article detail page when there is no list yet.
+
+A successful check saves all three metrics, per-paper counts, and the check date together. The
 compact card displays the month/year; hover over the date to see the full day.
 HTTP errors, verification pages, missing metrics, and incomplete pagination fail
 the workflow without replacing the previous snapshot or date. Google may block

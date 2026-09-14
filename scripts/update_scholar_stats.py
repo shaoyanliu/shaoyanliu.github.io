@@ -72,7 +72,7 @@ def parse_page(html, profile_id, first_page):
         if set(metrics) != {"citations", "h_index"}:
             raise ScholarError("Citations or h-index is missing.")
 
-    article_ids = []
+    articles = []
     for row in soup.select("#gsc_a_b .gsc_a_tr"):
         link = row.select_one("a.gsc_a_at[href]")
         if link is None:
@@ -80,31 +80,54 @@ def parse_page(html, profile_id, first_page):
         ids = parse_qs(urlparse(link["href"]).query).get("citation_for_view", [])
         if len(ids) != 1 or not re.fullmatch(re.escape(profile_id) + r":[A-Za-z0-9_-]+", ids[0]):
             raise ScholarError("An article does not match the requested profile.")
-        article_ids.append(ids[0])
+        title = link.get_text(" ", strip=True)
+        citation = row.select_one(".gsc_a_c a.gsc_a_ac")
+        if not title or citation is None or not citation.has_attr("href"):
+            raise ScholarError("An article title or citation field is missing.")
+        count_text = citation.get_text(strip=True)
+        href = citation["href"].strip()
+        # Scholar represents a genuine zero with an empty citation anchor.
+        # A missing field or an empty count with a link is not a zero.
+        count = 0 if not count_text and not href else parse_count(count_text)
+        cited_by_url = None
+        if href:
+            target = urlparse(href)
+            clusters = parse_qs(target.query).get("cites", [])
+            if (target.scheme != "https" or target.netloc != "scholar.google.com"
+                    or target.path != "/scholar" or len(clusters) != 1
+                    or not re.fullmatch(r"[0-9]+(?:,[0-9]+)*", clusters[0])):
+                raise ScholarError("An article citation link is invalid.")
+            cited_by_url = "https://scholar.google.com/scholar?" + urlencode(
+                {"hl": "en", "cites": clusters[0]})
+        articles.append({"id": ids[0], "title": title, "citations": count,
+                         "cited_by_url": cited_by_url})
     more = soup.select_one("#gsc_bpf_more")
-    if more is None or not article_ids:
+    if more is None or not articles:
         raise ScholarError("The article list or its pagination is missing.")
-    return metrics, article_ids, not more.has_attr("disabled")
+    return metrics, articles, not more.has_attr("disabled")
 
 
 def collect_stats(profile_id, fetch=fetch_page):
     if not isinstance(profile_id, str) or not re.fullmatch(r"[A-Za-z0-9_-]+", profile_id):
         raise ScholarError("The saved Google Scholar profile ID is invalid.")
-    seen = set()
+    articles = {}
     metrics = {}
     for page_number in range(MAX_PAGES):
-        page_metrics, article_ids, has_more = parse_page(
-            fetch(profile_id, len(seen)), profile_id, first_page=page_number == 0)
+        page_metrics, page_articles, has_more = parse_page(
+            fetch(profile_id, len(articles)), profile_id, first_page=page_number == 0)
         if page_number == 0:
             metrics = page_metrics
-        if len(set(article_ids)) != len(article_ids) or seen.intersection(article_ids):
+        article_ids = [article["id"] for article in page_articles]
+        if len(set(article_ids)) != len(article_ids) or articles.keys() & set(article_ids):
             raise ScholarError("Repeated articles found; pagination may have failed.")
-        seen.update(article_ids)
+        for article in page_articles:
+            articles[article["id"]] = {key: value for key, value in article.items() if key != "id"}
         if not has_more:
-            if metrics["h_index"] > len(seen) or metrics["citations"] < metrics["h_index"] ** 2:
+            if metrics["h_index"] > len(articles) or metrics["citations"] < metrics["h_index"] ** 2:
                 raise ScholarError("The profile returned inconsistent statistics.")
-            return {"profile_id": profile_id, "papers": len(seen), **metrics,
-                    "updated": datetime.now(ZoneInfo("America/New_York")).date().isoformat()}
+            return {"profile_id": profile_id, "papers": len(articles), **metrics,
+                    "updated": datetime.now(ZoneInfo("America/New_York")).date().isoformat(),
+                    "articles": dict(sorted(articles.items()))}
     raise ScholarError("The article list exceeded the page limit; snapshot unchanged.")
 
 

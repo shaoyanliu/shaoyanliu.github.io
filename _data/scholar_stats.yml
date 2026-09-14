@@ -4,4 +4,40 @@ profile_id: Yw_kFE4AAAAJ
 papers: 7
 citations: 172
 h_index: 6
-updated: "2026-09-14"
+updated: '2026-09-14'
+articles:
+  Yw_kFE4AAAAJ:2osOgNQ5qMEC:
+    title: Effects of charging rates on heat and gas generation in lithium-ion battery
+      thermal runaway triggered by high temperature coupled with overcharge
+    citations: 61
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=11392020196404658599
+  Yw_kFE4AAAAJ:9yKSN-GCB0IC:
+    title: Effects of temperature and pressure fluctuations on exergy loss characteristics
+      of hydrogen auto-ignition processes
+    citations: 13
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=11338950309364682345
+  Yw_kFE4AAAAJ:UeHWp8X0CEIC:
+    title: 'Influence of different aging pathways on the thermal runaway characteristics
+      of lithium-ion batteries: A review with gas evolution as the bridging perspective'
+    citations: 0
+    cited_by_url: null
+  Yw_kFE4AAAAJ:d1gkVwhDpl0C:
+    title: Investigation on thermal runaway behaviors and gas generation dynamics
+      of lithium-ion batteries induced by electrical abuse at low-pressure conditions
+    citations: 15
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=10981343906212332625
+  Yw_kFE4AAAAJ:qjMakFHDy7sC:
+    title: Investigation on gas generation and corresponding explosion characteristics
+      of lithium-ion batteries during thermal runaway at different charge states
+    citations: 41
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=16097912477246491098
+  Yw_kFE4AAAAJ:u-x6o8ySG0sC:
+    title: Chemical reaction neural networks to map lithium-ion battery thermal runaway
+      gas generation
+    citations: 12
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=6905706003024370791
+  Yw_kFE4AAAAJ:u5HHmVD_uO8C:
+    title: A comparative study on the turbulent explosion characteristics of syngas
+      between CO-enriched and H2-enriched
+    citations: 30
+    cited_by_url: https://scholar.google.com/scholar?hl=en&cites=6737584453955494878

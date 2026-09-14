@@ -43,6 +43,12 @@
       {% if link.bibtex %} 
       <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
       {% endif %}
+      {% if link.scholar_id and site.data.scholar_stats.articles %}
+      {% assign scholar_article = site.data.scholar_stats.articles[link.scholar_id] %}
+      {% if scholar_article and scholar_article.citations != nil %}
+      <a class="publication-citations" href="{% if scholar_article.cited_by_url %}{{ scholar_article.cited_by_url | escape }}{% else %}https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user={{ site.data.scholar_stats.profile_id | url_encode }}&amp;citation_for_view={{ link.scholar_id | url_encode }}{% endif %}" target="_blank" rel="noopener noreferrer" title="Google Scholar citations · checked {{ site.data.scholar_stats.updated | date: '%B %-d, %Y' }}" aria-label="{{ scholar_article.citations }} Google Scholar citations for {{ link.title | strip_html | escape }}">Cited by <span>{{ scholar_article.citations }}</span></a>
+      {% endif %}
+      {% endif %}
       {% if link.notes %} 
       <strong> <i style="color:#e74d3c; font-weight:600">{{ link.notes }}</i></strong>
       {% endif %}
