@@ -3,6 +3,7 @@ main:
     authors: Mengying Wang, <strong>Shaoyan Liu</strong>, Dong Han, Zhen Huang, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: RSER
     conference: Renewable and Sustainable Energy Reviews, 241, 117225, 2026.
+    year: 2026
     doi: https://doi.org/10.1016/j.rser.2026.117225
     pdf: https://shaoyanliu.github.io/files/7_2026_rser.pdf
     image: https://shaoyanliu.github.io/assets/img/7_2026_rser.jpg
@@ -12,6 +13,7 @@ main:
     authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JES
     conference: Journal of Energy Storage, 125, 116855, 2025.
+    year: 2025
     doi: https://doi.org/10.1016/j.est.2025.116855
     pdf: https://shaoyanliu.github.io/files/6_2025_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/6_2025_jes.jpg
@@ -21,6 +23,7 @@ main:
     authors: Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Changsheng Ma, Shuaiqi Liu, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Peng Han, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: CRPS
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
+    year: 2025
     doi: https://doi.org/10.1016/j.xcrp.2025.102563
     pdf: https://shaoyanliu.github.io/files/5_2025_crps.pdf
     code: https://github.com/348396272/CRNN-for-battery-thermal-runaway/tree/main/code
@@ -32,6 +35,7 @@ main:
     authors: Qianzhen Guo, <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JPS
     conference: Journal of Power Sources, 600, 234237, 2024.
+    year: 2024
     doi: https://doi.org/10.1016/j.jpowsour.2024.234237
     pdf: https://shaoyanliu.github.io/files/4_2024_jps.pdf
     image: https://shaoyanliu.github.io/assets/img/4_2024_jps.jpg
@@ -41,6 +45,7 @@ main:
     authors: Jiabo Zhang, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Chao Zhou, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JES
     conference: Journal of Energy Storage, 80, 110201, 2024.
+    year: 2024
     doi: https://doi.org/10.1016/j.est.2023.110201
     pdf: https://shaoyanliu.github.io/files/3_2024_jes.pdf
     image: https://shaoyanliu.github.io/assets/img/3_2024_jes.jpg
@@ -50,6 +55,7 @@ main:
     authors: <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zuoyu Sun, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: IJHE
     conference: International Journal of Hydrogen Energy, 48(97), 38484-38495, 2023.
+    year: 2023
     doi: https://doi.org/10.1016/j.ijhydene.2023.06.084
     pdf: https://shaoyanliu.github.io/files/2_2023_ijhe.pdf
     image: https://shaoyanliu.github.io/assets/img/2_2023_ijhe.jpg
@@ -59,6 +65,7 @@ main:
     authors: Zuoyu Sun<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, <strong>Shaoyan Liu</strong>
     conference_short: Energy
     conference: Energy, 241, 122941, 2022.
+    year: 2022
     doi: https://doi.org/10.1016/j.energy.2021.122941
     pdf: https://shaoyanliu.github.io/files/1_2022_energy.pdf
     image: https://shaoyanliu.github.io/assets/img/1_2022_energy.jpg

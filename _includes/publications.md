@@ -4,18 +4,23 @@
 
 
 <div class="publications">
-<ol class="bibliography">
+{% assign publication_years = site.data.publications.main | group_by: "year" | sort: "name" | reverse %}
+{% assign publication_number = site.data.publications.main.size %}
 
-{% for link in site.data.publications.main %}
+{% for year_group in publication_years %}
+<h3 class="year" id="publications-{{ year_group.name }}"><span>{{ year_group.name }}</span></h3>
+<ol class="bibliography" reversed start="{{ publication_number }}">
 
-<li>
+{% for link in year_group.items %}
+
+<li value="{{ publication_number }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
             <abbr class="badge">{{ link.conference_short }}</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="{{ link.doi }}">{{ link.title }}</a></div>
+      <div class="title"><span class="publication-number">{{ publication_number }}.</span> <a href="{{ link.doi }}">{{ link.title }}</a></div>
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
@@ -49,11 +54,9 @@
 </div>
 </li>
 
-<br>
-
+{% assign publication_number = publication_number | minus: 1 %}
 {% endfor %}
 
 </ol>
+{% endfor %}
 </div>
-
-
