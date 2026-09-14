@@ -1,0 +1,105 @@
+.scholar-stats {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 232px;
+  margin: 16px auto;
+  padding: 8px 10px;
+  border: 1px solid var(--site-border);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--site-card-text);
+  text-align: left;
+}
+
+.scholar-stats-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.scholar-stats .scholar-stats-title {
+  color: var(--global-theme-color);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.scholar-stats .scholar-stats-title:hover {
+  text-decoration: underline;
+}
+
+.scholar-stats .scholar-stats-title:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.scholar-stats-metrics {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5px;
+  margin: 0;
+}
+
+.scholar-stats-metrics > div {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.scholar-stats-metrics > div + div::before {
+  content: "\00b7";
+  margin-right: 2px;
+  color: var(--site-card-text);
+}
+
+header.site-sidebar .scholar-stats dt {
+  color: var(--site-card-text);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.scholar-stats dd {
+  margin: 0;
+  color: var(--global-theme-color);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.scholar-stats-updated {
+  color: #666;
+  font-size: 10px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .scholar-stats-updated {
+  color: var(--global-text-color-light);
+}
+
+/* Keep the lower profile links reachable on short desktop screens. */
+@media screen and (min-width: 961px) {
+  header.site-sidebar {
+    top: 5.5em;
+    padding-top: 0;
+    max-height: calc(100vh - 5.5em - 1rem);
+    max-height: calc(100dvh - 5.5em - 1rem);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    padding-bottom: 16px;
+  }
+}
+
+@media print {
+  .scholar-stats {
+    break-inside: avoid;
+  }
+}

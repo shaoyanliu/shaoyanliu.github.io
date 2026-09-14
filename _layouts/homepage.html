@@ -144,6 +144,7 @@
       }
     </style>
     {% include theme-head.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/scholar-stats.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
 
   <body>
@@ -187,7 +188,7 @@
     </script>
 
     <div class="wrapper">
-      <header>
+      <header class="site-sidebar">
         {% if site.avatar %}
         <a class="image avatar">
           <img src="{{ site.avatar }}" alt="Avatar">
@@ -219,8 +220,7 @@
         <email>{{ site.email2 }}</email>
         {% endif %}
 
-        <br>
-        <br>
+        {% include scholar-stats.html %}
 
         {% if site.link_type == 'text' %}
         [<a href="{{ site.cv_link }}">CV</a>]

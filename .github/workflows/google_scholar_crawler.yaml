@@ -1,27 +1,54 @@
-name: Get Citation Data
+name: Update Google Scholar statistics
 
-on: 
- page_build: 
- schedule:
-  - cron:  '0 8 * * *'
+on:
+  schedule:
+    - cron: '17 4 * * *'
+      timezone: America/New_York
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: google-scholar-statistics
+  cancel-in-progress: false
 
 jobs:
-  build:
+  update:
+    if: github.repository == 'shaoyanliu/shaoyanliu.github.io' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Reqs
-      run: |
-        sudo apt-get install python3-setuptools
-    - name: Run
-      run: |
-        cd ./google_scholar_crawler
-        pip3 install -r requirements.txt
-        python3 main.py
-        cd ./results
-        git init
-        git config --local user.name "${GITHUB_ACTOR}"
-        export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-        git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: scripts/requirements-scholar.txt
+      - name: Install parser dependencies
+        run: python -m pip install -r scripts/requirements-scholar.txt
+      - name: Test data validation and failure handling
+        run: python -m unittest discover -s tests -p 'test_scholar_stats.py'
+      - name: Fetch current statistics
+        run: python scripts/update_scholar_stats.py
+      - name: Save verified snapshot
+        run: |
+          if git diff --quiet -- _data/scholar_stats.yml; then
+            echo "Statistics already checked today; no new commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- _data/scholar_stats.yml
+          git commit -m "Update Google Scholar statistics"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      # GITHUB_TOKEN commits do not trigger Pages automatically. Request a
+      # build even on a same-day rerun, so a failed build request can be retried.
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

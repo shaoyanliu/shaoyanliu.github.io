@@ -29,6 +29,8 @@ avatar: ./assets/img/avatar.jpg
 # Footnotes
 # The following files will be removed from the generated website.
 exclude:
+  - scripts
+  - tests
   - build.sh
   - Gemfile
   - Gemfile.lock

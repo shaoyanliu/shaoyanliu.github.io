@@ -1,0 +1,16 @@
+{% assign scholar_stats = site.data.scholar_stats %}
+{% if scholar_stats %}
+<div class="scholar-stats" role="group" aria-label="Google Scholar statistics">
+  <div class="scholar-stats-heading">
+    <a class="scholar-stats-title" href="https://scholar.google.com/citations?user={{ scholar_stats.profile_id | escape }}&amp;hl=en" title="View Google Scholar profile">GS Stat.</a>
+    <div class="scholar-stats-updated">updated <time datetime="{{ scholar_stats.updated | escape }}" title="Verified on {{ scholar_stats.updated | date: '%B %-d, %Y' }}">{{ scholar_stats.updated | date: '%m/%Y' }}</time></div>
+  </div>
+  <dl class="scholar-stats-metrics">
+    <div><dt>Papers:</dt><dd>{{ scholar_stats.papers }}</dd></div>
+    <div><dt>Citations:</dt><dd>{{ scholar_stats.citations }}</dd></div>
+    <div><dt>h-index:</dt><dd>{{ scholar_stats.h_index }}</dd></div>
+  </dl>
+</div>
+{% else %}
+<br><br>
+{% endif %}
