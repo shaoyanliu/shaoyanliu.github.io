@@ -28,11 +28,57 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications [hidden] { display: none !important; }
 
+.publication-search { position: relative; margin-bottom: 10px; }
+
+.publication-search input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 11px 44px 11px 14px;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 8px;
+    background: var(--global-bg-color);
+    color: var(--site-card-text);
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.publication-search input::placeholder { color: var(--global-text-color-light); opacity: 1; }
+.publication-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.publication-search-clear {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--site-card-text);
+    font: inherit;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.publication-search-clear:hover { background: var(--site-surface); }
+
 .publication-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 8px;
+    padding: 12px;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 8px;
+    background: var(--global-bg-color);
 }
 
 .publication-filters button {
@@ -65,7 +111,12 @@ html[data-theme="dark"] .publication-filters button[aria-pressed="true"] { color
 
 .publication-year-group:not([hidden]) ~ .publication-year-group:not([hidden]) { margin-top: 2rem; }
 
-.publications .publication-action {
+.publications .links .publication-action,
+.publications .links a.btn {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    vertical-align: middle;
     padding: 0.1rem 0.5rem;
     border: 1px solid var(--site-card-text);
     border-radius: 0;
@@ -73,16 +124,12 @@ html[data-theme="dark"] .publication-filters button[aria-pressed="true"] { color
     color: var(--site-card-text);
     font: inherit;
     font-size: 12px;
-    line-height: 1;
+    line-height: 1.2;
     cursor: pointer;
 }
 
-html[data-theme="dark"] .publications .publication-action {
-    border-color: var(--site-border);
-    background: var(--site-surface);
-}
-
 .publications .publication-action:hover,
+.publications .links a.btn:hover,
 .publications .publication-action[aria-expanded="true"] {
     border-color: var(--global-theme-color);
     color: var(--global-theme-color);
@@ -182,7 +229,9 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
 .bibtex-dialog-actions a { color: var(--global-theme-color); font-size: 14px; }
 
 .publication-filters button:focus-visible,
+.publication-search :focus-visible,
 .publications .publication-action:focus-visible,
+.publications .links a.btn:focus-visible,
 .publication-bibtex-dialog :focus-visible {
     outline: 2px solid var(--global-theme-color);
     outline-offset: 3px;
@@ -194,6 +243,7 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
 }
 
 @media print {
+    .publications .publication-search,
     .publications .publication-filters,
     .publications .publication-filter-status,
     .publications .publication-action,
@@ -256,10 +306,6 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
 .publications ol.bibliography li .author a:hover { border-bottom-style: solid; text-decoration: none; }
 
 .publications ol.bibliography li .author > em { border-bottom: 1px solid; font-style: normal; }
-
-.publications ol.bibliography li .links a.btn { color: #000000; border: 1px solid #000000; padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.1rem; padding-bottom: 0.1rem; }
-
-.publications ol.bibliography li .links a.btn:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
 
 .publications .publication-citations {
     display: inline-block;

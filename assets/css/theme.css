@@ -138,12 +138,15 @@ html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
   color: #fff !important;
 }
 
+html[data-theme="dark"] .publications .links .publication-action,
 html[data-theme="dark"] .publications ol.bibliography li .links a.btn {
   background-color: var(--site-surface);
   border-color: var(--site-border);
   color: var(--global-text-color);
 }
 
+html[data-theme="dark"] .publications .links .publication-action:hover,
+html[data-theme="dark"] .publications .links .publication-action[aria-expanded="true"],
 html[data-theme="dark"] .publications ol.bibliography li .links a.btn:hover {
   border-color: var(--global-theme-color);
   color: var(--site-link);

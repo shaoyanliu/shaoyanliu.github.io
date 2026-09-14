@@ -4,13 +4,17 @@
 
 
 <div class="publications" data-publication-list>
+<div class="publication-search" data-publication-search-controls role="search" aria-label="Search publications" hidden>
+  <input type="search" data-publication-search aria-label="Search publications by title, author, journal, or keyword" placeholder="Search publications by title, author, journal, or keyword" autocomplete="off" spellcheck="false" aria-describedby="publication-filter-status">
+  <button type="button" class="publication-search-clear" data-search-clear aria-label="Clear search" title="Clear search" hidden>&times;</button>
+</div>
 <div class="publication-filters" data-publication-filters role="group" aria-label="Filter publications by topic" hidden>
   <button type="button" data-topic-filter="all" aria-pressed="true">All</button>
   {% for topic in site.data.publication_topics %}
-  <button type="button" data-topic-filter="{{ topic.id }}" aria-pressed="false">{{ topic.label }}</button>
+  <button type="button" data-topic-filter="{{ topic.id | escape }}" title="{{ topic.name | default: topic.label | escape }}" aria-pressed="false">{{ topic.label | escape }}</button>
   {% endfor %}
 </div>
-<p class="publication-filter-status" data-filter-status role="status" aria-live="polite" hidden></p>
+<p class="publication-filter-status" id="publication-filter-status" data-filter-status role="status" aria-live="polite" hidden></p>
 {% assign publication_years = site.data.publications.main | group_by: "year" | sort: "name" | reverse %}
 {% assign publication_number = site.data.publications.main.size %}
 
@@ -21,7 +25,8 @@
 
 {% for link in year_group.items %}
 
-<li value="{{ publication_number }}" data-publication data-topics="{{ link.topics | join: ' ' | escape }}">
+{% capture search_text %}{{ link.title | strip_html }} {{ link.authors | strip_html }} {{ link.conference | strip_html }} {{ link.conference_short }} {{ link.year }} {{ link.abstract }} {% for topic in site.data.publication_topics %}{% if link.topics contains topic.id %} {{ topic.id }} {{ topic.label }} {{ topic.name }}{% endif %}{% endfor %}{% endcapture %}
+<li value="{{ publication_number }}" data-publication data-topics="{{ link.topics | join: ' ' | escape }}" data-search-text="{{ search_text | strip_newlines | escape }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
@@ -37,7 +42,7 @@
       <button class="publication-action" type="button" data-abstract-toggle aria-expanded="false" aria-controls="abstract-{{ publication_number }}" hidden>Abstract</button>
       {% endif %}
       {% if link.doi %} 
-      <a href="{{ link.doi }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">DOI</a>
+      <a href="{{ link.doi }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">HTML</a>
       {% endif %}
       {% if link.pdf %} 
       <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>

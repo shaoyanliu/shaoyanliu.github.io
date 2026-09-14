@@ -1,11 +1,9 @@
 - id: thermal-runaway
   label: Thermal runaway
-- id: gas-generation
-  label: Gas generation
-- id: modeling
-  label: Modeling
-  - id: machine-learning
-  label: Machine learning
+  name: Thermal runaway (TR)
+- id: machine-learning
+  label: AI/ML
+  name: Artificial intelligence / machine learning
 - id: combustion
   label: Combustion
 - id: review
