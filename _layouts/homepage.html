@@ -223,9 +223,6 @@
         {% include scholar-stats.html %}
 
         {% if site.link_type == 'text' %}
-        [<a href="{{ site.cv_link }}">CV</a>]
-        <br>
-
         [<a href="{{ site.google_scholar }}">Google Scholar</a>]
         <br>
 
@@ -249,19 +246,6 @@
             <i
               class="ai ai-google-scholar"
               style="font-size: 1.2rem"
-            ></i>
-          </a>
-          {% endif %}
-
-          {% if site.cv_link %}
-          <a
-            style="margin: 0 5px 0 0"
-            href="{{ site.cv_link }}"
-            aria-label="CV"
-          >
-            <i
-              class="ai ai-cv"
-              style="font-size: 1.3rem"
             ></i>
           </a>
           {% endif %}

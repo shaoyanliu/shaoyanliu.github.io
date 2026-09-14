@@ -45,8 +45,11 @@
 
     {% include theme-head.html %}
     <link rel="stylesheet" href="{{ '/assets/css/scholar-stats.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% if page.full_width %}
+    <link rel="stylesheet" href="{{ '/assets/css/cv.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% endif %}
   </head>
-  <body>
+  <body{% if page.full_width %} class="layout-wide"{% endif %}>
     
     <div class="topnav">
 
@@ -94,6 +97,7 @@
     </style>
     
     <div class="wrapper">
+      {% unless page.full_width %}
       <header class="site-sidebar">
         
         {% if site.avatar %}
@@ -121,8 +125,6 @@
         {% include scholar-stats.html %}
 
         {% if site.link_type == 'text' %}
-        [<a href="{{ site.cv_link }}">CV</a>]
-        <br> 
         [<a href="{{ site.google_scholar }}">Google Scholar</a>]
         <br>
         [<a href="{{ site.orcid }}">ORCID</a>]
@@ -138,12 +140,6 @@
         <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
           <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
         </a>  
-        {% endif %}
-
-        {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
         {% endif %}
 
         {% if site.github_link %}
@@ -168,6 +164,7 @@
         <br>
 
       </header>
+      {% endunless %}
       <section>
 
       {{ content }}
@@ -189,6 +186,7 @@
       <br>
       
       </section>
+      {% unless page.full_width %}
       <footer>
         <div style="font: 12px/1.2 Crimson Pro, serif">
         <p>
@@ -205,6 +203,7 @@
         <br>
         <br>
       </footer>
+      {% endunless %}
     </div>
   </body>
 </html>

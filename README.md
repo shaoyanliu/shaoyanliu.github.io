@@ -2,7 +2,7 @@
 
 Personal academic website of **Shaoyan Liu (劉 少言)**, a Ph.D. student in Mechanical Engineering at **The Pennsylvania State University**, working with Prof. Jun Xu in the Energy Mechanics and Sustainability Laboratory. My research focuses on **battery safety**, including lithium-ion battery thermal runaway, gas generation, and combustion.
 
-[Website](https://shaoyanliu.github.io/) · [Publications](https://shaoyanliu.github.io/publications/) · [Google Scholar](https://scholar.google.com/citations?user=Yw_kFE4AAAAJ&hl=en) · [CV](https://shaoyanliu.github.io/cv/cv_shaoyan.pdf)
+[Website](https://shaoyanliu.github.io/) · [Publications](https://shaoyanliu.github.io/publications/) · [Google Scholar](https://scholar.google.com/citations?user=Yw_kFE4AAAAJ&hl=en) · [CV](https://shaoyanliu.github.io/cv/)
 
 Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing research, publications, teaching, and academic service.
 
@@ -12,6 +12,7 @@ Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing 
 - **Browsable publications:** year dividers, paper numbers, keyword search, topic filters, and lowercase colored topic badges.
 - **Research at a glance:** expandable abstracts, DOI and PDF links, BibTeX preview with copy/download, and per-paper Google Scholar citations.
 - **Scholar statistics:** a compact sidebar with paper count, total citations, h-index, and the last successful check date.
+- **Dedicated CV page:** a continuously scrolling PDF preview with a Sections menu, zoom controls, open/download links, and a CV entry in the top navigation.
 - **News and activities:** six recent news items with an expandable archive, plus dedicated Teaching and Services pages.
 - **Visitor statistics:** GoatCounter tracks the homepage and subpages, with a total visitor display on the homepage.
 
@@ -25,7 +26,9 @@ Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing 
 | Topic IDs, labels, and full names | [`_data/publication_topics.yml`](_data/publication_topics.yml) |
 | News, newest first | [`_data/news.yml`](_data/news.yml) |
 | Teaching and academic service | [`_includes/teaching.md`](_includes/teaching.md), [`_includes/services.md`](_includes/services.md) |
-| CV and BibTeX files | [`cv/`](cv/), [`bib/`](bib/) |
+| CV page and PDF | [`cv.md`](cv.md), [`cv/cv_shaoyan.pdf`](cv/cv_shaoyan.pdf); PDF path is configured as `cv_pdf` in `_config.yml` |
+| CV section navigation | [`_data/cv_sections.yml`](_data/cv_sections.yml); headings are located in the PDF automatically, so page numbers need no manual updates |
+| BibTeX files | [`bib/`](bib/) |
 | Navigation | [`_data/navigation.yml`](_data/navigation.yml) |
 | Theme and publication styles | [`assets/css/theme.css`](assets/css/theme.css), [`assets/css/pub.css`](assets/css/pub.css) |
 | Saved Scholar statistics | [`_data/scholar_stats.yml`](_data/scholar_stats.yml), maintained by the updater |
@@ -83,4 +86,4 @@ bundle exec jekyll build --strict_front_matter
 
 Based on the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme, customized for Shaoyan Liu's academic website.
 
-The repository includes the original [CC0 1.0 Universal license](LICENSE).
+The repository includes the original [CC0 1.0 Universal license](LICENSE). The CV reader uses [PDF.js](https://mozilla.github.io/pdf.js/), distributed separately under its [Apache 2.0 license](assets/vendor/pdfjs/LICENSE).

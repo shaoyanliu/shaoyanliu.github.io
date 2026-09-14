@@ -33,4 +33,10 @@
  <changefreq>weekly</changefreq>
 </url>
 
+<url>
+ <loc>https://shaoyanliu.github.io/cv/</loc>
+ <priority>0.8</priority>
+ <changefreq>monthly</changefreq>
+</url>
+
 </urlset>

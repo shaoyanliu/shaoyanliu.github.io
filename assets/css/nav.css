@@ -48,6 +48,11 @@
   }
 
   /* Change the color of links on hover */
+  .topnav a.normal[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -2px 0 #9bc5ed;
+  }
+
   .topnav a.normal:hover {
     background-color: #ddd;
     color: black;
