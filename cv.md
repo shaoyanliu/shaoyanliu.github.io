@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CV
+description: Read or download the curriculum vitae of Shaoyan Liu, a Ph.D. student at Penn State researching lithium-ion battery safety and thermal runaway.
 permalink: /cv/
 full_width: true
 cv_reader: true

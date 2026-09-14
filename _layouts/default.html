@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <title>{{ page.title }} | {{ site.title }} | {{ site.affiliation }}</title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ site.title }}">
-    <meta name="keywords" content="{{ site.keywords }}">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ site.title }} | {{ site.affiliation }}">
-    <meta property="og:url" content="{{ site.canonical }}{{ page.permalink }}">
-    <meta property="og:site_name" content="{{ site.title }} | {{ site.affiliation }}">
-    <meta property="og:description" content="{{ site.description }}">
-    <meta property="og:locale" content="default">
-    <meta property="og:image" content="{{ site.avatar }}">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }} | {{ site.affiliation }}">
-    <meta name="twitter:description" content="{{ site.description }}">
-    <meta name="twitter:image" content="{{ site.avatar }}">
-
-    <link rel="canonical" href="{{ site.canonical }}{{ page.permalink }}"/>
-
-
-
-
-
-
-
+    {% include seo.html %}
 
     {% include favicon.html %}
     <meta name="msapplication-TileColor" content="#ffffff">

@@ -1,6 +1,7 @@
 ---
 layout: homepage
 title: About
+seo_title: Shaoyan Liu | Penn State | Battery Safety Research
 ---
 
 <div class="about-heading">

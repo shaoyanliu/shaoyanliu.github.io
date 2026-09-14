@@ -7,9 +7,12 @@ affiliation_logo: ./assets/img/pennstate.png
 email: svl6508@psu.edu
 
 # Search Engine Optimization (SEO)
-keywords: Shaoyan Liu, Liu Shaoyan, shaoyanliu, liushaoyan
-canonical: https://shaoyanliu.github.io/
-description: Shaoyan Liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery safety and performance prediction.
+url: https://shaoyanliu.github.io
+baseurl: ""
+lang: en-US
+description: Shaoyan Liu is a Ph.D. student at Penn State researching lithium-ion battery safety, thermal runaway, and data-driven modeling. Explore his publications and CV.
+# Add the public HTML-tag verification code from Google Search Console when available.
+google_site_verification: "1OgWLLMDaCNTcm-MB7K6KwFmO1R6coeqS3nucPkSuzs"
 
 # The option is used to show the last update time.
 enable_last_update: false
@@ -24,7 +27,7 @@ linkedin: https://www.linkedin.com/in/shaoyanliu/
 #strava: https://www.strava.com/athletes/shaoyanliu
 
 # Images 
-avatar: ./assets/img/avatar.jpg
+avatar: /assets/img/avatar.jpg
 
 # Footnotes
 # The following files will be removed from the generated website.

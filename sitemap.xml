@@ -1,42 +1,17 @@
+---
+layout: null
+sitemap: false
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
-
-<url>
- <loc>https://shaoyanliu.github.io/</loc>
- <priority>1.0</priority>
- <lastmod>2024-08-01</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://shaoyanliu.github.io/publications/</loc>
- <priority>1.0</priority>
- <lastmod>2024-08-01</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://shaoyanliu.github.io/teaching/</loc>
- <priority>1.0</priority>
- <lastmod>2024-08-01</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-<url>
- <loc>https://shaoyanliu.github.io/services/</loc>
- <priority>1.0</priority>
- <lastmod>2024-08-01</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>https://shaoyanliu.github.io/cv/</loc>
- <priority>0.8</priority>
- <changefreq>monthly</changefreq>
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- assign sitemap_pages = site.pages | sort: 'url' -%}
+  {%- for sitemap_page in sitemap_pages -%}
+    {%- if sitemap_page.layout == 'homepage' or sitemap_page.layout == 'default' -%}
+      {%- unless sitemap_page.sitemap == false %}
+  <url>
+    <loc>{{ sitemap_page.url | absolute_url | xml_escape }}</loc>
+  </url>
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor %}
 </urlset>
