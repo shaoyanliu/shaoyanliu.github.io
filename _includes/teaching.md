@@ -1,6 +1,4 @@
-<h1 id="teaching"></h1>
-
-<h2 style="margin: 60px 0px 10px;">Teaching</h2>
+<h1 id="teaching" class="page-title">Teaching</h1>
 
 <h4 style="margin:0 10px 0;">Teaching Assistant</h4>
 

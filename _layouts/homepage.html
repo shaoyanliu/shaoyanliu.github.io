@@ -145,17 +145,13 @@
     </style>
     {% include theme-head.html %}
     <link rel="stylesheet" href="{{ '/assets/css/scholar-stats.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/layout-wide.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
 
-  <body>
+  <body class="layout-wide layout-about">
     <div class="topnav">
-      <a href="{{ site.affiliation_link }}">
-        <img
-          width="120"
-          src="{{ site.affiliation_logo }}"
-          alt="{{ site.affiliation }}"
-        >
-      </a>
+      {% include profile-icons.html %}
 
       <div class="nav-controls">
         <div id="myLinks">
@@ -188,102 +184,6 @@
     </script>
 
     <div class="wrapper">
-      <header class="site-sidebar">
-        {% if site.avatar %}
-        <a class="image avatar">
-          <img src="{{ site.avatar }}" alt="Avatar">
-        </a>
-        {% endif %}
-
-        <h1>{{ site.title }}</h1>
-
-        {% if site.position %}
-        <position style="font-size: 1.10rem;">
-          {{ site.position }}
-        </position>
-        <br>
-        {% endif %}
-
-        {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener">
-          <autocolor>{{ site.affiliation }}</autocolor>
-        </a>
-        <br>
-        {% endif %}
-
-        {% if site.email %}
-        <email>{{ site.email }}</email>
-        {% endif %}
-
-        {% if site.email2 %}
-        <br>
-        <email>{{ site.email2 }}</email>
-        {% endif %}
-
-        {% include scholar-stats.html %}
-
-        {% if site.link_type == 'text' %}
-        [<a href="{{ site.google_scholar }}">Google Scholar</a>]
-        <br>
-
-        [<a href="{{ site.orcid }}">ORCID</a>]
-        <br>
-
-        [<a href="{{ site.linkedin }}">LinkedIn</a>]
-        <br>
-
-        [<a href="{{ site.github_link }}">GitHub</a>]
-        {% endif %}
-
-        {% if site.link_type == 'icon' %}
-        <div class="social-icons">
-          {% if site.google_scholar %}
-          <a
-            style="margin: 0 5px 0 0"
-            href="{{ site.google_scholar }}"
-            aria-label="Google Scholar"
-          >
-            <i
-              class="ai ai-google-scholar"
-              style="font-size: 1.2rem"
-            ></i>
-          </a>
-          {% endif %}
-
-          {% if site.github_link %}
-          <a
-            style="margin: 0 5px 0 0"
-            href="{{ site.github_link }}"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          {% endif %}
-
-          {% if site.linkedin %}
-          <a
-            style="margin: 0 5px 0 0"
-            href="{{ site.linkedin }}"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          {% endif %}
-
-          {% if site.twitter %}
-          <a
-            href="{{ site.twitter }}"
-            aria-label="X"
-          >
-            <i class="fab fa-x-twitter"></i>
-          </a>
-          {% endif %}
-        </div>
-        {% endif %}
-
-        <br>
-      </header>
-
       <section>
         {{ content }}
 
@@ -425,7 +325,8 @@
         </script>
       </section>
 
-      <footer>
+      {% if site.imprint or site.data_protection %}
+      <footer class="about-footer">
         <div style="font: 12px/1.2 Crimson Pro, serif">
           <p>
             <small>
@@ -450,6 +351,7 @@
         <br>
         <br>
       </footer>
+      {% endif %}
     </div>
   </body>
 </html>

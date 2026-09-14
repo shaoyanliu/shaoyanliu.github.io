@@ -1,0 +1,75 @@
+.topnav .profile-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 46px;
+  margin-left: max(24px, calc((100% - 960px) / 2));
+  vertical-align: top;
+}
+
+.topnav .profile-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 44px;
+  color: #f2f2f2;
+  font-size: 25px;
+  text-decoration: none;
+}
+.topnav .profile-nav a:hover { color: #fff; background: #ffffff1f; }
+.topnav .profile-nav a:focus-visible { outline: 2px solid white; outline-offset: -2px; }
+
+.about-heading { margin-bottom: 28px; }
+.about-heading h1 { font-size: clamp(38px, 5vw, 56px); font-weight: 600; margin: 0 0 14px; }
+.about-tagline { margin: 0; font-size: 21px; font-style: italic; line-height: 1.5; }
+.about-intro { display: flow-root; font-size: 18px; line-height: 1.65; }
+.about-portrait {
+  float: right;
+  width: 29%;
+  height: auto;
+  margin: 0 0 24px 32px;
+  border-radius: 7px;
+  box-shadow: 0 3px 12px #0003;
+}
+.about-portrait img { display: block; width: 100%; height: auto; border-radius: inherit; }
+.about-intro > p { margin-bottom: 24px; }
+.about-mentoring { margin-top: 8px; }
+
+.about-intro .scholar-stats {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  width: fit-content;
+  max-width: calc(71% - 32px);
+  margin: 0 0 24px;
+  padding: 8px 14px;
+  border-radius: 24px;
+}
+.about-intro .scholar-stats-heading { display: contents; }
+.about-intro .scholar-stats-title { order: 0; font-size: 16px; }
+.about-intro .scholar-stats-metrics { order: 1; gap: 8px; }
+.about-intro .scholar-stats-updated { order: 2; font-size: 12px; }
+.about-intro .scholar-stats dt { font-size: 15px; font-weight: 400; color: var(--site-card-text); }
+.about-intro .scholar-stats dd { font-size: 16px; }
+.layout-about .about-footer { position: static; width: 100%; text-align: left; }
+
+@media screen and (max-width: 960px) {
+  .topnav .profile-nav { margin-left: 24px; }
+}
+
+@media screen and (max-width: 700px) {
+  .about-portrait { width: 32%; margin-left: 24px; }
+  .about-intro .scholar-stats { max-width: calc(68% - 24px); }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .profile-nav { margin-left: 12px; gap: 0; }
+  .topnav .profile-nav a { width: 34px; font-size: 23px; }
+  .about-heading { margin-bottom: 22px; }
+  .about-tagline { font-size: 18px; }
+  .about-intro { display: flex; flex-direction: column; font-size: 17px; }
+  .about-intro .scholar-stats { order: -2; max-width: 100%; width: 100%; gap: 5px 10px; padding: 8px 12px; border-radius: 14px; }
+  .about-portrait { order: -1; float: none; width: 210px; max-width: 70%; margin: 0 auto 24px; }
+}

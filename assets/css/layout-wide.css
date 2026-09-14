@@ -1,0 +1,37 @@
+.layout-wide .wrapper {
+  width: calc(100% - 48px);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 961px) {
+  .layout-wide .topnav .site-brand { margin-left: max(24px, calc((100% - 960px) / 2)); }
+  .layout-wide .topnav .nav-controls { margin-right: max(24px, calc((100% - 960px) / 2)); }
+}
+
+.layout-wide .wrapper > section {
+  box-sizing: border-box;
+  width: 100%;
+  float: none;
+  margin: 0;
+  padding: 100px 0 40px;
+  border: 0;
+}
+
+.page-title {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 600;
+}
+
+.publication-legend { margin: -12px 0 0; font-size: 15px; }
+
+@media screen and (max-width: 600px) {
+  .layout-wide .wrapper { width: calc(100% - 32px); }
+  .layout-wide .wrapper > section { padding-top: 80px; }
+}
+
+@media print {
+  .layout-wide .wrapper { width: 100%; }
+  .layout-wide .wrapper > section { padding-top: 0; }
+}

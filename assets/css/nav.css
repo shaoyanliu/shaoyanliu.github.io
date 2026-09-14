@@ -32,10 +32,23 @@
     outline-offset: -4px;
 }
 
-  .topnav img {
-    margin-bottom:0pt;
-    margin-top:10pt;
+  .topnav .site-brand {
+    display: inline-flex;
+    align-items: center;
+    height: 46px;
     margin-left:30%;
+    color: #f2f2f2;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .topnav .site-brand:hover { color: #fff; }
+  .topnav .site-brand:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
   }
 
   /* Style the links inside the navigation bar */
@@ -65,7 +78,7 @@
 
   @media print, screen and (max-width: 1000px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:3%;
       }
 
@@ -81,7 +94,7 @@
 
    @media print, screen and (max-width: 1200px) and (min-width: 1001px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:6%;
       }
     .topnav .nav-controls {
@@ -92,7 +105,7 @@
 
    @media print, screen and (max-width: 1400px) and (min-width: 1201px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:12%;
       }
     .topnav .nav-controls {
@@ -104,7 +117,7 @@
 
    @media print, screen and (max-width: 1600px) and (min-width: 1401px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:16%;
       }
     .topnav .nav-controls {
@@ -115,7 +128,7 @@
 
    @media print, screen and (max-width: 1800px) and (min-width: 1601px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:19%;
       }
     .topnav .nav-controls {
@@ -126,7 +139,7 @@
 
    @media print, screen and (max-width: 2000px) and (min-width: 1801px) {
 
-    .topnav img {
+    .topnav .site-brand {
         margin-left:22%;
       }
     .topnav .nav-controls {

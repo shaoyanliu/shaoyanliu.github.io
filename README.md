@@ -11,7 +11,8 @@ Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing 
 - **Penn State blue, light and dark themes:** a persistent theme switch and responsive navigation.
 - **Browsable publications:** year dividers, paper numbers, keyword search, topic filters, and lowercase colored topic badges.
 - **Research at a glance:** expandable abstracts, DOI and PDF links, BibTeX preview with copy/download, and per-paper Google Scholar citations.
-- **Scholar statistics:** a compact sidebar with paper count, total citations, h-index, and the last successful check date.
+- **About page:** a single content area with a name heading, profile photo, biography, and contact/profile icons in the navigation.
+- **Scholar statistics:** a compact inline summary with paper count, total citations, h-index, and the last successful check date.
 - **Dedicated CV page:** a continuously scrolling PDF preview with a Sections menu, zoom controls, open/download links, and a CV entry in the top navigation.
 - **News and activities:** six recent news items with an expandable archive, plus dedicated Teaching and Services pages.
 - **Visitor statistics:** GoatCounter tracks the homepage and subpages, with a total visitor display on the homepage.

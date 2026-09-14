@@ -1,0 +1,17 @@
+<div class="profile-nav" role="group" aria-label="Contact and academic profiles">
+  {% if site.email %}
+  <a href="mailto:{{ site.email | escape }}" aria-label="Email Shaoyan Liu" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.orcid %}
+  <a href="{{ site.orcid }}" aria-label="ORCID" title="ORCID" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.google_scholar %}
+  <a href="{{ site.google_scholar }}" aria-label="Google Scholar profile" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.github_link %}
+  <a href="{{ site.github_link }}" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.linkedin %}
+  <a href="{{ site.linkedin }}" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+  {% endif %}
+</div>

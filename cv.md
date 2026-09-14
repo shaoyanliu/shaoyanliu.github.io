@@ -3,6 +3,7 @@ layout: default
 title: CV
 permalink: /cv/
 full_width: true
+cv_reader: true
 ---
 
 <div class="cv-heading">
