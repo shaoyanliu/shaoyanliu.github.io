@@ -1,90 +1,86 @@
-# shaoyanliu.github.io
+# Shaoyan Liu · Academic Website
 
-This website is based on a fork of [Yaoyao Liu's homepage](https://yaoyaoliu.web.illinois.edu/).  
-Many thanks to Yaoyao for providing the original template!
+Personal academic website of **Shaoyan Liu (劉 少言)**, a Ph.D. student in Mechanical Engineering at **The Pennsylvania State University**, working with Prof. Jun Xu in the Energy Mechanics and Sustainability Laboratory. My research focuses on **battery safety**, including lithium-ion battery thermal runaway, gas generation, and combustion.
 
-For more details about the original theme, please refer to this repository:  
-<https://github.com/yaoyao-liu/minimal-light>
+[Website](https://shaoyanliu.github.io/) · [Publications](https://shaoyanliu.github.io/publications/) · [Google Scholar](https://scholar.google.com/citations?user=Yw_kFE4AAAAJ&hl=en) · [CV](https://shaoyanliu.github.io/cv/cv_shaoyan.pdf)
 
-## Publication browsing
+Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing research, publications, teaching, and academic service.
 
-The Publications page has a search bar, single-topic filters, expandable
-abstracts, and a BibTeX dialog with copy and download buttons. Search matches
-titles, authors, journals, years, abstracts, and topic names or abbreviations;
-it works together with the selected topic. Filtering preserves each paper's
-original number and hides year headings that have no matching papers.
+## Features
 
-Maintain `abstract` (plain text from the paper) and `topics` (a list of IDs) in
-`_data/publications.yml`. Topic IDs and display labels are defined in
-`_data/publication_topics.yml`; keep each `- id:` at the same indentation level.
-The optional `name` holds the full name for tooltips and search when `label` is
-an abbreviation (such as AI/ML). Current IDs are `thermal-runaway`,
-`machine-learning`, `combustion`, and `review`;
-a paper can have several.
+- **Penn State blue, light and dark themes:** a persistent theme switch and responsive navigation.
+- **Browsable publications:** year dividers, paper numbers, keyword search, topic filters, and lowercase colored topic badges.
+- **Research at a glance:** expandable abstracts, DOI and PDF links, BibTeX preview with copy/download, and per-paper Google Scholar citations.
+- **Scholar statistics:** a compact sidebar with paper count, total citations, h-index, and the last successful check date.
+- **News and activities:** six recent news items with an expandable archive, plus dedicated Teaching and Services pages.
+- **Visitor statistics:** GoatCounter tracks the homepage and subpages, with a total visitor display on the homepage.
 
-Each paper displays its topics as lowercase colored badges before the resource
-buttons. Badge colors are defined by topic ID in `assets/css/pub.css`, with
-separate light and dark palettes; new topics fall back to blue.
+## Content maintenance
 
-BibTeX content is loaded from the existing `bib/*.txt` files on this site, so
-there is only one copy of each citation to maintain. Downloads use a `.bib`
-filename. Without JavaScript, abstracts remain readable and BibTeX links open
-the original files. If clipboard access is unavailable, the dialog selects the
-citation for manual copying and keeps the download link available.
+| Content | Where to edit |
+| --- | --- |
+| Name, affiliation, profile links, and site metadata | [`_config.yml`](_config.yml) |
+| Biography and personal introduction | [`index.md`](index.md) |
+| Publications, abstracts, resource links, and Scholar article IDs | [`_data/publications.yml`](_data/publications.yml) |
+| Topic IDs, labels, and full names | [`_data/publication_topics.yml`](_data/publication_topics.yml) |
+| News, newest first | [`_data/news.yml`](_data/news.yml) |
+| Teaching and academic service | [`_includes/teaching.md`](_includes/teaching.md), [`_includes/services.md`](_includes/services.md) |
+| CV and BibTeX files | [`cv/`](cv/), [`bib/`](bib/) |
+| Navigation | [`_data/navigation.yml`](_data/navigation.yml) |
+| Theme and publication styles | [`assets/css/theme.css`](assets/css/theme.css), [`assets/css/pub.css`](assets/css/pub.css) |
+| Saved Scholar statistics | [`_data/scholar_stats.yml`](_data/scholar_stats.yml), maintained by the updater |
 
-## Google Scholar statistics
+For a new publication, add its metadata, a plain-text `abstract`, and a list of `topics` using IDs from the topic file. A paper can have several topics. BibTeX is read from its existing `bib/*.txt` file and downloaded as `.bib`, so only one citation file needs maintenance.
 
-The sidebar reads `_data/scholar_stats.yml`. The **Update Google Scholar statistics**
-workflow checks the public profile every day at **04:17 America/New_York**
-(including daylight saving time). It can also be run from the repository's
-**Actions → Update Google Scholar statistics → Run workflow** page.
+Set `scholar_id` to the full `citation_for_view` ID from the paper's Google Scholar detail link. Citation counts are matched by this verified ID, not by title. A missing match hides the citation label; a verified zero displays **Cited by 0**. Search and topic filters preserve each paper's original number.
 
-The updater uses the free public Google Scholar profile; no API key or paid
-service is required. It reads the **All** column for citations and h-index and
-counts every listed article, following pagination when needed. These are Google
-Scholar's counts, which can differ from the website's curated publication list.
-Google Scholar does not guarantee that its own counts change every day.
+## Daily Google Scholar updates
 
-Each paper on Publications also displays **Cited by N**. Per-paper counts are
-collected from the same profile response and saved in the snapshot's `articles`
-mapping, so the current seven papers still need just one request per daily run.
-Each entry in `_data/publications.yml` has a manually verified `scholar_id`
-matching Google Scholar's full `citation_for_view` ID. When adding a paper, copy
-that ID from its Scholar detail link; the site never guesses a match by title.
-Papers without a matching entry omit the citation label, while a verified zero
-displays **Cited by 0**. The label opens the citing-paper list, or the Scholar
-article detail page when there is no list yet.
+The [Update Google Scholar statistics](.github/workflows/google_scholar_crawler.yaml) workflow is scheduled for **05:16 America/New_York every day**, following daylight saving time. GitHub may start scheduled jobs later than the specified time.
 
-A successful check saves all three metrics, per-paper counts, and the check date together. The
-compact card displays the month/year; hover over the date to see the full day.
-HTTP errors, verification pages, missing metrics, and incomplete pagination fail
-the workflow without replacing the previous snapshot or date. Google may block
-automated requests from GitHub runners even when a local request succeeds; check
-failed runs in Actions if the displayed date stops advancing.
+The cloud workflow uses **SerpApi's Google Scholar Author API**, a third-party service, to retrieve profile statistics and per-paper citations together. It requires a SerpApi account and API key; any free allowance is subject to the provider's current plan and quota. This is not an official Google API. Additional article pages may require additional requests.
 
-After saving the snapshot to `main`, the workflow explicitly requests a GitHub
-Pages build. This is necessary because a commit made with `GITHUB_TOKEN` does
-not trigger a Pages build by itself. It uses the built-in token with `contents:
-write` and `pages: write`; no personal access token is needed. The workflow does
-not run on `page_build`, so publishing the new snapshot will not trigger a
-second fetch. It expects Pages to continue publishing from `main`.
+### Set up cloud synchronization
 
-To activate after pushing these files to `main`, open Actions, enable the
-workflow if GitHub has disabled the inherited template workflow, and run it
-once. Check that both the update and the subsequent Pages build succeed.
-GitHub schedules may run late and can be disabled after 60 days without
-repository activity. The daily successful snapshot commits normally keep this
-repository active.
+1. Obtain a key from [SerpApi](https://serpapi.com/google-scholar-author-api).
+2. In this repository, open **Settings → Secrets and variables → Actions → New repository secret** and save it as **`SERPAPI_API_KEY`**. Keep the key out of source files.
+3. Ensure GitHub Pages publishes from `main`. Open **Actions**, enable the workflow if needed, and select **Update Google Scholar statistics → Run workflow**.
+4. Confirm that both the update and the following Pages build succeed. Adding the key or enabling the schedule alone does not verify a successful cloud update.
 
-Local verification (Python 3.10 or newer):
+For a fork, update the owner-specific job condition in the workflow, the Scholar profile and article IDs, and the site's personal content before enabling Actions.
+
+A successful run validates the all-time metrics, article counts, and check date as one snapshot, saves and commits any changes to `main`, and requests a GitHub Pages rebuild. Each run records its provider, check time, and result in the Actions summary, including successful checks with no data changes. Failed requests, missing data, and incomplete pagination leave the previous snapshot and date intact. The webpage reads this saved snapshot rather than making API requests for each visitor. Google Scholar's own data may stay unchanged between daily checks.
+
+### Verify locally
+
+With Python 3.10 or newer:
 
 ```sh
 python3 -m venv /tmp/scholar-tools
 /tmp/scholar-tools/bin/pip install -r scripts/requirements-scholar.txt
 /tmp/scholar-tools/bin/python -m unittest discover -s tests -p 'test_scholar_stats.py'
-/tmp/scholar-tools/bin/python scripts/update_scholar_stats.py --dry-run
+/tmp/scholar-tools/bin/python scripts/update_scholar_stats.py --provider direct --dry-run
 ```
 
-References: [GitHub scheduled workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule),
-[GITHUB_TOKEN and Pages](https://docs.github.com/en/actions/concepts/security/github_token),
-[requesting a Pages build](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build).
+The `direct` provider reads the public Google Scholar HTML without an API key. It is useful for local verification, but Google can limit or block these requests. `--dry-run` validates and prints the result without changing the saved data; local success does not establish that the cloud workflow works.
+
+## Preview locally
+
+With Ruby and Bundler installed, run these commands from the repository root:
+
+```sh
+bundle install
+bundle exec jekyll serve --host 127.0.0.1 --port 4000
+```
+
+Open [http://127.0.0.1:4000](http://127.0.0.1:4000). To check a production build without starting a server:
+
+```sh
+bundle exec jekyll build --strict_front_matter
+```
+
+## Credits
+
+Adapted from [Yaoyao Liu's academic homepage](https://yaoyaoliu.web.illinois.edu/) and the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme. Many thanks to Yaoyao for sharing the original template.
+
+The repository includes the original [CC0 1.0 Universal license](LICENSE).

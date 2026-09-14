@@ -1,12 +1,18 @@
 """Offline checks for complete Scholar snapshots and preservation on failure."""
 
 from datetime import datetime
+from contextlib import redirect_stderr, redirect_stdout
 from html import escape
+from http.client import IncompleteRead
+import io
+import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
 from urllib.error import HTTPError, URLError
+from urllib.parse import parse_qs, urlencode, urlparse
 from zoneinfo import ZoneInfo
 
 import yaml
@@ -62,6 +68,31 @@ def expected_articles():
         f"{PROFILE}:paper_b": {"title": "Synthetic paper_b", "citations": 2,
                                 "cited_by_url": "https://scholar.google.com/scholar?hl=en&cites=1001"},
     }
+
+
+def serpapi_page(ids=("paper_a", "paper_b"), start=0, next_start=None, offset_name="start"):
+    """Synthetic English response based on the documented Author API fields."""
+    payload = {
+        "search_metadata": {"status": "Success"},
+        "search_parameters": {"engine": "google_scholar_author", "author_id": PROFILE,
+                              "hl": "en", "start": start},
+        "author": {"name": "Synthetic Author"},
+        "cited_by": {"table": [{"citations": {"all": 172, "since_2021": 1}},
+                               {"h_index": {"all": 2, "since_2021": 1}}]},
+        "articles": [{"citation_id": f"{PROFILE}:{paper}", "title": f"Synthetic {paper}",
+                      "cited_by": {"value": 2, "link":
+                                   f"https://scholar.google.com/scholar?cites={1000 + start + index}"}}
+                     for index, paper in enumerate(ids)],
+    }
+    if next_start is not None:
+        payload["serpapi_pagination"] = {"next": "https://serpapi.com/search.json?" + urlencode({
+            "engine": "google_scholar_author", "author_id": PROFILE,
+            "hl": "en", offset_name: next_start})}
+    return payload
+
+
+def json_response(payload):
+    return io.BytesIO(json.dumps(payload).encode("utf-8"))
 
 
 class ScholarParsingTests(unittest.TestCase):
@@ -341,6 +372,261 @@ class ScholarSnapshotTests(unittest.TestCase):
         result = scholar.update_snapshot(self.path, fetch=lambda *_: profile_page())
         self.assertEqual(result["articles"], expected_articles())
         self.assertEqual(yaml.safe_load(self.path.read_text()), result)
+
+
+class SerpApiTests(unittest.TestCase):
+    KEY = "synthetic-key+/not-a-real-key"
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.path = Path(self.directory.name) / "scholar_stats.yml"
+        self.summary = Path(self.directory.name) / "summary.md"
+        self.previous = {"profile_id": PROFILE, "papers": 2, "citations": 172,
+                         "h_index": 2, "updated": "2026-09-13", "articles": expected_articles()}
+        self.path.write_text(yaml.safe_dump(self.previous), encoding="utf-8")
+        environment = patch.dict(os.environ, {"SERPAPI_API_KEY": self.KEY,
+                                             "GITHUB_STEP_SUMMARY": str(self.summary)})
+        environment.start()
+        self.addCleanup(environment.stop)
+        clock = patch.object(scholar, "datetime")
+        clock.start().now.side_effect = lambda tz: NOW.astimezone(tz)
+        self.addCleanup(clock.stop)
+
+    def assert_preserved(self, payload):
+        before = self.path.read_bytes()
+        with self.assertRaises(scholar.ScholarError) as failure:
+            scholar.update_snapshot(self.path, provider="serpapi", serpapi_fetch=lambda *_: payload)
+        self.assertNotIn(self.KEY, str(failure.exception))
+        self.assertEqual(self.path.read_bytes(), before)
+
+    def test_author_response_preserves_existing_snapshot_schema(self):
+        result = scholar.update_snapshot(self.path, provider="serpapi",
+                                         serpapi_fetch=lambda *_: serpapi_page())
+        self.assertEqual(result, {**self.previous, "updated": TODAY})
+        self.assertEqual(yaml.safe_load(self.path.read_text()), result)
+
+    def test_all_time_values_and_explicit_zero_citations(self):
+        payload = serpapi_page()
+        payload["cited_by"]["table"][0]["citations"]["all"] = 1234
+        payload["cited_by"]["table"][1]["h_index"]["all"] = 1
+        payload["articles"][0]["cited_by"] = {"value": 1234}
+        payload["articles"][1]["cited_by"] = {"value": 0}
+        result = scholar.collect_serpapi_stats(PROFILE, fetch=lambda *_: payload)
+        self.assertEqual(result["citations"], 1234)
+        self.assertEqual(result["h_index"], 1)
+        self.assertEqual(result["articles"][f"{PROFILE}:paper_b"]["citations"], 0)
+        self.assertIsNone(result["articles"][f"{PROFILE}:paper_b"]["cited_by_url"])
+
+    def test_missing_or_invalid_counts_never_become_zero(self):
+        for value in (None, False, True, -1, 1.5, "0", "1,234", [], {}):
+            for aggregate in (False, True):
+                with self.subTest(value=value, aggregate=aggregate):
+                    payload = serpapi_page()
+                    if aggregate:
+                        payload["cited_by"]["table"][0]["citations"]["all"] = value
+                    else:
+                        payload["articles"][0]["cited_by"]["value"] = value
+                    self.assert_preserved(payload)
+        payload = serpapi_page()
+        del payload["articles"][0]["cited_by"]
+        self.assert_preserved(payload)
+
+    def test_unexpected_response_identity_or_structure_is_rejected(self):
+        mutations = (
+            lambda p: p.update(error="Provider error with " + self.KEY),
+            lambda p: p.update(search_metadata={"status": "Processing"}),
+            lambda p: p.update(search_parameters={}),
+            lambda p: p["search_parameters"].update(author_id="OTHER_AUTHOR"),
+            lambda p: p["search_parameters"].update(engine="google_scholar"),
+            lambda p: p["search_parameters"].update(hl="fr"),
+            lambda p: p["search_parameters"].update(start=5),
+            lambda p: p.update(author={"name": " "}),
+            lambda p: p.update(cited_by={}),
+            lambda p: p["cited_by"].update(table=[{"citations": {"all": 172}}]),
+            lambda p: p["cited_by"]["table"].append({"h_index": {"all": 1}}),
+            lambda p: p.update(articles=[]),
+            lambda p: p["articles"][0].update(citation_id="OTHER_AUTHOR:paper_a"),
+            lambda p: p["articles"][0].update(citation_id=PROFILE + ":"),
+            lambda p: p["articles"][0].update(title=""),
+            lambda p: p["articles"][0]["cited_by"].update(link="https://example.com/?cites=1"),
+        )
+        for index, mutate in enumerate(mutations):
+            with self.subTest(case=index):
+                payload = serpapi_page()
+                mutate(payload)
+                self.assert_preserved(payload)
+        self.assert_preserved([])
+
+    def test_start_and_cstart_pagination_collect_complete_article_mapping(self):
+        for offset_name in ("start", "cstart"):
+            with self.subTest(offset=offset_name):
+                first = serpapi_page(tuple(f"paper_{i}" for i in range(100)),
+                                     next_start=100, offset_name=offset_name)
+                second = serpapi_page(("paper_100",), start=100)
+                del second["cited_by"]
+                fetch = Mock(side_effect=[first, second])
+                result = scholar.collect_serpapi_stats(PROFILE, fetch=fetch)
+                self.assertEqual(result["papers"], 101)
+                self.assertEqual(len(result["articles"]), 101)
+                self.assertEqual(list(result["articles"]), sorted(result["articles"]))
+                self.assertEqual([call.args for call in fetch.call_args_list],
+                                 [(PROFILE, 0), (PROFILE, 100)])
+
+    def test_untrusted_next_url_cannot_change_destination_key_or_parameters(self):
+        first = serpapi_page(next_start=2)
+        first["serpapi_pagination"]["next"] += "&api_key=UNTRUSTED&extra=ignored"
+        second = serpapi_page(("paper_c",), start=2)
+        with patch.object(scholar, "_open_serpapi", side_effect=[
+                json_response(first), json_response(second)]) as network:
+            result = scholar.collect_serpapi_stats(PROFILE)
+        self.assertEqual(result["papers"], 3)
+        for index, call in enumerate(network.call_args_list):
+            url = urlparse(call.args[0].full_url)
+            self.assertEqual(url.scheme + "://" + url.netloc + url.path, scholar.SERPAPI_ENDPOINT)
+            self.assertEqual(parse_qs(url.query), {
+                "engine": ["google_scholar_author"], "author_id": [PROFILE],
+                "hl": ["en"], "num": ["100"], "start": [str(index * 2)], "api_key": [self.KEY]})
+
+    def test_repeated_skipped_or_cross_account_pagination_is_rejected(self):
+        valid = serpapi_page(next_start=2)["serpapi_pagination"]["next"]
+        links = (valid.replace("start=2", "start=0"),
+                 valid.replace("start=2", "start=3"),
+                 valid.replace("start=2", "start=2&cstart=3"),
+                 valid.replace("start=2", "start=2&start=2"),
+                 valid.replace(PROFILE, "OTHER_AUTHOR"),
+                 valid.replace("google_scholar_author", "google_scholar"),
+                 valid.replace("serpapi.com", "example.com"),
+                 valid.replace("https:", "http:"),
+                 valid.replace("search.json", "account.json"), "https://[")
+        for link in links:
+            with self.subTest(link=link):
+                payload = serpapi_page()
+                payload["serpapi_pagination"] = {"next": link}
+                self.assert_preserved(payload)
+
+    def test_duplicate_articles_and_later_page_failure_preserve_entire_snapshot(self):
+        self.assert_preserved(serpapi_page(("same", "same")))
+        for second in (serpapi_page(start=2), {"error": "quota " + self.KEY}):
+            before = self.path.read_bytes()
+            fetch = Mock(side_effect=[serpapi_page(next_start=2), second])
+            with self.assertRaises(scholar.ScholarError):
+                scholar.update_snapshot(self.path, provider="serpapi", serpapi_fetch=fetch)
+            self.assertEqual(self.path.read_bytes(), before)
+
+    def test_pagination_is_bounded(self):
+        def fetch(_profile, start):
+            return serpapi_page((f"paper_{start}", f"paper_{start + 1}"),
+                                start=start, next_start=start + 2)
+        with patch.object(scholar, "MAX_PAGES", 2), self.assertRaises(scholar.ScholarError):
+            scholar.collect_serpapi_stats(PROFILE, fetch=fetch)
+
+    def test_transient_http_and_network_errors_retry_once(self):
+        for error in (HTTPError("secret-url", 429, "rate limited", {}, io.BytesIO(b"{}")),
+                      HTTPError("secret-url", 503, "unavailable", {}, None),
+                      URLError(self.KEY), TimeoutError(self.KEY), IncompleteRead(b"partial")):
+            with self.subTest(kind=type(error).__name__):
+                with patch.object(scholar, "_open_serpapi", side_effect=[
+                        error, json_response(serpapi_page())]) as network:
+                    with patch.object(scholar.time, "sleep") as sleep:
+                        self.assertIsInstance(scholar.fetch_serpapi_page(PROFILE, 0), dict)
+                self.assertEqual(network.call_count, 2)
+                sleep.assert_called_once_with(2)
+
+    def test_repeated_transient_failure_is_bounded_and_redacted(self):
+        with patch.object(scholar, "_open_serpapi", side_effect=URLError(self.KEY)) as network:
+            with patch.object(scholar.time, "sleep"), self.assertRaises(scholar.ScholarError) as error:
+                scholar.fetch_serpapi_page(PROFILE, 0)
+        self.assertEqual(network.call_count, 2)
+        self.assertNotIn(self.KEY, str(error.exception))
+
+    def test_auth_quota_and_redirect_errors_do_not_retry_or_echo_provider_text(self):
+        cases = [(status, {"error": "Invalid key " + self.KEY}) for status in (400, 401, 403, 302)]
+        cases.append((429, {"error": "Your account has run out of searches. " + self.KEY}))
+        for status, body in cases:
+            with self.subTest(status=status):
+                error = HTTPError("https://serpapi.com/?api_key=" + self.KEY,
+                                  status, self.KEY, {}, json_response(body))
+                with patch.object(scholar, "_open_serpapi", side_effect=error) as network:
+                    with patch.object(scholar.time, "sleep") as sleep:
+                        with self.assertRaises(scholar.ScholarError) as failure:
+                            scholar.fetch_serpapi_page(PROFILE, 0)
+                self.assertEqual(network.call_count, 1)
+                sleep.assert_not_called()
+                self.assertNotIn(self.KEY, str(failure.exception))
+                self.assertNotIn("https://", str(failure.exception))
+
+    def test_redirects_are_disabled_and_request_timeout_is_60_seconds(self):
+        with patch.object(scholar, "build_opener") as build:
+            request = Mock()
+            scholar._open_serpapi(request)
+        handler = build.call_args.args[0]
+        self.assertIsNone(handler.redirect_request(request, None, 302, "Found", {}, "https://example.com"))
+        build.return_value.open.assert_called_once_with(request, timeout=60)
+
+    def test_malformed_json_does_not_retry_or_leak_response_body(self):
+        with patch.object(scholar, "_open_serpapi", return_value=io.BytesIO(
+                ("not json " + self.KEY).encode())) as network:
+            with self.assertRaises(scholar.ScholarError) as error:
+                scholar.fetch_serpapi_page(PROFILE, 0)
+        self.assertEqual(network.call_count, 1)
+        self.assertNotIn(self.KEY, str(error.exception))
+
+    def test_provider_selection_and_missing_key_fail_before_network(self):
+        self.assertEqual(scholar.resolve_provider("auto"), "serpapi")
+        self.assertEqual(scholar.resolve_provider("direct"), "direct")
+        with patch.dict(os.environ, {"SERPAPI_API_KEY": ""}):
+            self.assertEqual(scholar.resolve_provider("auto"), "direct")
+            with patch.object(scholar, "_open_serpapi") as network:
+                with self.assertRaisesRegex(scholar.ScholarError, "SERPAPI_API_KEY"):
+                    scholar.fetch_serpapi_page(PROFILE, 0)
+            network.assert_not_called()
+
+    def test_explicit_direct_provider_ignores_configured_api_key(self):
+        api_fetch = Mock(side_effect=AssertionError("SerpApi must not be called"))
+        result = scholar.update_snapshot(self.path, provider="direct", fetch=lambda *_: profile_page(),
+                                         serpapi_fetch=api_fetch)
+        self.assertEqual(result["articles"], expected_articles())
+        api_fetch.assert_not_called()
+
+    def test_dry_run_and_identical_same_day_snapshot_do_not_write(self):
+        before = self.path.read_bytes()
+        scholar.update_snapshot(self.path, dry_run=True, provider="serpapi",
+                                serpapi_fetch=lambda *_: serpapi_page())
+        self.assertEqual(self.path.read_bytes(), before)
+        self.previous["updated"] = TODAY
+        self.path.write_text(yaml.safe_dump(self.previous), encoding="utf-8")
+        with patch.object(scholar.tempfile, "NamedTemporaryFile") as temporary:
+            scholar.update_snapshot(self.path, provider="serpapi", serpapi_fetch=lambda *_: serpapi_page())
+        temporary.assert_not_called()
+
+    def test_cli_defaults_to_auto_and_reports_provider_utc_and_metrics(self):
+        snapshot = {**self.previous, "updated": TODAY}
+        output = io.StringIO()
+        with patch("sys.argv", ["update_scholar_stats.py", "--data", str(self.path)]):
+            with patch.object(scholar, "update_snapshot", return_value=snapshot) as update:
+                with redirect_stdout(output):
+                    self.assertEqual(scholar.main(), 0)
+        update.assert_called_once_with(self.path, False, provider="serpapi")
+        message = output.getvalue()
+        for expected in ("succeeded", "serpapi", "08:17:00 UTC", "2 papers", "172 citations", "h-index 2"):
+            self.assertIn(expected, message)
+        self.assertNotIn(self.KEY, message)
+        self.assertEqual(self.summary.read_text(), message)
+
+    def test_failure_summary_redacts_raw_and_encoded_key(self):
+        encoded_key = urlencode({"api_key": self.KEY}).split("=", 1)[1]
+        error = scholar.ScholarError("Synthetic failure " + self.KEY + " " + encoded_key)
+        output = io.StringIO()
+        with patch("sys.argv", ["update_scholar_stats.py", "--provider", "serpapi"]):
+            with patch.object(scholar, "update_snapshot", side_effect=error):
+                with redirect_stdout(output), redirect_stderr(output):
+                    self.assertEqual(scholar.main(), 1)
+        for text in (output.getvalue(), self.summary.read_text()):
+            self.assertIn("failed (serpapi", text)
+            self.assertIn("Saved statistics were not replaced", text)
+            self.assertNotIn(self.KEY, text)
+            self.assertNotIn(encoded_key, text)
 
 
 if __name__ == "__main__":
