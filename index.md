@@ -12,7 +12,7 @@ title: About
 
 <figure class="about-portrait">
   <img src="{{ site.avatar | relative_url }}" alt="Shaoyan Liu" />
-  <figcaption><a href="https://maps.app.goo.gl/J4aAKyqFRWxEpaaZ9" title="View location on Google Maps"><span aria-hidden="true">📍</span><span>State College</span></a></figcaption>
+  <figcaption><a href="https://maps.app.goo.gl/J4aAKyqFRWxEpaaZ9" title="View location on Google Maps"><span aria-hidden="true">📍</span><span>Happy Valley · State College</span></a></figcaption>
 </figure>
 
 {% include scholar-stats.html %}
@@ -35,3 +35,5 @@ In my spare time, I enjoy doing sports (mostly running, cycling and working out 
 
 
 {% include_relative _includes/news.md %}
+
+{% include publications.md selected_only=true %}

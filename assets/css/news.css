@@ -1,0 +1,9 @@
+.news-home-heading { margin: 60px 0 16px; }
+
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-item { margin-bottom: 12px; }
+.news-icon { margin-right: 0.25em; font-size: 16px; line-height: 1.5; }
+.news-date { white-space: nowrap; }
+.news-content { overflow-wrap: break-word; }
+.news-all-link { margin: 16px 0 0; }
+.news-all-link a:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }

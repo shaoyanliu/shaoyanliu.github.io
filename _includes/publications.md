@@ -1,8 +1,13 @@
+{% if include.selected_only %}
+<h2 id="selected-publications" class="selected-publications-heading"><a href="{{ '/publications/' | relative_url }}">Selected Publications</a></h2>
+{% else %}
 <h1 id="publications" class="page-title">Publications</h1>
 <p class="publication-legend">[<a href="https://scholar.google.com/citations?&user=Yw_kFE4AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> | Corresponding author = <sup><i class="fa-regular fa-envelope fa-xs"></i></sup>]</p>
+{% endif %}
 
 
-<div class="publications" data-publication-list>
+<div class="publications{% if include.selected_only %} selected-publications{% endif %}" data-publication-list>
+{% unless include.selected_only %}
 <div class="publication-search" data-publication-search-controls role="search" aria-label="Search publications" hidden>
   <input type="search" data-publication-search aria-label="Search publications by title, author, journal, or keyword" placeholder="Search publications by title, author, journal, or keyword" autocomplete="off" spellcheck="false" aria-describedby="publication-filter-status">
   <button type="button" class="publication-search-clear" data-search-clear aria-label="Clear search" title="Clear search" hidden>&times;</button>
@@ -14,25 +19,33 @@
   {% endfor %}
 </div>
 <p class="publication-filter-status" id="publication-filter-status" data-filter-status role="status" aria-live="polite" hidden></p>
+{% endunless %}
 {% assign publication_years = site.data.publications.main | group_by: "year" | sort: "name" | reverse %}
 {% assign publication_number = site.data.publications.main.size %}
 
+{% if include.selected_only %}<ol class="bibliography" role="list">{% endif %}
 {% for year_group in publication_years %}
+{% unless include.selected_only %}
 <div class="publication-year-group" data-publication-year>
 <h3 class="year" id="publications-{{ year_group.name }}"><span>{{ year_group.name }}</span></h3>
 <ol class="bibliography" reversed start="{{ publication_number }}">
+{% endunless %}
 
 {% for link in year_group.items %}
+{% if include.selected_only and link.selected != true %}
+{% assign publication_number = publication_number | minus: 1 %}
+{% continue %}
+{% endif %}
 
 {% capture search_text %}{{ link.title | strip_html }} {{ link.authors | strip_html }} {{ link.conference | strip_html }} {{ link.conference_short }} {{ link.year }} {{ link.abstract }} {% for topic in site.data.publication_topics %}{% if link.topics contains topic.id %} {{ topic.id }} {{ topic.label }} {{ topic.name }}{% endif %}{% endfor %}{% endcapture %}
-<li value="{{ publication_number }}" data-publication data-topics="{{ link.topics | join: ' ' | escape }}" data-search-text="{{ search_text | strip_newlines | escape }}">
+<li{% unless include.selected_only %} value="{{ publication_number }}"{% endunless %} data-publication data-topics="{{ link.topics | join: ' ' | escape }}" data-search-text="{{ search_text | strip_newlines | escape }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
             <abbr class="badge">{{ link.conference_short }}</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><span class="publication-number">{{ publication_number }}.</span> <a href="{{ link.doi }}">{{ link.title }}</a></div>
+      <div class="title">{% unless include.selected_only %}<span class="publication-number">{{ publication_number }}.</span> {% endunless %}<a href="{{ link.doi }}">{{ link.title }}</a></div>
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
@@ -91,10 +104,16 @@
 {% assign publication_number = publication_number | minus: 1 %}
 {% endfor %}
 
+{% unless include.selected_only %}
 </ol>
 </div>
+{% endunless %}
 {% endfor %}
+{% if include.selected_only %}</ol>{% endif %}
 </div>
+{% if include.selected_only %}
+<p class="selected-publications-all"><a href="{{ '/publications/' | relative_url }}">View all publications <span aria-hidden="true">&rarr;</span></a></p>
+{% endif %}
 
 <dialog class="publication-bibtex-dialog" id="publication-bibtex-dialog" aria-labelledby="bibtex-dialog-title" aria-describedby="bibtex-paper-title">
   <div class="bibtex-dialog-heading">

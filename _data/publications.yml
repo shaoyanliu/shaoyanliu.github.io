@@ -1,9 +1,10 @@
 main:
   - title: "Influence of Different Aging Pathways on the Thermal Runaway Characteristics of Lithium-ion Batteries: A Review with Gas Evolution as the Bridging Perspective"
-    authors: Mengying Wang, <strong>Shaoyan Liu</strong>, Dong Han, Zhen Huang, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: Mengying Wang, <span class="publication-self-author">Shaoyan Liu</span>, Dong Han, Zhen Huang, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: RSER
     conference: Renewable and Sustainable Energy Reviews, 241, 117225, 2026.
     year: 2026
+    selected: true
     topics: [thermal-runaway, review]
     abstract: >-
       Lithium-ion batteries (LIBs) are increasingly used in electric vehicles and large-scale energy storage systems.
@@ -25,10 +26,11 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/7_2026_rser.txt
 
   - title: "Investigation on Thermal Runaway Behaviors and Gas Generation Dynamics of Lithium-ion Batteries Induced by Electrical Abuse at Low Pressure Conditions"
-    authors: <strong>Shaoyan Liu</strong>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: <span class="publication-self-author">Shaoyan Liu</span>, Qianzhen Guo, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JES
     conference: Journal of Energy Storage, 125, 116855, 2025.
     year: 2025
+    selected: true
     topics: [thermal-runaway]
     abstract: >-
       With the increased demand of lithium-ion batteries in aviation and high-altitude applications, understanding
@@ -52,10 +54,11 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/6_2025_jes.txt
 
   - title: "Chemical Reaction Neural Networks to Map Lithium-ion Battery Thermal Runaway Gas Generation"
-    authors: Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Changsheng Ma, Shuaiqi Liu, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Peng Han, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Changsheng Ma, Shuaiqi Liu, Qianzhen Guo, <span class="publication-self-author">Shaoyan Liu</span>, Peng Han, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: CRPS
     conference: Cell Reports Physical Science, 6(5), 102563, 2025.
     year: 2025
+    selected: true
     topics: [thermal-runaway, machine-learning]
     abstract: >-
       The widespread application of lithium-ion batteries in electric vehicles is hindered by safety concerns, notably
@@ -77,7 +80,7 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/5_2025_crps.txt
 
   - title: "Effects of Charging Rates on Heat and Gas Generation in Lithium-ion Battery Thermal Runaway Triggered by High Temperature Coupled with Overcharge"
-    authors: Qianzhen Guo, <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: Qianzhen Guo, <span class="publication-self-author">Shaoyan Liu</span>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JPS
     conference: Journal of Power Sources, 600, 234237, 2024.
     year: 2024
@@ -103,7 +106,7 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/4_2024_jps.txt
 
   - title: "Investigation on Gas Generation and Corresponding Explosion Characteristics of Lithium-ion Batteries During Thermal Runaway at Different Charge States"
-    authors: Jiabo Zhang, Qianzhen Guo, <strong>Shaoyan Liu</strong>, Chao Zhou, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: Jiabo Zhang, Qianzhen Guo, <span class="publication-self-author">Shaoyan Liu</span>, Chao Zhou, Zhen Huang, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: JES
     conference: Journal of Energy Storage, 80, 110201, 2024.
     year: 2024
@@ -130,10 +133,11 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/3_2024_jes.txt
 
   - title: "Effects of Temperature and Pressure Fluctuations on Exergy Loss Characteristics of Hydrogen Auto-ignition Processes"
-    authors: <strong>Shaoyan Liu</strong>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zuoyu Sun, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    authors: <span class="publication-self-author">Shaoyan Liu</span>, Jiabo Zhang<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Zuoyu Sun, Dong Han<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
     conference_short: IJHE
     conference: International Journal of Hydrogen Energy, 48(97), 38484-38495, 2023.
     year: 2023
+    selected: true
     topics: [combustion]
     abstract: >-
       Intake temperature and pressure fluctuations prior to main ignition are one of the reasons
@@ -164,7 +168,7 @@ main:
     bibtex: https://shaoyanliu.github.io/bib/2_2023_ijhe.txt
 
   - title: "A Comparative Study on the Turbulent Explosion Characteristics of Syngas Between CO-Enriched and H<sub>2</sub>-Enriched"
-    authors: Zuoyu Sun<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, <strong>Shaoyan Liu</strong>
+    authors: Zuoyu Sun<sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, <span class="publication-self-author">Shaoyan Liu</span>
     conference_short: Energy
     conference: Energy, 241, 122941, 2022.
     year: 2022

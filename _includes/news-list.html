@@ -1,0 +1,8 @@
+{% assign news_limit = include.limit | default: site.data.news.size %}
+<ul class="news-list" role="list">
+  {% for item in site.data.news limit:news_limit %}
+  <li class="news-item">
+    <div class="news-content"><strong class="news-date">[{{ item.date | escape }}]</strong> <span class="news-icon" aria-hidden="true">{{ site.data.news_icons[item.category] | default: '📌' | escape }}</span> {{ item.content }}</div>
+  </li>
+  {% endfor %}
+</ul>

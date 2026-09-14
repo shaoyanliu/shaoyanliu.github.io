@@ -1,0 +1,87 @@
+body.layout-wide {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.layout-wide > .wrapper { flex: 1 0 auto; }
+
+.home-connect { margin-top: 32px; padding: 12px 0 20px; }
+.visitor-stats { text-align: center; font-size: 14px; line-height: 1.5; }
+.home-connect .visitor-stats-link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px 7px;
+  color: var(--global-text-color-light);
+  text-decoration: none;
+}
+.visitor-stats-title,
+.visitor-stats-content { white-space: nowrap; }
+.visitor-stats-number { color: var(--site-card-text); font-weight: 600; }
+.visitor-stats-link-icon { font-size: 10px; }
+.home-connect .visitor-stats-link:hover { color: var(--global-theme-color); }
+
+.profile-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+.profile-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 72px;
+  color: var(--site-card-text);
+  font-size: 60px;
+  line-height: 1;
+  text-decoration: none;
+}
+html[data-theme="dark"] .profile-footer a { color: var(--site-heading); }
+.profile-footer a:hover,
+html[data-theme="dark"] .profile-footer a:hover { color: var(--global-theme-color); }
+.profile-footer a:focus-visible,
+.visitor-stats-link:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.site-copyright {
+  position: static;
+  float: none;
+  clear: both;
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  background: var(--global-footer-bg-color);
+  color: var(--global-footer-text-color);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+}
+.site-copyright-inner {
+  width: calc(100% - var(--site-content-gutter, 15px) * 2);
+  max-width: var(--site-content-width, 770px);
+  margin: 0 auto;
+}
+.site-copyright small { font: inherit; }
+
+@media screen and (max-width: 480px) {
+  .visitor-stats { font-size: 13px; }
+  .home-connect .visitor-stats-link { gap: 4px 5px; }
+  .profile-footer { gap: 10px; margin-top: 22px; }
+  .profile-footer a { width: 44px; height: 52px; font-size: 42px; }
+}
+
+@media print {
+  body.layout-wide { display: block; min-height: 0; }
+  .home-connect { display: none; }
+}

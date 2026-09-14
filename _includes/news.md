@@ -1,18 +1,5 @@
-<h2 style="margin: 60px 0px 10px;">News</h2>
+<h2 class="news-home-heading">News</h2>
 
-<ul>
-  {% for item in site.data.news limit:6 %}
-  <li><strong>[{{ item.date }}]</strong> {{ item.content }}</li>
-  {% endfor %}
-</ul>
+{% include news-list.html limit=6 %}
 
-{% if site.data.news.size > 6 %}
-<details class="news-archive">
-  <summary>Show more</summary>
-  <ul>
-    {% for item in site.data.news offset:6 %}
-    <li><strong>[{{ item.date }}]</strong> {{ item.content }}</li>
-    {% endfor %}
-  </ul>
-</details>
-{% endif %}
+<p class="news-all-link"><a href="{{ '/news/' | relative_url }}">View all news <span aria-hidden="true">&rarr;</span></a></p>

@@ -1,61 +1,82 @@
-# Keep newest entries first; the homepage shows the first six by default.
+# Keep newest entries first; the homepage shows the first six.
+# Category icons are shared through news_icons.yml.
 - date: "Sep. 2026"
+  category: review
   content: >-
     Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-power-sources">Journal of Power Sources</a>. Honored to serve our community!
 - date: "Aug. 2026"
+  category: milestone
   content: >-
     Joined the <a href="https://junxu-emslab.github.io/">Energy Mechanics and Sustainability Laboratory</a> (EMSLab) at Penn State!
 - date: "Jul. 2026"
+  category: publication
   content: >-
     Our review paper about <a href="https://doi.org/10.1016/j.rser.2026.117225">gas-bridged aging and TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/renewable-and-sustainable-energy-reviews">Renewable and Sustainable Energy Reviews</a>.
 - date: "May 2026"
+  category: education
   content: >-
     Completed all Ph.D. coursework with a GPA 3.8. Excited to start summer research!
 - date: "Oct. 2025"
+  category: milestone
   content: >-
     Joined the <a href="https://ecec.me.psu.edu/">Electrochemical Engine Center</a> (ECEC) at Penn State!
 - date: "Aug. 2025"
+  category: milestone
   content: >-
     Started my journey at <a href="https://www.psu.edu/">PENN STATE</a>. Cheers!
 - date: "Jul. 2025"
+  category: conference
   content: >-
     Attended <a href="https://worldaic.com.cn/">2025 World Artificial Intelligence Conference</a> (WAIC) in Shanghai.
 - date: "Jun. 2025"
+  category: review
   content: >-
     Started serving as a reviewer for the <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>. Honored to serve our community!
 - date: "Apr. 2025"
+  category: publication
   content: >-
     Our paper about <a href="https://doi.org/10.1016/j.est.2025.116855">low pressure TR</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.
 - date: "Mar. 2025"
+  category: education
   content: >-
     Graduated from SJTU and honored as an Outstanding Graduate! [<a href="https://shaoyanliu.github.io/assets/img/graduation-president-1.png" target="_blank">📸 honored pic with the president</a>]:D
 - date: "Mar. 2025"
+  category: milestone
   content: >-
     Officially accepted the Ph.D. offer from <a href="https://www.psu.edu/">PENN STATE</a>! WE ARE!
 - date: "Mar. 2025"
+  category: publication
   content: >-
     Our paper about <a href="https://doi.org/10.1016/j.xcrp.2025.102563">CRNN for battery TR</a> is accepted by <a href="https://www.cell.com/cell-reports-physical-science/home">Cell Reports Physical Science</a>.
 - date: "Dec. 2024"
+  category: conference
   content: >-
     Presented at <a href="https://eteu2024.scimeeting.cn/">2024 China National Symposium on Energy Utilization</a> in Xiamen. 
 - date: "Oct. 2024"
+  category: conference
   content: >-
     Presented at <a href="https://combust2024.casconf.cn/">2024 China National Symposium on Combustion</a> in Hangzhou. 
 - date: "Sep. 2024"
+  category: conference
   content: >-
     Presented at the 2nd National Doctoral Forum on Energy Storage in Beijing. 
 - date: "Feb. 2024"
+  category: publication
   content: >-
     Our paper about <a href="https://doi.org/10.1016/j.jpowsour.2024.234237">TR under overcharge coupled with high temperature</a> is accepted by <a href="https://www.sciencedirect.com/journal/journal-of-power-sources">Journal of Power Sources</a>.
 - date: "Dec. 2023"
+  category: award
   content: >-
     Received the First Prize Baillie Gifford Scholarship in SJTU. Thanks, Baillie Gifford!
 - date: "Dec. 2023"
+  category: publication
   content: >-
     Our paper about <a href="https://doi.org/10.1016/j.est.2023.110201">TR explosion limits</a> is accepted  by <a href="https://www.sciencedirect.com/journal/journal-of-energy-storage/">Journal of Energy Storage</a>.
 - date: "Jun. 2023"
+  category: publication
   content: >-
     Our paper about <a href="https://doi.org/10.1016/j.ijhydene.2023.06.084">exergy loss under temperature fluctuations</a> is accepted by <a href="https://www.sciencedirect.com/journal/international-journal-of-hydrogen-energy">International Journal of Hydrogen Energy</a>.
 - date: "Dec. 2022"
+  category: conference
   content: >-
     Presented at <a href="https://combust2022.casconf.cn/">2022 China National Symposium on Combustion</a> in Shanghai. 

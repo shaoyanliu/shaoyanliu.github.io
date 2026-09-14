@@ -63,13 +63,8 @@ html[data-theme="dark"] a:hover {
 
 html[data-theme="dark"] a small,
 html[data-theme="dark"] a:hover small,
-html[data-theme="dark"] .visitor-stats-icon,
 html[data-theme="dark"] .visitor-stats-label {
   color: var(--global-text-color-light);
-}
-
-html[data-theme="dark"] .news-archive summary {
-  color: var(--site-link);
 }
 
 html[data-theme="dark"] section,
@@ -98,7 +93,6 @@ html[data-theme="dark"] pre {
   border-color: var(--site-border);
 }
 
-html[data-theme="dark"] .visitor-stats,
 html[data-theme="dark"] header ul,
 html[data-theme="dark"] .icon-button {
   background-color: var(--site-surface);

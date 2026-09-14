@@ -66,6 +66,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/pub.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/nav.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/news.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 
 
@@ -83,70 +84,12 @@
         text-align: center;
       }
 
-      .visitor-stats {
-        width: 100%;
-        max-width: 370px;
-        margin: 20px 0 10px 0;
-        padding: 16px 18px;
-        border: 1px solid #dddddd;
-        border-radius: 8px;
-        background-color: #ffffff;
-        box-sizing: border-box;
-        text-align: left;
-      }
-
-      .visitor-stats-title {
-        margin-bottom: 10px;
-        color: #333333;
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      .visitor-stats-content {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .visitor-stats-icon {
-        color: #555555;
-        font-size: 24px;
-        line-height: 1;
-      }
-
-      .visitor-stats-number {
-        color: #222222;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 1.2;
-      }
-
-      .visitor-stats-label {
-        margin-top: 2px;
-        color: #777777;
-        font-size: 12px;
-      }
-
-      .visitor-stats-link {
-        display: inline-block;
-        margin-top: 13px;
-        font-size: 13px;
-        text-decoration: none;
-      }
-
-      .visitor-stats-link:hover {
-        text-decoration: underline;
-      }
-
-      .visitor-stats-link-icon {
-        margin-left: 3px;
-        font-size: 10px;
-      }
     </style>
     {% include theme-head.html %}
     <link rel="stylesheet" href="{{ '/assets/css/scholar-stats.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/layout-wide.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
 
   <body class="layout-wide layout-about">
@@ -231,44 +174,16 @@
         </div>
         {% endif %}
 
-        <br>
-
-        <!-- GoatCounter statistics card -->
-        <div class="visitor-stats">
-          <div class="visitor-stats-title">
-            Website Statistics
+        <div class="home-connect">
+          <div class="visitor-stats">
+            <a class="visitor-stats-link" href="https://shaoyanliu.goatcounter.com" target="_blank" rel="noopener noreferrer" title="View detailed website statistics">
+              <span class="visitor-stats-title">Website Statistics</span>
+              <span aria-hidden="true">&middot;</span>
+              <span class="visitor-stats-content"><span id="goatcounter-total" class="visitor-stats-number">Loading...</span> <span class="visitor-stats-label">total page views</span></span>
+              <i class="fa-solid fa-arrow-up-right-from-square visitor-stats-link-icon" aria-hidden="true"></i>
+            </a>
           </div>
-
-          <div class="visitor-stats-content">
-            <div class="visitor-stats-icon">
-              <i class="fa-solid fa-chart-simple"></i>
-            </div>
-
-            <div>
-              <div
-                id="goatcounter-total"
-                class="visitor-stats-number"
-              >
-                Loading...
-              </div>
-
-              <div class="visitor-stats-label">
-                Total page views
-              </div>
-            </div>
-          </div>
-
-          <a
-            class="visitor-stats-link"
-            href="https://shaoyanliu.goatcounter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View detailed statistics
-            <i
-              class="fa-solid fa-arrow-up-right-from-square visitor-stats-link-icon"
-            ></i>
-          </a>
+          {% include profile-icons.html class="profile-footer" %}
         </div>
 
         <script>
@@ -353,5 +268,6 @@
       </footer>
       {% endif %}
     </div>
+    {% include copyright.html %}
   </body>
 </html>

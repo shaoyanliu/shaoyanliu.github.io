@@ -26,6 +26,13 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications { margin-top: 2rem; }
 
+.selected-publications-heading { margin: 60px 0 16px; }
+.selected-publications-heading a { color: inherit; }
+.selected-publications { margin-top: 0; }
+.selected-publications-all { margin: 16px 0 0; }
+.selected-publications-heading a:focus-visible,
+.selected-publications-all a:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
+
 .publications [hidden] { display: none !important; }
 
 .publication-search { position: relative; margin-bottom: 10px; }
@@ -78,8 +85,10 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
     padding: 12px;
     border: 1px solid var(--global-theme-color);
     border-radius: 8px;
-    background: var(--global-bg-color);
+    background: #f1f6fc;
 }
+
+html[data-theme="dark"] .publication-filters { background: #192331; }
 
 .publication-filters button {
     padding: 4px 11px;
@@ -342,6 +351,12 @@ html[data-theme="dark"] .bibtex-dialog-actions button { color: #13294b; }
 .publications ol.bibliography li .title { font-size: 16px; font-weight: 400; line-height: 1.25; }
 
 .publications ol.bibliography li .author { line-height: 1.3; }
+
+.publications .author .publication-self-author {
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
 
 .publications ol.bibliography li .periodical { line-height: 1.25; }
 

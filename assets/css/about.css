@@ -31,7 +31,17 @@
   margin: 0 0 24px 32px;
   border-radius: 7px;
 }
-.about-portrait img { display: block; width: 100%; height: auto; border-radius: inherit; box-shadow: 0 3px 12px #0003; }
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Crop the white strip below the photo in avatar.jpg. */
+  aspect-ratio: 2570 / 2795;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  box-shadow: 0 3px 12px #0003;
+}
 .about-portrait figcaption { margin-top: 7px; color: #737373; font-size: 14px; font-weight: 400; line-height: 1.4; text-align: center; }
 html[data-theme="dark"] .about-portrait figcaption { color: var(--global-text-color-light); }
 .about-portrait figcaption a { display: inline-flex; align-items: center; gap: 4px; color: inherit; }

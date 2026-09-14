@@ -1,4 +1,4 @@
-<div class="profile-nav" role="group" aria-label="Contact and academic profiles">
+<div class="{{ include.class | default: 'profile-nav' | escape }}" role="group" aria-label="Contact and academic profiles">
   {% if site.email %}
   <a href="mailto:{{ site.email | escape }}" aria-label="Email Shaoyan Liu" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
   {% endif %}

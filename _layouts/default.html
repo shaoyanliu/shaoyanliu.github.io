@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/pub.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/nav.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/news.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 
     
@@ -51,6 +52,7 @@
     {% if page.cv_reader %}
     <link rel="stylesheet" href="{{ '/assets/css/cv.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body{% if page.full_width %} class="layout-wide"{% endif %}>
     
@@ -208,5 +210,6 @@
       </footer>
       {% endunless %}
     </div>
+    {% include copyright.html %}
   </body>
 </html>
