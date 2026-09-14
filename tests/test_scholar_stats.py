@@ -432,6 +432,32 @@ class SerpApiTests(unittest.TestCase):
         del payload["articles"][0]["cited_by"]
         self.assert_preserved(payload)
 
+    def test_observed_null_only_article_citations_mean_zero(self):
+        payload = serpapi_page()
+        payload["articles"][1]["cited_by"] = {"value": None}
+        payload["cited_by"]["table"][1]["h_index"]["all"] = 1
+        result = scholar.update_snapshot(self.path, provider="serpapi",
+                                         serpapi_fetch=lambda *_: payload)
+        article = result["articles"][f"{PROFILE}:paper_b"]
+        self.assertEqual(article["citations"], 0)
+        self.assertIsNone(article["cited_by_url"])
+        self.assertEqual(result["updated"], TODAY)
+        self.assertEqual(yaml.safe_load(self.path.read_text()), result)
+
+    def test_null_with_extra_fields_and_missing_values_remain_invalid(self):
+        for cited_by in (None, {}, {"link": ""},
+                         {"value": None, "link": ""},
+                         {"value": None, "link": "https://scholar.google.com/scholar?cites=1"},
+                         {"value": None, "cites_id": "1"},
+                         {"value": None, "serpapi_link": "https://serpapi.com/search.json"}):
+            with self.subTest(cited_by=cited_by):
+                payload = serpapi_page()
+                payload["articles"][0]["cited_by"] = cited_by
+                self.assert_preserved(payload)
+        payload = serpapi_page()
+        payload["cited_by"]["table"][1]["h_index"]["all"] = None
+        self.assert_preserved(payload)
+
     def test_unexpected_response_identity_or_structure_is_rejected(self):
         mutations = (
             lambda p: p.update(error="Provider error with " + self.KEY),

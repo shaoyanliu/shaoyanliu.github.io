@@ -201,8 +201,11 @@ def parse_serpapi_page(payload, profile_id, start):
         cited_by = entry.get("cited_by")
         if not isinstance(title, str) or not title.strip() or not isinstance(cited_by, dict):
             raise ScholarError("A SerpApi article title or citation field is missing.")
+        # Observed SerpApi convention for an independently verified uncited paper:
+        # exactly {"value": null}; missing fields or null with citation links are invalid.
+        citations = 0 if cited_by == {"value": None} else _json_count(cited_by.get("value"))
         articles.append({"id": article_id, "title": " ".join(title.split()),
-                         "citations": _json_count(cited_by.get("value")),
+                         "citations": citations,
                          "cited_by_url": citation_url(cited_by.get("link"))})
 
     pagination = payload.get("serpapi_pagination", {})
