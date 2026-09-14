@@ -5,18 +5,18 @@ This is the deep-cleaned version of the Shaoyan Liu academic website.
 ## Removed legacy/template content
 
 - Old generated `html_source_file/` copy
-- Yaoyao Liu Google Scholar crawler and its GitHub Actions workflow
+- Original template's Google Scholar crawler and GitHub Actions workflow, replaced by this site's own updater
 - Legacy Talks page/include
 - Unused `simple` layout
 - Unused images and scripts
 - macOS `.DS_Store` / `__MACOSX` metadata
-- Entire `assets/Illinois/` branding/favicon package
-- Illinois Brand CSS dependency
+- Original university branding and favicon package
+- Original university branding stylesheet dependency
 - Unused jQuery 1.5
 - Unused `github-stars.js`
 - Unneeded `favicon-switcher.js`
 - Obsolete iPhone viewport helper `scale.fix.js`
-- Legacy `enable_hopkins_logo` configuration
+- Unused institution-specific logo configuration
 
 ## Preserved current functionality
 

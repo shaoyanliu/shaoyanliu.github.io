@@ -7,9 +7,9 @@ affiliation_logo: ./assets/img/pennstate.png
 #email: svl6508@psu.edu
 
 # Search Engine Optimization (SEO)
-keywords: shaoyanliu liu, liu shaoyan, shaoyanliu, liushaoyan
+keywords: Shaoyan Liu, Liu Shaoyan, shaoyanliu, liushaoyan
 canonical: https://shaoyanliu.github.io/
-description: Shaoyan liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery safety and performance prediction.
+description: Shaoyan Liu is a Ph.D. student at The Pennsylvania State University. His research lies in battery safety and performance prediction.
 
 # The option is used to show the last update time.
 enable_last_update: false
@@ -35,5 +35,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLEANUP_NOTES.md
   - LICENSE
   - CNAME

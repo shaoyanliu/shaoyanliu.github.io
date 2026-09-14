@@ -81,6 +81,6 @@ bundle exec jekyll build --strict_front_matter
 
 ## Credits
 
-Adapted from [Yaoyao Liu's academic homepage](https://yaoyaoliu.web.illinois.edu/) and the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme. Many thanks to Yaoyao for sharing the original template.
+Based on the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme, customized for Shaoyan Liu's academic website.
 
 The repository includes the original [CC0 1.0 Universal license](LICENSE).
