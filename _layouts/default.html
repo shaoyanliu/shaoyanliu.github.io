@@ -25,6 +25,9 @@
     {% if page.full_width %}
     <link rel="stylesheet" href="{{ '/assets/css/layout-wide.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% endif %}
+    {% if page.activities %}
+    <link rel="stylesheet" href="{{ '/assets/css/activities.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    {% endif %}
     {% if page.cv_reader %}
     <link rel="stylesheet" href="{{ '/assets/css/cv.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% endif %}

@@ -5,15 +5,8 @@ main:
   - title: "News"
     url: news/
 
-  - title: "Services"
-    url: services/
-    right: true
-  #- title: "Talks"
-  #  url: talks/
-
-  - title: "Teaching"
-    url: teaching/
-    #right: true 
+  - title: "Activities"
+    url: activities/
 
   - title: "Publications"
     url: publications/

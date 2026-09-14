@@ -1,0 +1,39 @@
+.academic-activities .activities-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 36px 0 20px;
+  color: var(--global-theme-color);
+  font-size: clamp(24px, 3vw, 28px);
+  scroll-margin-top: 76px;
+}
+
+.academic-activities .activities-heading::after {
+  content: "";
+  flex: 1;
+  min-width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.academic-activities h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.academic-activities .activities-list {
+  padding-left: 22px;
+  margin: 0 0 24px;
+}
+
+.academic-activities .activities-list li + li {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .academic-activities .activities-heading {
+    gap: 12px;
+    margin-top: 30px;
+  }
+}

@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: redirect
 title: Services
-description: Academic service and journal peer-review activities of Shaoyan Liu, a battery safety researcher and Ph.D. student at Penn State.
 permalink: /services/
-full_width: true
+redirect_to: /activities/#services
+sitemap: false
 ---
-
-{% include_relative _includes/services.md %}

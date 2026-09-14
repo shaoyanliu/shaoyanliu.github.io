@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: redirect
 title: Teaching
-description: Teaching experience and courses supported by Shaoyan Liu, a Ph.D. student in Mechanical Engineering at Penn State.
 permalink: /teaching/
-full_width: true
+redirect_to: /activities/#teaching
+sitemap: false
 ---
-
-{% include_relative _includes/teaching.md %}
