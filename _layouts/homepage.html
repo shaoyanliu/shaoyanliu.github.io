@@ -63,9 +63,9 @@
       referrerpolicy="no-referrer"
     >
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ '/assets/css/pub.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="{{ '/assets/css/nav.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 
 
@@ -143,6 +143,7 @@
         font-size: 10px;
       }
     </style>
+    {% include theme-head.html %}
   </head>
 
   <body>
@@ -155,20 +156,24 @@
         >
       </a>
 
-      <div id="myLinks">
-        {% include navigation-home.md %}
-      </div>
+      <div class="nav-controls">
+        <div id="myLinks">
+          {% include navigation-home.md %}
+        </div>
 
-      <button
-        type="button"
-        id="navigation-toggle"
-        class="icon"
-        aria-controls="myLinks"
-        aria-expanded="false"
-        aria-label="Open navigation menu"
-      >
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </button>
+        {% include theme-toggle.html %}
+
+        <button
+          type="button"
+          id="navigation-toggle"
+          class="icon"
+          aria-controls="myLinks"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
 
     <script src="./assets/js/vanilla-back-to-top.min.js"></script>

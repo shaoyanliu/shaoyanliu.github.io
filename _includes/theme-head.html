@@ -1,0 +1,19 @@
+<script>
+  // Apply the saved theme before the page is painted to avoid a white flash.
+  (function () {
+    var theme;
+    try {
+      theme = localStorage.getItem("site-theme");
+    } catch (error) {
+      // Theme switching also works when browser storage is unavailable.
+    }
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+    var themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = theme === "dark" ? "#121212" : "#ffffff";
+  })();
+</script>
+<link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script src="{{ '/assets/js/theme.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

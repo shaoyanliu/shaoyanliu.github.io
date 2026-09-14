@@ -1,0 +1,224 @@
+:root {
+  color-scheme: light;
+  --site-surface: #f9f9f9;
+  --site-border: #ccc;
+  --site-card-text: #333;
+  --site-callout-accent: #e74d3c;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --global-bg-color: #121212;
+  --global-code-bg-color: #1c1c1c;
+  --global-text-color: #d5deea;
+  --global-text-color-light: #a6b5c9;
+  --global-theme-color: #9bc5ed;
+  --global-hover-color: #b8dcf4;
+  --global-footer-bg-color: #1c1c1c;
+  --global-footer-text-color: #d5deea;
+  --global-footer-link-color: #8bc6e8;
+  --global-distill-app-color: #a6b5c9;
+  --site-surface: #1c1c1c;
+  --site-border: #3a3a3a;
+  --site-card-text: #d5deea;
+  --site-callout-accent: #ff9688;
+  --site-heading: #e8eef7;
+  --site-strong: #e8eef7;
+  --site-link: #8bc6e8;
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] autocolor {
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: var(--site-heading);
+}
+
+html[data-theme="dark"] strong,
+html[data-theme="dark"] dt,
+html[data-theme="dark"] th,
+html[data-theme="dark"] .visitor-stats-title,
+html[data-theme="dark"] .visitor-stats-number {
+  color: var(--site-strong);
+}
+
+html[data-theme="dark"] a {
+  color: var(--site-link);
+}
+
+html[data-theme="dark"] a:hover {
+  color: var(--global-hover-color);
+}
+
+html[data-theme="dark"] a small,
+html[data-theme="dark"] a:hover small,
+html[data-theme="dark"] .visitor-stats-icon,
+html[data-theme="dark"] .visitor-stats-label {
+  color: var(--global-text-color-light);
+}
+
+html[data-theme="dark"] .news-archive summary {
+  color: var(--site-link);
+}
+
+html[data-theme="dark"] section,
+html[data-theme="dark"] th,
+html[data-theme="dark"] td,
+html[data-theme="dark"] header li {
+  border-color: var(--site-border);
+}
+
+html[data-theme="dark"] hr {
+  background-color: var(--site-border);
+}
+
+html[data-theme="dark"] blockquote {
+  background-color: var(--global-bg-color);
+  border-color: var(--global-theme-color);
+}
+
+html[data-theme="dark"] code,
+html[data-theme="dark"] pre {
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] pre {
+  background-color: var(--global-code-bg-color);
+  border-color: var(--site-border);
+}
+
+html[data-theme="dark"] .visitor-stats,
+html[data-theme="dark"] header ul,
+html[data-theme="dark"] .icon-button {
+  background-color: var(--site-surface);
+  border-color: var(--site-border);
+  color: var(--site-card-text);
+}
+
+html[data-theme="dark"] header ul a,
+html[data-theme="dark"] header ul a:hover {
+  color: var(--site-link);
+}
+
+html[data-theme="dark"] header ul a:active {
+  background-color: var(--site-border);
+}
+
+html[data-theme="dark"] .social-icons a {
+  color: var(--site-link) !important;
+}
+
+html[data-theme="dark"] .social-icons a:hover {
+  background-color: var(--site-surface);
+  color: var(--site-heading) !important;
+}
+
+html[data-theme="dark"] .icon-button .icon-github {
+  color: var(--site-heading);
+}
+
+html[data-theme="dark"] .publications .year,
+html[data-theme="dark"] .publications .publication-number {
+  color: var(--global-theme-color);
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
+  background-color: #13294b;
+  color: #fff !important;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .links a.btn {
+  background-color: var(--site-surface);
+  border-color: var(--site-border);
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .links a.btn:hover {
+  border-color: var(--global-theme-color);
+  color: var(--site-link);
+}
+
+/* Publication notes currently carry an inline accent color. */
+html[data-theme="dark"] .publications .links > strong > i {
+  color: var(--site-callout-accent) !important;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .teaser {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Override the stylesheet inserted by the back-to-top helper. */
+html[data-theme="dark"] #back-to-top {
+  background: var(--site-surface);
+  border-color: var(--site-border);
+  color: var(--global-text-color);
+}
+
+@media print {
+  :root,
+  html[data-theme="dark"] {
+    color-scheme: light;
+    --global-bg-color: #fff;
+    --global-code-bg-color: #fff;
+    --global-text-color: #222;
+    --global-text-color-light: #555;
+    --global-theme-color: #13294b;
+    --global-hover-color: #13294b;
+    --global-footer-bg-color: #fff;
+    --global-footer-text-color: #222;
+    --global-footer-link-color: #13294b;
+    --global-distill-app-color: #555;
+    --site-surface: #fff;
+    --site-border: #aaa;
+    --site-card-text: #222;
+    --site-callout-accent: #a32c21;
+    --site-heading: #13294b;
+    --site-strong: #222;
+    --site-link: #13294b;
+  }
+
+  body {
+    background: #fff;
+    color: #222;
+  }
+
+  .visitor-stats,
+  pre,
+  header ul,
+  .publications ol.bibliography li .links a.btn {
+    background-color: #fff;
+    border-color: #aaa;
+    color: #222;
+  }
+
+  .publications ol.bibliography li .abbr abbr,
+  html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
+    background-color: #fff !important;
+    border: 1px solid #13294b;
+    color: #13294b !important;
+  }
+
+  .visitor-stats,
+  .publications ol.bibliography li .teaser,
+  .publications ol.bibliography li .abbr abbr {
+    box-shadow: none !important;
+  }
+
+  .topnav,
+  #theme-toggle,
+  .theme-toggle,
+  #back-to-top {
+    display: none !important;
+  }
+}

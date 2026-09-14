@@ -17,8 +17,8 @@ In my spare time, I enjoy doing sports (mostly running, cycling and working out 
 <a href="https://www.strava.com/athletes/shaoyanliu" class="strava-badge- strava-badge-follow" target="_blank"><img src="//badges.strava.com/echelon-sprite-16.png" alt="Strava" /></a>). Also, I enjoy music, photography, and philosophy.
 
 
-<div style="border: 1px solid #ccc; padding: 11px; background-color: #f9f9f9; color: #333; border-radius: 5px;">
-  <strong><span style="color:#e74d3c;">Pin1:</span> I dedicate one hour per week to mentor and offer suggestions to underrepresented students or anyone in need. You are welcome to fill in <a href="https://forms.gle/VpNYkEUKp5PXqFSv8">this form</a> if you are interested.</strong>
+<div style="border: 1px solid var(--site-border); padding: 11px; background-color: var(--site-surface); color: var(--site-card-text); border-radius: 5px;">
+  <strong><span style="color:var(--site-callout-accent);">Pin1:</span> I dedicate one hour per week to mentor and offer suggestions to underrepresented students or anyone in need. You are welcome to fill in <a href="https://forms.gle/VpNYkEUKp5PXqFSv8">this form</a> if you are interested.</strong>
 </div>
 
 
