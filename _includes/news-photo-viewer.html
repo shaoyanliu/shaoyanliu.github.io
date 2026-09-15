@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ '/assets/css/news-photo-viewer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<dialog class="news-photo-viewer" id="news-photo-viewer" aria-label="News photo" aria-describedby="news-photo-caption">
+  <div class="news-photo-toolbar">
+    <button class="news-photo-close" type="button" aria-label="Close photo" autofocus><span aria-hidden="true">&times;</span></button>
+  </div>
+  <figure class="news-photo-figure">
+    <div class="news-photo-stage">
+      <p class="news-photo-status" role="status"></p>
+    </div>
+    <figcaption class="news-photo-details">
+      <span id="news-photo-caption"></span>
+      <a class="news-photo-original" target="_blank" rel="noopener">Open image <span aria-hidden="true">↗</span></a>
+    </figcaption>
+  </figure>
+</dialog>
+<script src="{{ '/assets/js/news-photo-viewer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
