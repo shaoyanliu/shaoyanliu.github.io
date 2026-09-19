@@ -2,14 +2,14 @@
 # updated is the last successful check date in America/New_York.
 profile_id: Yw_kFE4AAAAJ
 papers: 7
-citations: 173
+citations: 174
 h_index: 6
-updated: '2026-09-18'
+updated: '2026-09-19'
 articles:
   Yw_kFE4AAAAJ:2osOgNQ5qMEC:
     title: Effects of charging rates on heat and gas generation in lithium-ion battery
       thermal runaway triggered by high temperature coupled with overcharge
-    citations: 62
+    citations: 63
     cited_by_url: https://scholar.google.com/scholar?hl=en&cites=11392020196404658599
   Yw_kFE4AAAAJ:9yKSN-GCB0IC:
     title: Effects of temperature and pressure fluctuations on exergy loss characteristics
