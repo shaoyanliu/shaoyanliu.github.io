@@ -2,9 +2,9 @@
 # updated is the last successful check date in America/New_York.
 profile_id: Yw_kFE4AAAAJ
 papers: 7
-citations: 174
+citations: 175
 h_index: 6
-updated: '2026-09-27'
+updated: '2026-09-28'
 articles:
   Yw_kFE4AAAAJ:2osOgNQ5qMEC:
     title: Effects of charging rates on heat and gas generation in lithium-ion battery
@@ -29,7 +29,7 @@ articles:
   Yw_kFE4AAAAJ:qjMakFHDy7sC:
     title: Investigation on gas generation and corresponding explosion characteristics
       of lithium-ion batteries during thermal runaway at different charge states
-    citations: 41
+    citations: 42
     cited_by_url: https://scholar.google.com/scholar?hl=en&cites=16097912477246491098
   Yw_kFE4AAAAJ:u-x6o8ySG0sC:
     title: Chemical reaction neural networks to map lithium-ion battery thermal runaway
