@@ -6,6 +6,8 @@ Personal academic website of **Shaoyan Liu (劉 少言)**, a Ph.D. student in Me
 
 Built with Jekyll and hosted on GitHub Pages, with a compact layout for sharing research, publications, teaching, and academic service.
 
+Looking for a reusable version? Use the separately maintained [Academic Homepage template](https://github.com/shaoyanliu/academic-homepage), which provides fictional sample content and configurable integrations. This repository contains my personal website and research materials.
+
 ## Features
 
 - **Penn State blue, light and dark themes:** a persistent theme switch and responsive navigation.
@@ -62,7 +64,7 @@ The cloud workflow uses **SerpApi's Google Scholar Author API**, a third-party s
 3. Ensure GitHub Pages publishes from `main`. Open **Actions**, enable the workflow if needed, and select **Update Google Scholar statistics → Run workflow**.
 4. Confirm that both the update and the following Pages build succeed. Adding the key or enabling the schedule alone does not verify a successful cloud update.
 
-For a fork, update the owner-specific job condition in the workflow, the Scholar profile and article IDs, and the site's personal content before enabling Actions.
+For a new website, use the [Academic Homepage template](https://github.com/shaoyanliu/academic-homepage) and follow its opt-in synchronization guide; this personal repository retains its owner-specific workflow configuration.
 
 A successful run validates the all-time metrics, article counts, and check date as one snapshot, saves and commits any changes to `main`, and requests a GitHub Pages rebuild. Each run records its provider, check time, and result in the Actions summary, including successful checks with no data changes. Failed requests, missing data, and incomplete pagination leave the previous snapshot and date intact. The webpage reads this saved snapshot rather than making API requests for each visitor. Google Scholar's own data may stay unchanged between daily checks.
 
@@ -96,6 +98,6 @@ bundle exec jekyll build --strict_front_matter
 
 ## Credits
 
-Based on the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme, customized for Shaoyan Liu's academic website.
+Independently maintained and customized by Shaoyan Liu, originally based on [Yaoyao Liu's personal website](https://github.com/yaoyao-liu/personal-website) and the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) theme. The reusable version is available separately as [Academic Homepage](https://github.com/shaoyanliu/academic-homepage).
 
 The repository includes the original [CC0 1.0 Universal license](LICENSE). The CV reader uses [PDF.js](https://mozilla.github.io/pdf.js/), distributed separately under its [Apache 2.0 license](assets/vendor/pdfjs/LICENSE).
