@@ -1,5 +1,9 @@
 # Keep newest entries first; the homepage shows the first six.
 # Category icons are shared through news_icons.yml.
+- date: "Oct. 2026"
+  category: education
+  content: >-
+    Passed the qualifier at Penn State!
 - date: "Sep. 2026"
   category: review
   content: >-

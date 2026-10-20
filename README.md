@@ -1,6 +1,6 @@
 # Shaoyan Liu · Academic Website
 
-Personal academic website of **Shaoyan Liu (劉 少言)**, a Ph.D. student in Mechanical Engineering at **The Pennsylvania State University**, working with Prof. Jun Xu in the Energy Mechanics and Sustainability Laboratory. My research focuses on **battery safety**, including lithium-ion battery thermal runaway, gas generation, and combustion.
+Personal academic website of **Shaoyan Liu (劉 少言)**, a Ph.D. candidate in Mechanical Engineering at **The Pennsylvania State University**, working with Prof. Jun Xu in the Energy Mechanics and Sustainability Laboratory. My research focuses on **battery safety**, including lithium-ion battery thermal runaway, gas generation, and combustion.
 
 [Website](https://shaoyanliu.github.io/) · [Publications](https://shaoyanliu.github.io/publications/) · [Google Scholar](https://scholar.google.com/citations?user=Yw_kFE4AAAAJ&hl=en) · [CV](https://shaoyanliu.github.io/cv/)
 
