@@ -1,6 +1,12 @@
 - id: thermal-runaway
   label: Thermal runaway
   name: Thermal runaway (TR)
+- id: thermal-abuse
+  label: Thermal abuse
+- id: electrical-abuse
+  label: Electrical abuse
+- id: gas-generation
+  label: Gas generation
 - id: machine-learning
   label: AI/ML
   name: Artificial intelligence / machine learning

@@ -144,11 +144,17 @@ html[data-theme="dark"] .publication-filters button[aria-pressed="true"] { color
     white-space: nowrap;
 }
 
+.publications .publication-topic[data-topic="thermal-abuse"] { background: #a64545; }
+.publications .publication-topic[data-topic="electrical-abuse"] { background: #8a661d; }
+.publications .publication-topic[data-topic="gas-generation"] { background: #416b85; }
 .publications .publication-topic[data-topic="machine-learning"] { background: #176763; }
 .publications .publication-topic[data-topic="combustion"] { background: #a6491d; }
 .publications .publication-topic[data-topic="review"] { background: #66518c; }
 
 html[data-theme="dark"] .publications .publication-topic { background: #356592; }
+html[data-theme="dark"] .publications .publication-topic[data-topic="thermal-abuse"] { background: #b05252; }
+html[data-theme="dark"] .publications .publication-topic[data-topic="electrical-abuse"] { background: #8e6b28; }
+html[data-theme="dark"] .publications .publication-topic[data-topic="gas-generation"] { background: #47748e; }
 html[data-theme="dark"] .publications .publication-topic[data-topic="machine-learning"] { background: #25756c; }
 html[data-theme="dark"] .publications .publication-topic[data-topic="combustion"] { background: #b45a2a; }
 html[data-theme="dark"] .publications .publication-topic[data-topic="review"] { background: #766096; }
