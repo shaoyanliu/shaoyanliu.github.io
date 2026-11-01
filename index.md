@@ -6,7 +6,7 @@ seo_title: Shaoyan Liu | Penn State | Battery Safety Research
 
 <div class="about-heading">
   <h1 id="about-me">{{ site.title }}</h1>
-  <p class="about-tagline">Battery safety, thermal runaway, and data-driven modeling</p>
+  <p class="about-tagline">At the intersection of heat transfer, electrochemistry, and reaction kinetics</p>
 </div>
 
 <div class="about-intro" markdown="1">
