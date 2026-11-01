@@ -2,9 +2,9 @@
 # updated is the last successful check date in America/New_York.
 profile_id: Yw_kFE4AAAAJ
 papers: 7
-citations: 185
+citations: 184
 h_index: 6
-updated: '2026-10-31'
+updated: '2026-11-01'
 articles:
   Yw_kFE4AAAAJ:2osOgNQ5qMEC:
     title: Effects of charging rates on heat and gas generation in lithium-ion battery
@@ -24,7 +24,7 @@ articles:
   Yw_kFE4AAAAJ:d1gkVwhDpl0C:
     title: Investigation on thermal runaway behaviors and gas generation dynamics
       of lithium-ion batteries induced by electrical abuse at low-pressure conditions
-    citations: 16
+    citations: 15
     cited_by_url: https://scholar.google.com/scholar?hl=en&cites=10981343906212332625
   Yw_kFE4AAAAJ:qjMakFHDy7sC:
     title: Investigation on gas generation and corresponding explosion characteristics
