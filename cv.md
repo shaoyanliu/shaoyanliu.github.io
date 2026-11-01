@@ -7,16 +7,19 @@ full_width: true
 cv_reader: true
 ---
 
+{% assign cv_version = site.time | date: '%s' %}
+{% assign cv_pdf_url = site.cv_pdf | relative_url | append: '?v=' | append: cv_version %}
+
 <div class="cv-heading">
   <h1>Curriculum Vitae</h1>
-  <a class="cv-download" href="{{ site.cv_pdf | relative_url }}" download="Shaoyan_Liu_CV.pdf" aria-label="Download Shaoyan Liu's CV (PDF)" title="Download CV (PDF)">
+  <a class="cv-download" href="{{ cv_pdf_url }}" download="Shaoyan_Liu_CV.pdf" aria-label="Download Shaoyan Liu's CV (PDF)" title="Download CV (PDF)">
     <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
   </a>
 </div>
 
-<a class="cv-view-link" href="{{ site.cv_pdf | relative_url }}" target="_blank" rel="noopener noreferrer">View PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+<a class="cv-view-link" href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer">View PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
 
-<div class="cv-reader" data-pdf-url="{{ site.cv_pdf | relative_url }}" aria-label="CV PDF reader">
+<div class="cv-reader" data-pdf-url="{{ cv_pdf_url }}" aria-label="CV PDF reader">
   <div class="cv-toolbar" hidden>
     <span class="cv-page-count"><span data-cv-total>–</span> pages</span>
     <span class="cv-toolbar-divider" aria-hidden="true"></span>
