@@ -1,5 +1,9 @@
 # Keep newest entries first; the homepage shows the first six.
 # Category icons are shared through news_icons.yml.
+- date: "Nov. 2026"
+  category: review
+  content: >-
+    Started serving as a reviewer for the <a href="https://asmedigitalcollection.asme.org/electrochemical">Journal of Electrochemical Energy Conversion and Storage</a>. Honored to serve our community!
 - date: "Oct. 2026"
   category: education
   content: >-
