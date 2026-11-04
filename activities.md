@@ -2,7 +2,7 @@
 layout: default
 title: Academic Activities
 nav_title: Activities
-description: Conference presentations, teaching experience, and academic service of Shaoyan Liu, including battery safety research talks, posters, and journal peer review.
+description: Conference presentations, teaching experience, academic service, and professional memberships of Shaoyan Liu, including battery safety research talks, posters, and journal peer review.
 permalink: /activities/
 full_width: true
 activities: true
@@ -14,4 +14,5 @@ activities: true
   {% include conferences.html %}
   {% include teaching.md %}
   {% include services.md %}
+  {% include memberships.html %}
 </div>
