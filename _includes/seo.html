@@ -53,7 +53,8 @@
       {{ site.google_scholar | jsonify }},
       {{ site.orcid | jsonify }},
       {{ site.github_link | jsonify }},
-      {{ site.linkedin | jsonify }}
+      {{ site.linkedin | jsonify }}{% if site.twitter %},
+      {{ site.twitter | jsonify }}{% endif %}
     ]
   }
 }
